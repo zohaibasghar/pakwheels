@@ -13,8 +13,8 @@ const CustomBackButton = () => (
 export default CustomBackButton
 const styles = StyleSheet.create({
     backButtonContainer: {
-        backgroundColor: "#e1e1e1",
+        backgroundColor: "#f8f8f8",
         borderRadius: 100,
-        padding: 8,
+        padding: 10,
     },
 });

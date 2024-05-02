@@ -5,6 +5,7 @@ import {
   AntDesign,
   MaterialIcons,
   Feather,
+  MaterialCommunityIcons
 } from "@expo/vector-icons";
 import Transfer from "./Screens/Transfer/index";
 import Pay from "./Screens/Pay/Index";
@@ -17,9 +18,9 @@ const Tab = createBottomTabNavigator();
 
 export default function Main() {
   const { token } = useAppSelector(state => state.auth);
-  if (!token) {
-    return <Auth />
-  }
+  // if (!token) {
+  //   return <Auth />
+  // }
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
@@ -45,7 +46,7 @@ export default function Main() {
                 />
               );
             case "Credit":
-              return <AntDesign name="creditcard" size={24} color={color} />;
+              return <MaterialCommunityIcons name="inbox-full-outline" size={24} color={color} />;
             case "Support":
               return (
                 <MaterialIcons

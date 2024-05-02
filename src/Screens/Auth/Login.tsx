@@ -8,7 +8,6 @@ import { useNavigation } from '@react-navigation/native';
 const Login = () => {
     const [phone, setPhone] = useState('');
     const nav = useNavigation();
-    console.log(phone)
 
     function handleLogin() {
         nav.navigate("OtpVerification", { phone })
@@ -34,7 +33,7 @@ const Login = () => {
                             </TouchableOpacity>} />
                     </Flex>
 
-                <Button text={"Log in"} bgColor={"#f8f8f8"} handleFunc={handleLogin} disability={!phone} />
+                    <Button text={"Log in"} bgColor={"#f8f8f8"} handleFunc={handleLogin} disability={!phone} />
 
                 </Stack>
                 <Stack>

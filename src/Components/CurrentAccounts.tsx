@@ -1,12 +1,17 @@
-import { View, Text, Flex, Link, Stack, Image } from "native-base";
+import { View, Text, Flex, Link, Stack, Image, Pressable, Menu, Divider, Box, HStack } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
-import { MaterialCommunityIcons, Feather } from "@expo/vector-icons";
+import { MaterialCommunityIcons, Feather, AntDesign } from "@expo/vector-icons";
 import { ImageBackground } from "react-native";
+import { useAppDispatch, useAppSelector } from "../redux/Store";
+import { createTransaction } from "../redux/authSlice";
+import CustomMenu from "./CustomMenu";
 
 export default function CurrentAccounts() {
   const navigation = useNavigation();
+  const { transaction } = useAppSelector(state => state.auth)
+  const dispatch = useAppDispatch();
   return (
     <View bg={"#000030"} w={"94%"} mx={"auto"} my={5} rounded={"2xl"}>
       <ImageBackground
@@ -30,10 +35,10 @@ export default function CurrentAccounts() {
                 Current Accounts
               </Text>
               <Text fontSize={"xs"} color={"gray.600"}>
-                Balance: $0.0
+                Balance: ${transaction.amount}
               </Text>
             </Stack>
-            <TouchableOpacity onPress={() => navigation.navigate("Transactions" as never)}>
+            <TouchableOpacity onPress={() => dispatch(createTransaction())}>
               <Stack
                 direction={"row"}
                 alignItems={"center"}
@@ -58,8 +63,8 @@ export default function CurrentAccounts() {
               </Stack>
             </Stack>
             <Stack direction={"row"} alignItems={"center"} space={1}>
-              <Text>$0.00</Text>
-              <MaterialCommunityIcons name="dots-vertical" size={22} color="gray" />
+              <Text>${transaction.amount}</Text>
+              <CustomMenu />
             </Stack>
           </Flex>
           <Flex align="center" direction="row" justify="space-between" mt={2}>
@@ -73,8 +78,8 @@ export default function CurrentAccounts() {
               </Stack>
             </Stack>
             <Stack direction={"row"} alignItems={"center"} space={1}>
-              <Text>$0.00</Text>
-              <MaterialCommunityIcons name="dots-vertical" size={22} color="gray" />
+              <Text>${transaction.amount}</Text>
+              <CustomMenu />
             </Stack>
           </Flex>
         </View>

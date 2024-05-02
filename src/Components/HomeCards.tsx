@@ -3,7 +3,7 @@ import { Image, Stack, Text } from "native-base";
 import { Feather } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
 
-export default function HomeCards({ title, desc, link, path, image }: any) {
+export default function HomeCards({ title, desc, link, path }: any) {
   return (
     <Stack
       direction={"row"}

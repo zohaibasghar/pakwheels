@@ -4,6 +4,8 @@ import Home from "../Screens/Home";
 import Transactions from "../Screens/Transactions";
 import MyCard from "../Screens/MyCard";
 import CustomBackButton from "../Components/CustomBackButton";
+import TransactionDetail from "../Screens/TransactionDetail";
+import CustomHeader from "../Components/CustomHeader";
 
 const Stack = createStackNavigator();
 
@@ -19,7 +21,7 @@ const Accounts = () => {
       <Stack.Screen
         name="Transactions"
         component={Transactions}
-        options={{ headerShown: false }}
+        options={{ headerTitle: "All Activity", headerTitleAlign: "center", headerBackImage: CustomBackButton }}
       />
       <Stack.Screen
         name="MyCard"
@@ -34,6 +36,11 @@ const Accounts = () => {
           },
         }}
       />
+      <Stack.Screen name="TransactionDetail" component={TransactionDetail} options={{
+        headerTitle: () => <CustomHeader title="Purchase" subtitle="11:47 AM &#8226; 1 April 2024 " />,
+        headerTitleAlign: "center",
+        headerBackImage: CustomBackButton
+      }} />
     </Stack.Navigator>
   );
 };
