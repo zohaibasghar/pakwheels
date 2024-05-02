@@ -10,10 +10,16 @@ import Transfer from "./Screens/Transfer/index";
 import Pay from "./Screens/Pay/Index";
 import Credit from "./Screens/Credit/index";
 import Support from "./Screens/Support/Index";
+import Auth from "./Stacks/Auth";
+import { useAppSelector } from "./redux/Store";
 
 const Tab = createBottomTabNavigator();
 
 export default function Main() {
+  const { token } = useAppSelector(state => state.auth);
+  if (!token) {
+    return <Auth />
+  }
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
