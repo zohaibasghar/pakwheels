@@ -12,16 +12,16 @@ const theme = extendTheme({
       defaultProps: {
         rounded: "md",
       },
-    }
-  }
-})
+    },
+  },
+});
 export default function App() {
   return (
     <View style={styles.container}>
-      <NativeBaseProvider theme={theme}>
+      <NativeBaseProvider theme={theme} config={{ strictMode: "warn" }}>
         <StoreProvider>
           <NavigationContainer>
-            <StatusBar style="dark" />
+            <StatusBar style="dark" animated />
             <Main />
           </NavigationContainer>
         </StoreProvider>

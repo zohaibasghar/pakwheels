@@ -1,4 +1,16 @@
-import { View, Text, Flex, Link, Stack, Image, Pressable, Menu, Divider, Box, HStack } from "native-base";
+import {
+  View,
+  Text,
+  Flex,
+  Link,
+  Stack,
+  Image,
+  Pressable,
+  Menu,
+  Divider,
+  Box,
+  HStack,
+} from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
@@ -10,7 +22,7 @@ import CustomMenu from "./CustomMenu";
 
 export default function CurrentAccounts() {
   const navigation = useNavigation();
-  const { transaction } = useAppSelector(state => state.auth)
+  const { transaction } = useAppSelector((state) => state.auth);
   const dispatch = useAppDispatch();
   return (
     <View bg={"#000030"} w={"94%"} mx={"auto"} my={5} rounded={"2xl"}>
@@ -23,7 +35,7 @@ export default function CurrentAccounts() {
             <Image source={require("../../assets/island_logo.png")} alt="PITG island" />
             <Text color={"white"}>Debit</Text>
           </Stack>
-          <Link onPress={() => navigation.navigate("MyCard" as never)}>
+          <Link onPress={() => navigation.navigate("Accounts", { screen: "MyCard" })}>
             <Text color={"white"}>Show card</Text>
             <Feather name="chevron-down" size={24} color="white" />
           </Link>

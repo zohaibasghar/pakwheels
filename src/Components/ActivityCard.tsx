@@ -12,7 +12,7 @@ export default function ActivityCard({ details }: any) {
         <Text bold fontSize={"lg"}>
           Activity
         </Text>
-        <TouchableOpacity onPress={() => nav.navigate("Transactions" as never)}>
+        <TouchableOpacity onPress={() => nav.navigate("Accounts", { screen: "Transactions" })}>
           <Stack
             direction={"row"}
             alignItems={"center"}
@@ -28,19 +28,20 @@ export default function ActivityCard({ details }: any) {
       </Flex>
       <Flex align="center" direction="row" justify="space-between" mt={4}>
         <Stack direction={"row"} alignItems={"center"} space={2}>
-          <Image
-            source={require("../../assets/other_bank.png")}
-            alt="Other Bank"
-          />
+          <Image source={require("../../assets/other_bank.png")} alt="Other Bank" />
           <Stack>
             <Text fontSize={"md"} bold>
               {details.bankName} {details.recipient}
             </Text>
-            <Text fontSize={"xs"}>{details.type} &#8226; {details.time}</Text>
+            <Text fontSize={"xs"}>
+              {details.type} • {details.time}
+            </Text>
           </Stack>
         </Stack>
         <Stack alignItems={"flex-end"}>
-          <Text color={details.type === "Deposit" ? "green.500" : "red.500"}>{details.type === "Deposit" ? "+" : "-"} ${details.amount}</Text>
+          <Text color={details.type === "Deposit" ? "green.500" : "red.500"}>
+            {details.type === "Deposit" ? "+" : "-"} ${details.amount}
+          </Text>
           <Text fontSize={"xs"}>${details.amount}</Text>
         </Stack>
       </Flex>

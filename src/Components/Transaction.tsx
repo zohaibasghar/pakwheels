@@ -18,7 +18,7 @@ const TransactionList = ({ transaction }: any) => {
                         <Text fontSize={"md"} bold>
                             {transaction.bankName} {transaction.recipient}
                         </Text>
-                        <Text fontSize={"xs"}>{transaction.type} &#8226; {transaction.time}</Text>
+                        <Text fontSize={"xs"}>{transaction.type} • {transaction.time}</Text>
                     </Stack>
                 </Stack>
                 <Stack alignItems={"flex-end"}>
