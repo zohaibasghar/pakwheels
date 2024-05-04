@@ -1,24 +1,23 @@
-import { Box, Flex, Image, Input, Stack, Text } from "native-base";
+import { View, Text, Stack, Image, Input, Flex, Box, Button } from "native-base";
 import React, { useState } from "react";
-import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
+import { TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
-import Button from "../../Components/Button";
 import { useNavigation } from "@react-navigation/native";
-import Svg, { Stop, Rect, RadialGradient } from "react-native-svg";
 
-const Login = () => {
+const CreateAccount = () => {
   const [phone, setPhone] = useState("");
   const nav = useNavigation();
-
-  function handleLogin() {
-    nav.navigate("OtpVerification", { phone });
-  }
   return (
-    <SafeAreaView style={{ backgroundColor: "#5E41E6", flex: 1 }}>
-      <Stack alignItems={"center"} justifyContent={"space-around"} w={"92%"} flex={1} mx={"auto"}>
-        <Stack alignItems={"center"} space={3}>
-          <Image source={require("../../../assets/main_logo.png")} alt="Logo" />
+    <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
+      <CustomHeaderHelp title="Help" />
+      <Stack flex={1} mx={6} justifyContent={"space-between"}>
+        <Stack>
+          <Text bold fontSize={"2xl"}>
+            Create account
+          </Text>
+          <Text>Enter your phone number. We'll send you a confirmation code.</Text>
           <Flex direction="row" justify="space-between" mx={"auto"} w={"100%"} mt={12}>
             <Box
               w={"33%"}
@@ -71,27 +70,23 @@ const Login = () => {
               }
             />
           </Flex>
-
-          <Button
-            text={"Log in"}
-            bgColor={"#f8f8f8"}
-            handleFunc={handleLogin}
-            disability={!phone}
-          />
-        </Stack>
-        <Stack>
-          <Text color={"#f8f8f8"} fontWeight={400}>
-            Don't have an account?
-          </Text>
-          <TouchableOpacity onPress={() => nav.navigate("Signup" as never)}>
-            <Text textAlign={"center"} color={"#f8f8f8"} fontWeight={800}>
-              Get one in 10mins
+          <Text my={4}>
+            Already have an account?{" "}
+            <Text color={"#5E41E6"} onPress={() => nav.navigate("Login" as never)}>
+              Log in
             </Text>
-          </TouchableOpacity>
+          </Text>
         </Stack>
+        <Button
+          _pressed={{ bg: "#f1f1f1" }}
+          disabled={!phone}
+          onPress={() => nav.navigate("OtpVerification2", { phone })}
+        >
+          Sign up
+        </Button>
       </Stack>
     </SafeAreaView>
   );
 };
 
-export default Login;
+export default CreateAccount;

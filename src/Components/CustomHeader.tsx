@@ -4,7 +4,7 @@ import CustomBackButton from "./CustomBackButton";
 
 const CustomHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => {
   return (
-    <Container mb={1}>
+    <Container mb={1} mt={4}>
       <HStack alignItems={"center"} justifyContent={"space-between"}>
         <Box ml={4}>
           <CustomBackButton />

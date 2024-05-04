@@ -13,6 +13,14 @@ const theme = extendTheme({
         rounded: "md",
       },
     },
+    Button: {
+      defaultProps: {
+        rounded: "full",
+        backgroundColor: "#5E41E6",
+        py: 4,
+        mb: 4,
+      },
+    },
   },
 });
 export default function App() {

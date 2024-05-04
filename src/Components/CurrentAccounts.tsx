@@ -46,7 +46,7 @@ export default function CurrentAccounts() {
               <Text bold fontSize={"xl"}>
                 Current Accounts
               </Text>
-              <Text fontSize={"xs"} color={"gray.600"}>
+              <Text fontSize={"xs"} color={"#616161"}>
                 Balance: ${transaction.amount}
               </Text>
             </Stack>
@@ -68,7 +68,7 @@ export default function CurrentAccounts() {
             <Stack direction={"row"} alignItems={"center"} space={2}>
               <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
               <Stack>
-                <Text fontSize={"xs"}>Debit Spending from</Text>
+                <Text fontSize={"xs"} color={"#616161"}>Debit Spending from</Text>
                 <Text bold fontSize={"md"}>
                   Checking **2830
                 </Text>
@@ -83,7 +83,7 @@ export default function CurrentAccounts() {
             <Stack direction={"row"} alignItems={"center"} space={2}>
               <Image source={require("../../assets/bank.png")} alt="Bank" />
               <Stack>
-                <Text fontSize={"xs"}>Checking **2830</Text>
+                <Text fontSize={"xs"} color={"#616161"}>Checking **2830</Text>
                 <Text fontSize={"md"} bold>
                   New Account
                 </Text>

@@ -1,5 +1,4 @@
 import {
-  View,
   Text,
   Stack,
   Flex,
@@ -7,10 +6,9 @@ import {
   Image,
   useDisclose,
   Actionsheet,
-  Box,
-  VStack,
   Radio,
-  HStack,
+  View,
+  Divider,
 } from "native-base";
 import React, { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
@@ -20,6 +18,7 @@ import OptionCards from "../Components/OptionCards";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeader from "../Components/CustomHeader";
 import BankCardDetails from "../Components/BankCardDetails";
+import Button from "../Components/Button";
 
 export default function MyCard() {
   const [details, setDetails] = useState(false);
@@ -56,91 +55,98 @@ export default function MyCard() {
             </Text>
           </TouchableOpacity>
           <Actionsheet isOpen={isOpen} onClose={onClose} hideDragIndicator>
-            <Actionsheet.Content p={6} bg={"#fff"} alignItems={"flex-start"}>
-              <TouchableOpacity style={styles.backButtonContainer} onPress={onClose}>
-                <AntDesign name="close" size={24} color="black" />
-              </TouchableOpacity>
-              <Text bold fontSize={"2xl"}>
-                Spending from
-              </Text>
-              <Text color={"#616161"}>
-                Select a default account which you'd like your card to spend from
-              </Text>
-              <Radio.Group
-                name="spendingFrom"
-                accessibilityLabel="Spending from"
-                value={spending}
-                onChange={(nextValue) => {
-                  setSpending(nextValue);
-                }}
-              >
-                <Radio
-                  _icon={{ color: "#401EE1" }}
-                  _checked={{
-                    borderColor: "#401EE1",
-                    _icon: {
-                      color: "#401EE1",
-                    },
+            <Actionsheet.Content
+              p={6}
+              bg={"#fff"}
+              alignItems={"flex-start"}
+              justifyContent={"space-between"}
+            >
+              <View h={"90%"}>
+                <TouchableOpacity style={styles.backButtonContainer} onPress={onClose}>
+                  <AntDesign name="close" size={24} color="black" />
+                </TouchableOpacity>
+                <Text bold fontSize={"2xl"}>
+                  Spending from
+                </Text>
+                <Text color={"#616161"} mb={2}>
+                  Select a default account which you'd like your card to spend from
+                </Text>
+                <Radio.Group
+                  name="spendingFrom"
+                  accessibilityLabel="Spending from"
+                  value={spending}
+                  onChange={(nextValue) => {
+                    setSpending(nextValue);
                   }}
-                  value="1"
-                  my={4}
                 >
-                  <Flex
-                    align="center"
-                    direction="row"
-                    justify="space-between"
-                    mb={2}
-                    mt={4}
-                    w={"90%"}
+                  <Radio
+                    _icon={{ color: "#401EE1" }}
+                    _checked={{
+                      borderColor: "#401EE1",
+                      _icon: {
+                        color: "#401EE1",
+                      },
+                    }}
+                    value="1"
                   >
-                    <Stack direction={"row"} alignItems={"center"} space={2}>
-                      <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
-                      <Stack>
-                        <Text fontSize={"xs"}>Checking **2830</Text>
-                        <Text bold fontSize={"md"} lineHeight={18}>
-                          New Account
-                        </Text>
+                    <Flex
+                      align="center"
+                      direction="row"
+                      justify="space-between"
+                      mb={2}
+                      mt={4}
+                      w={"90%"}
+                    >
+                      <Stack direction={"row"} alignItems={"center"} space={2}>
+                        <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
+                        <Stack>
+                          <Text fontSize={"xs"}>Checking **2830</Text>
+                          <Text bold fontSize={"md"} lineHeight={18}>
+                            New Account
+                          </Text>
+                        </Stack>
                       </Stack>
-                    </Stack>
-                    <Text bold textAlign={"right"}>
-                      $160.00
-                    </Text>
-                  </Flex>
-                </Radio>
-                <Radio
-                  value="2"
-                  _icon={{ color: "#401EE1" }}
-                  _checked={{
-                    borderColor: "#401EE1",
-                    _icon: {
-                      color: "#401EE1",
-                    },
-                  }}
-                  my={4}
-                >
-                  <Flex
-                    align="center"
-                    direction="row"
-                    justify="space-between"
-                    mb={2}
-                    mt={4}
-                    w={"90%"}
+                      <Text bold textAlign={"right"}>
+                        $160.00
+                      </Text>
+                    </Flex>
+                  </Radio>
+                  <Divider mt={2} />
+                  <Radio
+                    value="2"
+                    _icon={{ color: "#401EE1" }}
+                    _checked={{
+                      borderColor: "#401EE1",
+                      _icon: {
+                        color: "#401EE1",
+                      },
+                    }}
                   >
-                    <Stack direction={"row"} alignItems={"center"} space={2}>
-                      <Image source={require("../../assets/rainy_day_fund.png")} alt="Funds" />
-                      <Stack>
-                        <Text fontSize={"xs"}>Savings **2619</Text>
-                        <Text bold fontSize={"md"} lineHeight={18}>
-                          Rainy Day Fund
-                        </Text>
+                    <Flex
+                      align="center"
+                      direction="row"
+                      justify="space-between"
+                      mb={2}
+                      mt={4}
+                      w={"90%"}
+                    >
+                      <Stack direction={"row"} alignItems={"center"} space={2}>
+                        <Image source={require("../../assets/rainy_day_fund.png")} alt="Funds" />
+                        <Stack>
+                          <Text fontSize={"xs"}>Savings **2619</Text>
+                          <Text bold fontSize={"md"} lineHeight={18}>
+                            Rainy Day Fund
+                          </Text>
+                        </Stack>
                       </Stack>
-                    </Stack>
-                    <Text bold textAlign={"right"}>
-                      $50.00
-                    </Text>
-                  </Flex>
-                </Radio>
-              </Radio.Group>
+                      <Text bold textAlign={"right"}>
+                        $50.00
+                      </Text>
+                    </Flex>
+                  </Radio>
+                </Radio.Group>
+              </View>
+              <Button text="Continue" bgColor="#5E41E6" handleFunc={onClose} btnColor="white" />
             </Actionsheet.Content>
           </Actionsheet>
         </Flex>
@@ -172,6 +178,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f8f8f8",
     borderRadius: 100,
     padding: 16,
+    width: 56,
     marginBottom: 24,
   },
 });

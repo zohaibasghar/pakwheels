@@ -33,7 +33,7 @@ export default function ActivityCard({ details }: any) {
             <Text fontSize={"md"} bold>
               {details.bankName} {details.recipient}
             </Text>
-            <Text fontSize={"xs"}>
+            <Text fontSize={"xs"} color={"#616161"}>
               {details.type} • {details.time}
             </Text>
           </Stack>

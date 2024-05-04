@@ -1,22 +1,20 @@
-import { useRoute } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import { Stack, Text, View } from "native-base";
 import React, { useState } from "react";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { Title } from "react-native-paper";
-import { useAppDispatch } from "../../redux/Store";
-import { signIn } from "../../redux/authSlice";
-import CustomHeader from "../../Components/CustomHeader";
+import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 
-const OtpVerification = () => {
+const OtpVerification2 = () => {
   const route = useRoute();
   const { phone }: any = route.params;
   const [otp, setOtp] = useState("");
-  const dispatch = useAppDispatch();
+  const nav = useNavigation();
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
-      <View mt={16}>
-        <CustomHeader title="" />
+      <View mt={12}>
+        <CustomHeaderHelp title="Help" />
       </View>
       <Stack w={"92%"} mx={"auto"} mt={8}>
         <Stack space={4}>
@@ -32,7 +30,7 @@ const OtpVerification = () => {
             onChangeText={(e) => {
               setOtp(e);
               if (e.length === 6) {
-                dispatch(signIn());
+                nav.navigate("PushNotifications" as never);
               }
             }}
           />
@@ -45,4 +43,4 @@ const OtpVerification = () => {
   );
 };
 
-export default OtpVerification;
+export default OtpVerification2;

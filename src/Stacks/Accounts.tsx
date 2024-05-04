@@ -5,6 +5,7 @@ import Transactions from "../Screens/Transactions";
 import MyCard from "../Screens/MyCard";
 import TransactionDetail from "../Screens/TransactionDetail";
 import TransferDirect from "../Screens/Transfer/TransferDirect";
+import InviteFriends from "../Screens/InviteFriends";
 
 const Stack = createStackNavigator();
 
@@ -16,6 +17,7 @@ const Accounts = () => {
       <Stack.Screen name="MyCard" component={MyCard} />
       <Stack.Screen name="TransactionDetail" component={TransactionDetail} />
       <Stack.Screen name="TransferDirect" component={TransferDirect} />
+      <Stack.Screen name="InviteFriends" component={InviteFriends} />
     </Stack.Navigator>
   );
 };
