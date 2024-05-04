@@ -12,11 +12,11 @@ const TransferDirect = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       if (textInputRef.current) {
-        // textInputRef.current?.focus();
+        textInputRef.current?.focus();
       }
-    }, 200); // Short delay to ensure the component is fully mounted before focusing
+    }, 200);
 
-    return () => clearTimeout(timer); // Cleanup the timer if the component is unmounted
+    return () => clearTimeout(timer);
   }, []);
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
