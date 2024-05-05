@@ -1,6 +1,6 @@
 import { useRoute } from "@react-navigation/native";
 import { Stack, Text, View } from "native-base";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { Title } from "react-native-paper";
 import { useAppDispatch } from "../../redux/Store";
@@ -12,6 +12,16 @@ const OtpVerification = () => {
   const { phone }: any = route.params;
   const [otp, setOtp] = useState("");
   const dispatch = useAppDispatch();
+  const inputRef = useRef();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (inputRef.current) {
+        inputRef.current?.focus();
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -26,6 +36,7 @@ const OtpVerification = () => {
           </Text>
           <FloatingLabelInput
             label="Code"
+            ref={inputRef}
             value={otp}
             keyboardType="number-pad"
             maxLength={6}

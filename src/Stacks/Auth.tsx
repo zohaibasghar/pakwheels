@@ -7,6 +7,17 @@ import CreateAccount from "../Screens/Auth/CreateAccount";
 import OtpVerification2 from "../Screens/Auth/OtpVerification2";
 import PushNotifications from "../Screens/Auth/PushNotifications";
 import Residency from "../Screens/Auth/Residency";
+import PersonalDetails from "../Screens/Auth/PersonalDetails";
+import ConfirmDetails from "../Screens/Auth/ConfirmDetails";
+import ConfirmName from "../Screens/Auth/ConfirmName";
+import DOB from "../Screens/Auth/DOB";
+import HomeAddress from "../Screens/Auth/HomeAddress";
+import EmailContact from "../Screens/Auth/EmailContact";
+import Support from "../Screens/Support/Index";
+import EmploymentStatus from "../Screens/Auth/EmploymentStatus";
+import SalaryRange from "../Screens/Auth/SalaryRange";
+import AccountUsage from "../Screens/Auth/AccountUsage";
+import TaxInfo from "../Screens/Auth/TaxInfo";
 
 const Stack = createStackNavigator();
 export default function Auth() {
@@ -26,6 +37,17 @@ export default function Auth() {
       <Stack.Screen name="CreateAccount" component={CreateAccount} />
       <Stack.Screen name="PushNotifications" component={PushNotifications} />
       <Stack.Screen name="Residency" component={Residency} />
+      <Stack.Screen name="PersonalDetails" component={PersonalDetails} />
+      <Stack.Screen name="ConfirmDetails" component={ConfirmDetails} />
+      <Stack.Screen name="ConfirmName" component={ConfirmName} />
+      <Stack.Screen name="DOB" component={DOB} />
+      <Stack.Screen name="HomeAddress" component={HomeAddress} />
+      <Stack.Screen name="EmailContact" component={EmailContact} />
+      <Stack.Screen name="EmploymentStatus" component={EmploymentStatus} />
+      <Stack.Screen name="SalaryRange" component={SalaryRange} />
+      <Stack.Screen name="AccountUsage" component={AccountUsage} />
+      <Stack.Screen name="TaxInfo" component={TaxInfo} />
+      <Stack.Screen name="Support" component={Support} />
     </Stack.Navigator>
   );
 }

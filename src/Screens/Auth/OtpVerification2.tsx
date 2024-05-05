@@ -1,6 +1,6 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Stack, Text, View } from "native-base";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { Title } from "react-native-paper";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
@@ -10,6 +10,16 @@ const OtpVerification2 = () => {
   const { phone }: any = route.params;
   const [otp, setOtp] = useState("");
   const nav = useNavigation();
+  const inputRef = useRef();
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (inputRef.current) {
+        inputRef.current?.focus();
+      }
+    }, 200);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -25,6 +35,7 @@ const OtpVerification2 = () => {
           <FloatingLabelInput
             label="Code"
             value={otp}
+            ref={inputRef}
             keyboardType="number-pad"
             maxLength={6}
             onChangeText={(e) => {

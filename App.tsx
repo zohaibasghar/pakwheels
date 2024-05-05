@@ -20,6 +20,15 @@ const theme = extendTheme({
         py: 4,
         mb: 4,
       },
+      variants: {
+        disabled: {
+          bg: "gray.300",
+          opacity: 0.6,
+          _text: {
+            color: "gray.500",
+          },
+        },
+      },
     },
   },
 });
