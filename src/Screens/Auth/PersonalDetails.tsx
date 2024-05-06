@@ -31,6 +31,14 @@ const PersonalDetails = () => {
         {permission?.granted ? (
           <Camera style={{ flex: 1, marginVertical: 24 }} type={CameraType.back} autoFocus>
             <View style={styles.overlay}>
+              {/* Create a black overlay with a cutout for the rectangle */}
+              {/* Top, Bottom, Left, and Right views create the overlay */}
+              <View style={styles.topOverlay} />
+              <View style={styles.leftOverlay} />
+              <View style={styles.rightOverlay} />
+              <View style={styles.bottomOverlay} />
+
+              {/* The transparent rectangle in the center */}
               <View style={styles.rectangle} />
             </View>
           </Camera>
@@ -75,17 +83,54 @@ export default PersonalDetails;
 const styles = StyleSheet.create({
   camera: {
     flex: 1,
+    marginVertical: 24,
   },
   overlay: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    position: "relative",
   },
+
   rectangle: {
-    width: 350,
-    height: 200,
-    borderWidth: 2,
-    borderColor: "#e6e6e6",
-    borderRadius: 14,
+    position: "absolute",
+    top: "28%", // Adjust based on where you want the rectangle
+    left: "15%",
+    width: "70%", // Adjust the size of the rectangle
+    height: "44%",
+    borderWidth: 1, // Optional border to visualize the rectangle
+    borderColor: "#e0e0e0",
+    backgroundColor: "transparent",
+  },
+  // Black overlay parts that surround the rectangle
+  topOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: "28%", // Matches the top position of the rectangle
+    backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent black
+  },
+  bottomOverlay: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: "28%", // Matches the bottom position of the rectangle
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+  },
+  leftOverlay: {
+    position: "absolute",
+    top: "28%", // Matches the top position of the rectangle
+    bottom: "28%", // Matches the bottom position
+    left: 0,
+    width: "15%", // Matches the left position of the rectangle
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+  },
+  rightOverlay: {
+    position: "absolute",
+    top: "28%",
+    bottom: "28%",
+    right: 0,
+    width: "15%",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
 });

@@ -4,6 +4,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { FloatingLabelInput } from "react-native-floating-label-input";
+import CountrySelect from "../../Components/CountrySelect";
 
 const EmploymentStatus = () => {
   const nav = useNavigation();
@@ -101,25 +102,7 @@ const EmploymentStatus = () => {
                   Unemployed
                 </Radio>
               </Radio.Group>
-              <FloatingLabelInput
-                label="Country of residence"
-                style={{ borderColor: "#e0e0e0", borderWidth: 1 }}
-                containerStyles={{
-                  borderColor: "#e0e0e0",
-                  marginVertical: 16,
-                  borderWidth: 1,
-                  borderRadius: 12,
-                  paddingVertical: 14,
-                  paddingHorizontal: 8,
-                }}
-                leftComponent={
-                  <Image
-                    source={require("../../../assets/country_flag.png")}
-                    alt="Eastern caribbean"
-                    mr={2}
-                  />
-                }
-              />
+              <CountrySelect label="Employment country" />
             </VStack>
           </VStack>
         </ScrollView>

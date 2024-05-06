@@ -15,7 +15,7 @@ const AccountUsage = () => {
           <VStack space={4}>
             <VStack my={4}>
               <Text bold fontSize={"3xl"}>
-                Account usage
+                How do you plan to spend?
               </Text>
               <Text color={"#616161"}>How do you plan to use your account?</Text>
             </VStack>

@@ -4,6 +4,7 @@ import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { Button, Image, Input, Text, VStack } from "native-base";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { useNavigation } from "@react-navigation/native";
+import CountrySelect from "../../Components/CountrySelect";
 
 const Residency = () => {
   const nav = useNavigation();
@@ -21,24 +22,7 @@ const Residency = () => {
             </Text>
           </VStack>
           {/* // TODO: Still not confirm input or select */}
-          <FloatingLabelInput
-            label="Country of residence"
-            style={{ borderColor: "#e0e0e0", borderWidth: 1 }}
-            containerStyles={{
-              borderColor: "#e0e0e0",
-              borderWidth: 1,
-              borderRadius: 12,
-              paddingVertical: 12,
-              paddingHorizontal: 8,
-            }}
-            leftComponent={
-              <Image
-                source={require("../../../assets/country_flag.png")}
-                alt="Eastern caribbean"
-                mr={2}
-              />
-            }
-          />
+          <CountrySelect label="Country of residence" />
         </VStack>
         <Button
           _pressed={{ bg: "#f1f1f1" }}

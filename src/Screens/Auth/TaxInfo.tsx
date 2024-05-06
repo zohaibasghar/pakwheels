@@ -5,11 +5,14 @@ import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { useAppDispatch } from "../../redux/Store";
 import { signIn } from "../../redux/authSlice";
+import { useNavigation } from "@react-navigation/native";
+import CountrySelect from "../../Components/CountrySelect";
+
 const TaxInfo = () => {
   const [show, setShow] = React.useState(false);
-  const dispatch = useAppDispatch();
+  const nav = useNavigation();
+  const [data, setData] = React.useState([1]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -24,41 +27,34 @@ const TaxInfo = () => {
               <Text color={"#616161"}>In which country(s) are you a tax resident?</Text>
             </VStack>
             <VStack space={4}>
-              <FloatingLabelInput
-                label="Country of Tax Liability"
-                style={{ borderColor: "#e0e0e0", borderWidth: 1 }}
-                containerStyles={{
-                  borderColor: "#e0e0e0",
-                  borderWidth: 1,
-                  borderRadius: 12,
-                  paddingVertical: 14,
-                  paddingHorizontal: 8,
-                }}
-                leftComponent={
-                  <Image
-                    source={require("../../../assets/country_flag.png")}
-                    alt="Eastern caribbean"
-                    mr={2}
-                  />
-                }
-              />
-              <FloatingLabelInput
-                label="Tax number"
-                style={{ borderColor: "#e0e0e0", borderWidth: 1 }}
-                containerStyles={{
-                  borderColor: "#e0e0e0",
-                  borderWidth: 1,
-                  borderRadius: 12,
-                  paddingVertical: 14,
-                  paddingHorizontal: 8,
-                }}
-                isPassword
-                value="hello"
-                togglePassword={show}
-                customShowPasswordComponent={<Feather name="eye-off" size={24} color="#d4d2d2" />}
-                customHidePasswordComponent={<AntDesign name="eyeo" size={24} color="#d4d2d2" />}
-              />
-              <TouchableOpacity>
+              {Array.from(data).map(() => {
+                return (
+                  <View>
+                    <CountrySelect label="Country of Tax Liability" />
+                    <FloatingLabelInput
+                      label="Tax number"
+                      style={{ borderColor: "#e0e0e0", borderWidth: 1 }}
+                      containerStyles={{
+                        borderColor: "#e0e0e0",
+                        borderWidth: 1,
+                        borderRadius: 12,
+                        paddingVertical: 14,
+                        paddingHorizontal: 12,
+                      }}
+                      isPassword
+                      value="hello"
+                      togglePassword={show}
+                      customShowPasswordComponent={
+                        <Feather name="eye-off" size={24} color="#d4d2d2" />
+                      }
+                      customHidePasswordComponent={
+                        <AntDesign name="eyeo" size={24} color="#d4d2d2" />
+                      }
+                    />
+                  </View>
+                );
+              })}
+              <TouchableOpacity onPress={() => setData([...data, data.length])}>
                 <Stack
                   direction={"row"}
                   alignItems={"center"}
@@ -67,6 +63,7 @@ const TaxInfo = () => {
                   rounded={"2xl"}
                   py={1}
                   px={3}
+                  mb={8}
                 >
                   <Text>Add another</Text>
                   <Feather name="plus" size={18} color={"black"} />
@@ -96,7 +93,7 @@ const TaxInfo = () => {
               I'm the beneficial own of the account
             </Checkbox>
           </View>
-          <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => dispatch(signIn())}>
+          <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("GetVerified" as never)}>
             Done
           </Button>
         </VStack>
