@@ -26,6 +26,9 @@ import Video from "../Screens/Auth/Video";
 import ReviewVideo from "../Screens/Auth/ReviewVideo";
 import HappyBanking from "../Screens/Auth/HappyBanking";
 import SelectCard from "../Screens/Auth/SelectCard";
+import CreatePIN from "../Screens/Auth/CreatePIN";
+import DeliveryAdd from "../Screens/Auth/DeliveryAdd";
+import CardDone from "../Screens/Auth/CardDone";
 
 const Stack = createStackNavigator();
 export default function Auth() {
@@ -58,11 +61,14 @@ export default function Auth() {
       {/* <Stack.Screen name="GetVerified" component={GetVerified} />
       <Stack.Screen name="AllowCamera" component={AllowCamera} />
       <Stack.Screen name="FrontCard" component={FrontCard} /> */}
-      <Stack.Screen name="RecordVideo" component={RecordVideo} />
+      {/* <Stack.Screen name="RecordVideo" component={RecordVideo} />
       <Stack.Screen name="Video" component={Video} />
       <Stack.Screen name="ReviewVideo" component={ReviewVideo} />
-      <Stack.Screen name="HappyBanking" component={HappyBanking} />
+      <Stack.Screen name="HappyBanking" component={HappyBanking} /> */}
       <Stack.Screen name="SelectCard" component={SelectCard} />
+      <Stack.Screen name="DeliveryAdd" component={DeliveryAdd} />
+      <Stack.Screen name="CreatePIN" component={CreatePIN} />
+      <Stack.Screen name="CardDone" component={CardDone} />
       <Stack.Screen name="Support" component={Support} />
     </Stack.Navigator>
   );

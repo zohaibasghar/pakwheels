@@ -1,40 +1,39 @@
-import { View, Text, HStack, Button, VStack, Stack, Image, Flex } from "native-base";
-import React, { useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
 import { ImageBackground, StyleSheet, TouchableOpacity } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Button, Container, Flex, HStack, Image, Stack, Text, VStack, View } from "native-base";
+import { useAppDispatch } from "../../redux/Store";
+import { signIn } from "../../redux/authSlice";
 
-const SelectCard = () => {
-  const [cardColor, setCardColor] = useState("Sapphire black");
-  const nav = useNavigation();
-
+const CardDone = () => {
+  const dispatch = useAppDispatch();
   return (
-    <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
-      <VStack flex={1} mt={12} h={"100%"} justifyContent={"space-between"}>
-        <VStack>
-          <Text fontSize={"3xl"} bold mx={6}>
-            Select Card
-          </Text>
-          <Text mx={6} color={"#616161"}>
-            Choose one of our cards that matches your personality.
-          </Text>
-        </VStack>
-        <View h={"1/3"} w={"95%"} mx={"auto"} my={5} style={{ transform: [{ rotate: "90deg" }] }} justifyContent={'center'}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+      <VStack flex={1} justifyContent={"space-between"}>
+        <Container mb={1} mt={4} mx={7}>
+          <HStack w={"110%"} alignContent={"end"} justifyContent={"flex-end"}>
+            <TouchableOpacity onPress={() => dispatch(signIn())}>
+              <Text fontSize="md" color={"#401EE1"}>
+                Done
+              </Text>
+            </TouchableOpacity>
+          </HStack>
+        </Container>
+        <View
+          h={"1/3"}
+          w={"95%"}
+          mx={"auto"}
+          my={5}
+          style={{ transform: [{ rotate: "90deg" }] }}
+          justifyContent={"center"}
+        >
           <ImageBackground
             source={require("../../../assets/Card_Shape.png")}
             style={styles.imageBackground} // Apply the style to control width, height, and alignment
             imageStyle={styles.imageStyle} // Control the rounding of the corners
           >
             <Stack
-              style={{
-                ...styles.card,
-                backgroundColor:
-                  cardColor === "Indigo Blue"
-                    ? "#3716D4"
-                    : cardColor === "Midnight Blue"
-                    ? "#013A7D"
-                    : "transparent",
-              }}
+              style={styles.card}
               justifyContent="space-between" // Distribute space evenly
               w="100%" // Ensure it takes the full width of the ImageBackground
               rounded="2xl" // Apply border-radius to the whole stack
@@ -71,45 +70,26 @@ const SelectCard = () => {
             </Stack>
           </ImageBackground>
         </View>
-        <VStack>
-          <Text textAlign={"center"}>{cardColor}</Text>
-          <HStack mx={6} alignItems={"center"} justifyContent={"center"} my={4} space={3}>
-            <TouchableOpacity onPress={() => setCardColor("Sapphire Black")}>
-              <View
-                h={10}
-                w={10}
-                bg={"#0A061C"}
-                rounded={"full"}
-                p={1}
-                borderColor={"#0A061C"}
-                borderWidth={1}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setCardColor("Indigo Blue")}>
-              <View
-                h={10}
-                w={10}
-                bg={"#3716D4"}
-                rounded={"full"}
-                p={1}
-                borderColor={"#3716D4"}
-                borderWidth={1}
-              />
-            </TouchableOpacity>
-            <TouchableOpacity onPress={() => setCardColor("Midnight Blue")}>
-              <View
-                h={10}
-                w={10}
-                bg={"#013A7D"}
-                rounded={"full"}
-                p={1}
-                borderColor={"#013A7D"}
-                borderWidth={1}
-              />
-            </TouchableOpacity>
-          </HStack>
-          <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("CreatePIN" as never)} mx={6}>
-            Continue
+
+        <VStack alignItems={"center"} mx={8}>
+          <Text bold fontSize={"lg"}>
+            Your card is on way!
+          </Text>
+          <Text color={"#616161"} textAlign={"center"} fontSize={"15px"}>
+            Add your active digital card to your wallet to make easy-breezy payments online, in
+            stores, and in apps.
+          </Text>
+          <Button
+            bg={"#000"}
+            w={"100%"}
+            mt={6}
+            onPress={() => dispatch(signIn())}
+            _pressed={{ bg: "#f1f1f1" }}
+          >
+            <HStack alignItems={"center"} space={4}>
+              <Image source={require("../../../assets/apple.png")} alt="Apple wallet" />
+              <Text color={"white"}>Add to Apple Wallet</Text>
+            </HStack>
           </Button>
         </VStack>
       </VStack>
@@ -117,7 +97,7 @@ const SelectCard = () => {
   );
 };
 
-export default SelectCard;
+export default CardDone;
 
 const styles = StyleSheet.create({
   imageBackground: {
