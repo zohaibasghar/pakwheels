@@ -22,6 +22,10 @@ import GetVerified from "../Screens/Auth/GetVerified";
 import AllowCamera from "../Screens/Auth/AllowCamera";
 import FrontCard from "../Screens/Auth/FrontCard";
 import RecordVideo from "../Screens/Auth/RecordVideo";
+import Video from "../Screens/Auth/Video";
+import ReviewVideo from "../Screens/Auth/ReviewVideo";
+import HappyBanking from "../Screens/Auth/HappyBanking";
+import SelectCard from "../Screens/Auth/SelectCard";
 
 const Stack = createStackNavigator();
 export default function Auth() {
@@ -51,10 +55,14 @@ export default function Auth() {
       <Stack.Screen name="SalaryRange" component={SalaryRange} />
       <Stack.Screen name="AccountUsage" component={AccountUsage} />
       <Stack.Screen name="TaxInfo" component={TaxInfo} /> */}
-      <Stack.Screen name="GetVerified" component={GetVerified} />
+      {/* <Stack.Screen name="GetVerified" component={GetVerified} />
       <Stack.Screen name="AllowCamera" component={AllowCamera} />
-      <Stack.Screen name="FrontCard" component={FrontCard} />
+      <Stack.Screen name="FrontCard" component={FrontCard} /> */}
       <Stack.Screen name="RecordVideo" component={RecordVideo} />
+      <Stack.Screen name="Video" component={Video} />
+      <Stack.Screen name="ReviewVideo" component={ReviewVideo} />
+      <Stack.Screen name="HappyBanking" component={HappyBanking} />
+      <Stack.Screen name="SelectCard" component={SelectCard} />
       <Stack.Screen name="Support" component={Support} />
     </Stack.Navigator>
   );

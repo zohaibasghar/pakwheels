@@ -9,15 +9,27 @@ const TransactionDetail = () => {
   const route = useRoute();
   const { transaction }: any = route?.params;
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <CustomHeader title={transaction.type} subtitle={`${transaction.time} • 1 April 2024`} />
       <ScrollView>
         <Center>
-          <Box borderColor={"#F2F5F7"} borderWidth={1} p={6} rounded={"full"} bg={"#fff"}>
+          <View position={"relative"}>
+            <Image source={require("../../assets/maps.png")} alt="Maps" h={"190px"}/>
+          </View>
+          <Box
+            borderColor={"#F2F5F7"}
+            borderWidth={1}
+            p={6}
+            rounded={"full"}
+            bg={"#fff"}
+            position={"absolute"}
+            top={"29%"}
+            bgColor={"#fff"}
+          >
             <Image source={transaction.image} alt={transaction.bankName} />
           </Box>
 
-          <Text bold fontSize={18} my={2}>
+          <Text bold fontSize={18} mb={2} mt={16}>
             {transaction.bankName}
           </Text>
           <Text fontSize={"xs"} color={"#7b7b7b"}>
@@ -97,7 +109,7 @@ const TransactionDetail = () => {
             </TouchableOpacity>
           </HStack>
         </Center>
-        <VStack w={"90%"} mx={"auto"} space={6} mt={4}>
+        <VStack w={"90%"} mx={"auto"} space={6} my={4}>
           <Text>DETAILS</Text>
           <HStack justifyContent={"space-between"}>
             <Text color={"#3e3e3e"}>Category</Text>

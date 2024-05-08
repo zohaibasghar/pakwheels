@@ -1,29 +1,37 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
-import { Button, HStack, Image, ScrollView, Text, VStack } from "native-base";
-import { useNavigation } from "@react-navigation/native";
+import { Box, Button, Container, HStack, Image, ScrollView, Text, VStack } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 
-const RecordVideo = () => {
+const ReviewVideo = () => {
   const nav = useNavigation();
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <CustomHeaderHelp title="" />
-      <VStack justifyContent={"space-between"} flex={1} mx={6}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#0008" }}>
+      <VStack justifyContent={"space-between"} flex={1} px={6} bg={"#fff"} roundedTop={24}>
+        <Container mb={1} mt={6} mx={2}>
+          <HStack alignItems={"center"} justifyContent={"space-between"} w={"110%"}>
+            <Box>
+              <TouchableOpacity style={styles.backButtonContainer} onPress={() => nav.goBack()}>
+                <Ionicons name="close" size={22} color="#000" />
+              </TouchableOpacity>
+            </Box>
+            <TouchableOpacity onPress={() => nav.goBack()}>
+              <Text fontSize="md" color={"#401EE1"} left={6}>
+                Retake
+              </Text>
+            </TouchableOpacity>
+          </HStack>
+        </Container>
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
               <Text bold fontSize={"3xl"}>
-                Record a video
+                Review video
               </Text>
-              <Text color={"#616161"}>For security, we need a live capture</Text>
-              <Text color={"#616161"} ml={2}>
-                • You have 25 seconds to finish
-              </Text>
-              <Text color={"#616161"} ml={2}>
-                • Follow the instructions to move or speak
-              </Text>
+              <Text color={"#616161"}>Your video has been recorded</Text>
             </VStack>
             <VStack alignItems={"center"} mt={12} w={"100%"} position={"relative"}>
               <Image
@@ -52,11 +60,11 @@ const RecordVideo = () => {
         <VStack alignItems={"center"}>
           <Button
             _pressed={{ bg: "#f1f1f1" }}
-            onPress={() => nav.navigate("Video" as never)}
+            onPress={() => nav.navigate("HappyBanking" as never)}
             w={"100%"}
             mb={0}
           >
-            Record video
+            Upload video
           </Button>
           <HStack alignItems={"center"} mb={3}>
             <Text fontSize={"2xs"}>Powered by </Text>
@@ -68,4 +76,12 @@ const RecordVideo = () => {
   );
 };
 
-export default RecordVideo;
+export default ReviewVideo;
+
+const styles = StyleSheet.create({
+  backButtonContainer: {
+    backgroundColor: "#f8f8f8",
+    borderRadius: 100,
+    padding: 16,
+  },
+});
