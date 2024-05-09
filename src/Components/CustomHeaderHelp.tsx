@@ -20,7 +20,7 @@ const CustomHeaderHelp = ({ title, handleFunc }: { title: string; handleFunc?: (
           <CustomBackButton />
         </Box>
         <TouchableOpacity onPress={handleFunction}>
-          <Text fontSize="md" color={"#401EE1"}>
+          <Text fontSize="md" color={"#401EE1"} fontWeight={600}>
             {title}
           </Text>
         </TouchableOpacity>

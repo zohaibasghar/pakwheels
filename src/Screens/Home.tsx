@@ -6,26 +6,27 @@ import { ScrollView, Stack } from "native-base";
 import { useAppSelector } from "../redux/Store";
 import ActivityCard from "../Components/ActivityCard";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
 
-const cardsData = [
-  {
-    id: 1,
-    title: "Get your paycheck early",
-    desc: "Finish setting up direct deposit and get paid up to two days early",
-    link: "Finish setting up",
-    path: require("../../assets/Send.png"),
-    image: "arrow-circle-right",
-  },
-  {
-    id: 2,
-    title: "Grow your savings",
-    desc: "Earn more on your memory so you can save for what matters",
-    link: "Open Saving account",
-    path: require("../../assets/Chart.png"),
-    image: "chart-bar",
-  },
-];
 export default function Home() {
+  const navigation = useNavigation();
+  const cardsData = [
+    {
+      id: 1,
+      title: "Get your paycheck early",
+      desc: "Finish setting up direct deposit and get paid up to two days early",
+      link: "Finish setting up",
+      path: require("../../assets/Send.png"),
+    },
+    {
+      id: 2,
+      title: "Grow your savings",
+      desc: "Earn more on your memory so you can save for what matters",
+      link: "Open Saving account",
+      path: require("../../assets/Chart.png"),
+      handleFunc: () => navigation.navigate("Accounts", { screen: "FlexibleSavings" }),
+    },
+  ];
   const { transAdd, transaction } = useAppSelector((state) => state.auth);
   return (
     <SafeAreaView>
@@ -42,7 +43,7 @@ export default function Home() {
                 desc={card.desc}
                 link={card.link}
                 path={card.path}
-                image={card.image}
+                handleFunc={card.handleFunc}
               />
             );
           })}

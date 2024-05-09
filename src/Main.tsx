@@ -63,12 +63,12 @@ const HomeTabs = () => {
 };
 export default function Main() {
   const { token } = useAppSelector((state) => state.auth);
-  if (!token) {
-    return <Auth />;
-  }
+  // if (!token) {
+  //   return <Auth />;
+  // }
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="Home" component={HomeTabs} />
+      <Stack.Screen name="HomeTabs" component={HomeTabs} />
       <Stack.Screen name="Accounts" component={Accounts} />
       <Stack.Screen name="Transfers" component={Transfers} />
       <Stack.Screen name="Credit" component={Credit} />

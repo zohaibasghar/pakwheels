@@ -6,6 +6,10 @@ import MyCard from "../Screens/MyCard";
 import TransactionDetail from "../Screens/TransactionDetail";
 import TransferDirect from "../Screens/Transfer/TransferDirect";
 import InviteFriends from "../Screens/InviteFriends";
+import AddAccount from "../Screens/AddAccount";
+import FlexibleSavings from "../Screens/FlexibleSavings";
+import SelectBudget from "../Screens/SelectBudget";
+import DoneSavingAccount from "../Screens/DoneSavingAccount";
 
 const Stack = createStackNavigator();
 
@@ -18,6 +22,10 @@ const Accounts = () => {
       <Stack.Screen name="TransactionDetail" component={TransactionDetail} />
       <Stack.Screen name="TransferDirect" component={TransferDirect} />
       <Stack.Screen name="InviteFriends" component={InviteFriends} />
+      <Stack.Screen name="AddAccount" component={AddAccount} />
+      <Stack.Screen name="FlexibleSavings" component={FlexibleSavings} />
+      <Stack.Screen name="SelectBudget" component={SelectBudget} />
+      <Stack.Screen name="DoneSavingAccount" component={DoneSavingAccount} />
     </Stack.Navigator>
   );
 };

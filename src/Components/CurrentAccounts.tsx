@@ -1,29 +1,16 @@
-import {
-  View,
-  Text,
-  Flex,
-  Link,
-  Stack,
-  Image,
-  Pressable,
-  Menu,
-  Divider,
-  Box,
-  HStack,
-} from "native-base";
+import { View, Text, Flex, Link, Stack, Image } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
-import { MaterialCommunityIcons, Feather, AntDesign } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { ImageBackground } from "react-native";
-import { useAppDispatch, useAppSelector } from "../redux/Store";
-import { createTransaction } from "../redux/authSlice";
+import { useAppSelector } from "../redux/Store";
+
 import CustomMenu from "./CustomMenu";
 
 export default function CurrentAccounts() {
   const navigation = useNavigation();
   const { transaction } = useAppSelector((state) => state.auth);
-  const dispatch = useAppDispatch();
   return (
     <View bg={"#000030"} w={"94%"} mx={"auto"} my={5} rounded={"2xl"}>
       <ImageBackground
@@ -50,7 +37,9 @@ export default function CurrentAccounts() {
                 Balance: ${transaction.amount}
               </Text>
             </Stack>
-            <TouchableOpacity onPress={() => dispatch(createTransaction())}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate("Accounts", { screen: "AddAccount" })}
+            >
               <Stack
                 direction={"row"}
                 alignItems={"center"}
@@ -68,7 +57,9 @@ export default function CurrentAccounts() {
             <Stack direction={"row"} alignItems={"center"} space={2}>
               <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
               <Stack>
-                <Text fontSize={"xs"} color={"#616161"}>Debit Spending from</Text>
+                <Text fontSize={"xs"} color={"#616161"}>
+                  Debit Spending from
+                </Text>
                 <Text bold fontSize={"md"}>
                   Checking **2830
                 </Text>
@@ -83,7 +74,9 @@ export default function CurrentAccounts() {
             <Stack direction={"row"} alignItems={"center"} space={2}>
               <Image source={require("../../assets/bank.png")} alt="Bank" />
               <Stack>
-                <Text fontSize={"xs"} color={"#616161"}>Checking **2830</Text>
+                <Text fontSize={"xs"} color={"#616161"}>
+                  Checking **2830
+                </Text>
                 <Text fontSize={"md"} bold>
                   New Account
                 </Text>
