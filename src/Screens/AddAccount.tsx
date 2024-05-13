@@ -22,7 +22,7 @@ const AddAccount = () => {
     {
       title: "iSuSu Fund",
       desc: "Design a savings plan with other customers or for a special project, establishing the fund's rules to maintain accountability.",
-      handleFunc: () => nav.navigate("" as never),
+      handleFunc: () => nav.navigate("CreateiSuSu" as never),
     },
     {
       title: "Fixed Savings",

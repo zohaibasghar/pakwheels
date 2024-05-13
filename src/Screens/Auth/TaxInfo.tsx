@@ -5,7 +5,6 @@ import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { AntDesign, Feather } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
-import { signIn } from "../../redux/authSlice";
 import { useNavigation } from "@react-navigation/native";
 import CountrySelect from "../../Components/CountrySelect";
 
