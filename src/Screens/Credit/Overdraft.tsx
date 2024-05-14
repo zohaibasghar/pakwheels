@@ -97,7 +97,7 @@ const Overdraft = () => {
         <Button
           w={"100%"}
           rounded={"full"}
-          onPress={() => nav.navigate("HomeTabs", { screen: "Credi" })}
+          onPress={() => nav.navigate("HomeTabs", { screen: "Credit" })}
           _pressed={{ bg: "#f1f1f1" }}
         >
           Turn on

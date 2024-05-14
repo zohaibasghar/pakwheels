@@ -1,14 +1,14 @@
 import { Box, Flex, Image, Input, Stack, Text } from "native-base";
 import React, { useState } from "react";
-import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
+import { TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { AntDesign } from "@expo/vector-icons";
 import Button from "../../Components/Button";
 import { useNavigation } from "@react-navigation/native";
-import Svg, { Stop, Rect, RadialGradient } from "react-native-svg";
 
 const Login = () => {
   const [phone, setPhone] = useState("");
+  const [code, setCode] = useState("1784");
   const nav = useNavigation();
 
   function handleLogin() {
@@ -34,11 +34,14 @@ const Login = () => {
                 alt="eatern careabian"
               />
               <Input
+                leftElement={<Text>+</Text>}
                 bg={"transparent"}
                 variant={"unstyled"}
                 py={2}
                 fontSize={"15"}
-                value="+1 784"
+                inputMode="numeric"
+                value={code}
+                onChangeText={(e) => setCode(e)}
                 keyboardType="number-pad"
                 type="text"
               />

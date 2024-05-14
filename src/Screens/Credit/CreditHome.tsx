@@ -30,6 +30,7 @@ export default function CreditHome() {
       desc: "Secure and consolidate your debts or for an upcoming special occasion using your salary or acceptable assets",
       link: "Apply now",
       path: require("../../../assets/Lock.png"),
+      handleFunc: () => navigation.navigate("Credit", { screen: "LoanApplication" }),
     },
   ];
   return (

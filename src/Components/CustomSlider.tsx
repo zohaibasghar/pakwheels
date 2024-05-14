@@ -2,9 +2,17 @@ import { View, Text } from "react-native";
 import React from "react";
 import { Image, Slider, Stack } from "native-base";
 
-const CustomSlider = ({ handleFunc }: any) => {
+const CustomSlider = ({ handleFunc, min, max, value }: any) => {
   return (
-    <Slider defaultValue={70} colorScheme={"black"} onChange={(e) => handleFunc(e)}>
+    <Slider
+      defaultValue={value}
+      colorScheme={"black"}
+      w={"90%"}
+      mx={"auto"}
+      onChange={(e) => handleFunc(e)}
+      minValue={min}
+      maxValue={max}
+    >
       <Slider.Track>
         <Slider.FilledTrack bg={"black"} />
       </Slider.Track>
