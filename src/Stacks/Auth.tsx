@@ -34,20 +34,20 @@ const Stack = createStackNavigator();
 export default function Auth() {
   return (
     <Stack.Navigator
-      // initialRouteName="Signup"
+      initialRouteName="Signup"
       screenOptions={{
         headerShown: false,
         headerBackgroundContainerStyle: { backgroundColor: "#f8f8f8" },
       }}
     >
-      {/* <Stack.Screen name="Signup" component={Signup} />
+      <Stack.Screen name="Signup" component={Signup} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="OtpVerification" component={OtpVerification} />
       <Stack.Screen name="OtpVerification2" component={OtpVerification2} />
       <Stack.Screen name="GetStarted" component={GetStarted} />
       <Stack.Screen name="CreateAccount" component={CreateAccount} />
-      <Stack.Screen name="PushNotifications" component={PushNotifications} /> */}
-      {/* <Stack.Screen name="Residency" component={Residency} />
+      <Stack.Screen name="PushNotifications" component={PushNotifications} />
+      <Stack.Screen name="Residency" component={Residency} />
       <Stack.Screen name="PersonalDetails" component={PersonalDetails} />
       <Stack.Screen name="ConfirmDetails" component={ConfirmDetails} />
       <Stack.Screen name="ConfirmName" component={ConfirmName} />
@@ -57,14 +57,14 @@ export default function Auth() {
       <Stack.Screen name="EmploymentStatus" component={EmploymentStatus} />
       <Stack.Screen name="SalaryRange" component={SalaryRange} />
       <Stack.Screen name="AccountUsage" component={AccountUsage} />
-      <Stack.Screen name="TaxInfo" component={TaxInfo} /> */}
-      {/* <Stack.Screen name="GetVerified" component={GetVerified} />
+      <Stack.Screen name="TaxInfo" component={TaxInfo} />
+      <Stack.Screen name="GetVerified" component={GetVerified} />
       <Stack.Screen name="AllowCamera" component={AllowCamera} />
-      <Stack.Screen name="FrontCard" component={FrontCard} /> */}
-      {/* <Stack.Screen name="RecordVideo" component={RecordVideo} />
+      <Stack.Screen name="FrontCard" component={FrontCard} />
+      <Stack.Screen name="RecordVideo" component={RecordVideo} />
       <Stack.Screen name="Video" component={Video} />
       <Stack.Screen name="ReviewVideo" component={ReviewVideo} />
-      <Stack.Screen name="HappyBanking" component={HappyBanking} /> */}
+      <Stack.Screen name="HappyBanking" component={HappyBanking} />
       <Stack.Screen name="SelectCard" component={SelectCard} />
       <Stack.Screen name="DeliveryAdd" component={DeliveryAdd} />
       <Stack.Screen name="CreatePIN" component={CreatePIN} />
