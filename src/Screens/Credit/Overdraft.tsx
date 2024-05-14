@@ -13,8 +13,10 @@ import {
   VStack,
   View,
 } from "native-base";
+import { useNavigation } from "@react-navigation/native";
 
 const Overdraft = () => {
+  const nav = useNavigation();
   return (
     <View flex={1} bg={"#fff"}>
       <ScrollView>
@@ -92,7 +94,12 @@ const Overdraft = () => {
           By tapping "Turn on" you agree to the{" "}
           <Text color={"#5E41E6"}>Island Bank's Overdraft Account Agreement</Text>
         </Text>
-        <Button w={"100%"} rounded={"full"} _pressed={{ bg: "#f1f1f1" }}>
+        <Button
+          w={"100%"}
+          rounded={"full"}
+          onPress={() => nav.navigate("HomeTabs", { screen: "Credi" })}
+          _pressed={{ bg: "#f1f1f1" }}
+        >
           Turn on
         </Button>
       </Stack>

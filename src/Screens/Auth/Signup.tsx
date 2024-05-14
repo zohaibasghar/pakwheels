@@ -1,15 +1,16 @@
-import { Text, HStack, VStack, ScrollView, Image, Button, View } from "native-base";
+import { Text, HStack, VStack, Image, Button, View } from "native-base";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import Svg, { LinearGradient, Stop, Rect } from "react-native-svg";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const Signup = () => {
   const nav = useNavigation();
   return (
-    <View bg={"#5E41E6"} flex={1}>
-      <HStack mt={16} mb={8} mx={6} alignItems={"center"} space={4}>
+    <SafeAreaView style={{ backgroundColor: "#5E41E6", flex: 1 }}>
+      <HStack mt={4} mb={8} mx={6} alignItems={"center"} space={4}>
         <TouchableOpacity
           style={styles.backButtonContainer}
           onPress={() => nav.navigate("Login" as never)}
@@ -20,16 +21,16 @@ const Signup = () => {
           Login
         </Text>
       </HStack>
-      <VStack mx={6} space={2} position={"relative"}>
+      <VStack mx={6} space={2} position={"relative"} mb={16}>
         <Text color={"#fff"} bold fontSize={48} lineHeight={52}>
           Banking you need. Service you deserve.
         </Text>
         <Text color={"#fff"} fontSize={"md"}>
-          Create accounts, earn cash back and rewards, save effortlessly, and much more{" "}
+          Create accounts, earn cash back and rewards, save effortlessly, and much more
         </Text>
-      </VStack>
+      </VStack >
       <Image
-        mt={16}
+        
         source={require("../../../assets/bank_app.png")}
         alt="Island bank app opened on iphone 13"
       />
@@ -45,11 +46,15 @@ const Signup = () => {
         bg={"white"}
         _text={{ color: "black" }}
         mx={6}
+        position={'absolute'}
+        bottom={0}
+        left={0}
+        right={0}
         onPress={() => nav.navigate("GetStarted" as never)}
       >
         Get started
       </Button>
-    </View>
+    </SafeAreaView>
   );
 };
 

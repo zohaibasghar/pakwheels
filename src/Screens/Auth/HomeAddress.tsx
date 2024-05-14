@@ -1,5 +1,5 @@
 import { View, Text, VStack, Button, ScrollView } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { FloatingLabelInput } from "react-native-floating-label-input";
@@ -7,6 +7,9 @@ import { useNavigation } from "@react-navigation/native";
 
 const HomeAddress = () => {
   const nav = useNavigation();
+  const [street, setStreet] = useState("");
+  const [city, setCity] = useState("");
+  const [parish, setParish] = useState("");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <CustomHeaderHelp title="Help" />
@@ -31,6 +34,8 @@ const HomeAddress = () => {
                   paddingVertical: 16,
                   paddingHorizontal: 12,
                 }}
+                value={street}
+                onChangeText={(e) => setStreet(e)}
               />
               <FloatingLabelInput
                 label="Village, city or town"
@@ -41,6 +46,8 @@ const HomeAddress = () => {
                   paddingVertical: 16,
                   paddingHorizontal: 12,
                 }}
+                value={city}
+                onChangeText={(e) => setCity(e)}
               />
               <FloatingLabelInput
                 label="Parish"
@@ -52,6 +59,8 @@ const HomeAddress = () => {
                   paddingHorizontal: 12,
                   marginBottom: 12,
                 }}
+                value={parish}
+                onChangeText={(e) => setParish(e)}
               />
             </VStack>
           </VStack>

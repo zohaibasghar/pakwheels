@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
-import { Camera, CameraType } from "expo-camera";
+import { Camera, CameraType, CameraView } from "expo-camera";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import CustomActionHeader from "../../Components/CustomActionHeader";
@@ -38,12 +38,7 @@ const FrontCard = () => {
         {loading ? (
           <Spinner size={"lg"} />
         ) : (
-          <Camera
-            style={{ flex: 1, marginVertical: 24 }}
-            type={CameraType.back}
-            autoFocus
-            ref={cameraRef}
-          >
+          <CameraView style={{ flex: 1, marginVertical: 24 }} facing="back" ref={cameraRef}>
             <View style={styles.overlay}>
               {/* Create a black overlay with a cutout for the rectangle */}
               {/* Top, Bottom, Left, and Right views create the overlay */}
@@ -55,7 +50,7 @@ const FrontCard = () => {
               {/* The transparent rectangle in the center */}
               <View style={styles.rectangle} />
             </View>
-          </Camera>
+          </CameraView>
         )}
 
         <VStack alignItems={"center"} mx={6}>
@@ -95,8 +90,8 @@ const FrontCard = () => {
             </VStack>
           </VStack>
           <Image
-            source={{ uri: capturedImage }}
-            my={12}
+            source={{ uri: capturedImage ?? undefined }}
+            my={6}
             mx={"auto"}
             w={"100%"}
             style={{ objectFit: "cover" }}
@@ -108,7 +103,10 @@ const FrontCard = () => {
               _pressed={{ bg: "#f1f1f1" }}
               w={"100%"}
               mb={0}
-              onPress={() => nav.navigate("RecordVideo" as never)}
+              onPress={() => {
+                setIsOpen(false);
+                nav.navigate("RecordVideo" as never);
+              }}
             >
               Upload photo
             </Button>

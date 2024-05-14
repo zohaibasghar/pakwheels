@@ -11,7 +11,7 @@ import CountrySelect from "../../Components/CountrySelect";
 const TaxInfo = () => {
   const [show, setShow] = React.useState(false);
   const nav = useNavigation();
-  const [data, setData] = React.useState([1]);
+  const [data, setData] = React.useState([{ country: "", pin: "" }]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
@@ -26,9 +26,9 @@ const TaxInfo = () => {
               <Text color={"#616161"}>In which country(s) are you a tax resident?</Text>
             </VStack>
             <VStack space={4}>
-              {Array.from(data).map(() => {
+              {Array.from(data).map((item, index) => {
                 return (
-                  <View>
+                  <View key={index}>
                     <CountrySelect label="Country of Tax Liability" />
                     <FloatingLabelInput
                       label="Tax number"
@@ -41,7 +41,12 @@ const TaxInfo = () => {
                         paddingHorizontal: 12,
                       }}
                       isPassword
-                      value="hello"
+                      value={item.pin}
+                      onChangeText={(e) => {
+                        const copy = [...data];
+                        copy.splice(index, 1);
+                        setData([...copy, { ...item, pin: e }]);
+                      }}
                       togglePassword={show}
                       customShowPasswordComponent={
                         <Feather name="eye-off" size={24} color="#d4d2d2" />
@@ -53,7 +58,7 @@ const TaxInfo = () => {
                   </View>
                 );
               })}
-              <TouchableOpacity onPress={() => setData([...data, data.length])}>
+              <TouchableOpacity onPress={() => setData([...data, { country: "", pin: "" }])}>
                 <Stack
                   direction={"row"}
                   alignItems={"center"}
@@ -64,7 +69,7 @@ const TaxInfo = () => {
                   px={3}
                   mb={8}
                 >
-                  <Text>Add another</Text>
+                  <Text fontWeight={700}>Add another</Text>
                   <Feather name="plus" size={18} color={"black"} />
                 </Stack>
               </TouchableOpacity>
@@ -76,6 +81,7 @@ const TaxInfo = () => {
             <Checkbox
               shadow={2}
               value="us"
+              _text={{ fontSize: 14 }}
               defaultIsChecked
               _checked={{ bg: "#401EE1", borderColor: "#401EE1", borderWidth: 1 }}
             >
@@ -86,6 +92,7 @@ const TaxInfo = () => {
             <Checkbox
               shadow={2}
               value="beneficial"
+              _text={{ fontSize: 14 }}
               defaultIsChecked
               _checked={{ bg: "#401EE1", borderColor: "#401EE1", borderWidth: 1 }}
             >

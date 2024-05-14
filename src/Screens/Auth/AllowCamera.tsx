@@ -1,14 +1,14 @@
-import { Text, VStack, ScrollView, Button, HStack, Image, InfoIcon } from "native-base";
+import { Text, VStack, ScrollView, Button, HStack, Image } from "native-base";
 import React, { useEffect } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
-import { Camera } from "expo-camera";
 import { Feather } from "@expo/vector-icons";
+import { useCameraPermissions } from "expo-camera";
 
 const AllowCamera = () => {
   const nav = useNavigation();
-  const [permission, requestPermission] = Camera.useCameraPermissions();
+  const [permission, requestPermission] = useCameraPermissions();
   useEffect(() => {
     if (permission?.granted) {
       nav.navigate("FrontCard" as never);

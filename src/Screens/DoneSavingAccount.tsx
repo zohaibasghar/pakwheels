@@ -20,17 +20,19 @@ const DoneSavingAccount = () => {
         </Container>
         <View
           h={"1/3"}
-          w={"95%"}
-          mx={"auto"}
-          my={5}
-          style={{ transform: [{ rotate: "90deg" }] }}
+          mt={16}
+          w={"100%"}
+          my={6}
+          style={{
+            transform: [{ rotate: "90deg" }],
+          }}
           justifyContent={"center"}
           position={"relative"}
         >
           <Image
             source={require("../../assets/bg_umb.png")}
             alt="Umbrella"
-            top={56}
+            top={"80%"}
             left={-24}
             zIndex={2}
             position={"absolute"}
@@ -71,7 +73,7 @@ const DoneSavingAccount = () => {
             </Stack>
           </ImageBackground>
         </View>
-        <Stack alignItems={"center"}>
+        <Stack alignItems={"center"} mt={4}>
           <Text bold fontSize={"md"}>
             Rainy Day Fund
           </Text>
@@ -86,15 +88,16 @@ const DoneSavingAccount = () => {
           <Text color={"#616161"} textAlign={"center"} fontSize={"15px"}>
             Use your card and the money will come out of this account.
           </Text>
+          <Button
+            mt={8}
+            onPress={() => nav.navigate("HomeTabs" as never)}
+            _pressed={{ bg: "#f1f1f1" }}
+            mx={6}
+            w={'100%'}
+          >
+            Spend from here
+          </Button>
         </VStack>
-        <Button
-          mt={6}
-          onPress={() => nav.navigate("HomeTabs" as never)}
-          _pressed={{ bg: "#f1f1f1" }}
-          mx={6}
-        >
-          Spend from here
-        </Button>
       </VStack>
     </SafeAreaView>
   );
@@ -112,7 +115,7 @@ const styles = StyleSheet.create({
   },
   imageStyle: {
     borderRadius: 20,
-    objectFit: "cover",
+    objectFit: "contain",
   },
   card: {
     padding: 20,

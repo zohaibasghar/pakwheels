@@ -1,5 +1,5 @@
 import { View, Text, VStack, Button, HStack } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
@@ -7,6 +7,9 @@ import { FloatingLabelInput } from "react-native-floating-label-input";
 
 const DOB = () => {
   const nav = useNavigation();
+  const [month, setMonth] = useState("02");
+  const [day, setDay] = useState("15");
+  const [year, setYear] = useState("1986");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <CustomHeaderHelp title="Help" />
@@ -27,10 +30,12 @@ const DOB = () => {
                 borderColor: "#e0e0e0",
                 borderWidth: 1,
                 borderRadius: 12,
-                paddingVertical: 16,
+                paddingVertical: 12,
                 paddingHorizontal: 12,
               }}
               keyboardType="number-pad"
+              value={month}
+              onChangeText={(e) => setMonth(e)}
             />
             <FloatingLabelInput
               label="Day"
@@ -38,10 +43,12 @@ const DOB = () => {
                 borderColor: "#e0e0e0",
                 borderWidth: 1,
                 borderRadius: 12,
-                paddingVertical: 16,
+                paddingVertical: 12,
                 paddingHorizontal: 12,
               }}
               keyboardType="number-pad"
+              value={day}
+              onChangeText={(e) => setDay(e)}
             />
             <FloatingLabelInput
               label="Year"
@@ -49,10 +56,12 @@ const DOB = () => {
                 borderColor: "#e0e0e0",
                 borderWidth: 1,
                 borderRadius: 12,
-                paddingVertical: 16,
+                paddingVertical: 12,
                 paddingHorizontal: 12,
               }}
               keyboardType="number-pad"
+              value={year}
+              onChangeText={(e) => setYear(e)}
             />
           </HStack>
         </VStack>

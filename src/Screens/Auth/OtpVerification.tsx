@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import { Title } from "react-native-paper";
 import { useAppDispatch } from "../../redux/Store";
-import { signIn } from "../../redux/authSlice";
+import { createTransaction, signIn } from "../../redux/authSlice";
 import CustomHeader from "../../Components/CustomHeader";
 
 const OtpVerification = () => {
@@ -44,6 +44,7 @@ const OtpVerification = () => {
               setOtp(e);
               if (e.length === 6) {
                 dispatch(signIn());
+                dispatch(createTransaction());
               }
             }}
           />

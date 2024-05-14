@@ -25,7 +25,7 @@ export default function MyCard() {
   const [spending, setSpending] = useState("1");
   const { isOpen, onOpen, onClose } = useDisclose();
   return (
-    <SafeAreaView flex={1}>
+    <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <CustomHeader title="My Card" />
       {details ? <BankCardDetails /> : <BankCard />}
       <ScrollView>

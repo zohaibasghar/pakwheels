@@ -1,5 +1,5 @@
 import { View, Text, VStack, Button } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
@@ -7,6 +7,8 @@ import { FloatingLabelInput } from "react-native-floating-label-input";
 
 const ConfirmName = () => {
   const nav = useNavigation();
+  const [fName, setFName] = useState('')
+  const [lName, setLName] = useState('')
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <CustomHeaderHelp title="Hep" />
@@ -30,6 +32,8 @@ const ConfirmName = () => {
                 paddingVertical: 16,
                 paddingHorizontal: 12,
               }}
+              value={fName}
+              onChangeText={e=>setFName(e)}
             />
             <FloatingLabelInput
               label="Last name"
@@ -40,6 +44,8 @@ const ConfirmName = () => {
                 paddingVertical: 16,
                 paddingHorizontal: 12,
               }}
+              value={lName}
+              onChangeText={e=>setLName(e)}
             />
           </VStack>
         </VStack>

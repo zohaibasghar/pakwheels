@@ -26,6 +26,7 @@ const SelectBudget = () => {
           <FloatingLabelInput
             label="Amount"
             value={amount}
+            keyboardType="number-pad"
             leftComponent={<Text>$</Text>}
             containerStyles={{
               borderColor: "#E0E0E0",

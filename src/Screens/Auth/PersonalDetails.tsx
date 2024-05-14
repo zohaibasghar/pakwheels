@@ -3,13 +3,13 @@ import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
-import { Camera, CameraType } from "expo-camera";
+import { Camera,  CameraView, useCameraPermissions } from "expo-camera";
 import { StyleSheet } from "react-native";
 
 const PersonalDetails = () => {
   const nav = useNavigation();
   const [showModal, setShowModal] = useState(true);
-  const [permission, requestPermission] = Camera.useCameraPermissions();
+  const [permission, requestPermission] = useCameraPermissions();
   useEffect(() => {
     requestPermission();
   }, []);
@@ -29,7 +29,7 @@ const PersonalDetails = () => {
           </VStack>
         </VStack>
         {permission?.granted ? (
-          <Camera style={{ flex: 1, marginVertical: 24 }} type={CameraType.back} autoFocus>
+          <CameraView style={{ flex: 1, marginVertical: 24 }} facing="back">
             <View style={styles.overlay}>
               {/* Create a black overlay with a cutout for the rectangle */}
               {/* Top, Bottom, Left, and Right views create the overlay */}
@@ -41,7 +41,7 @@ const PersonalDetails = () => {
               {/* The transparent rectangle in the center */}
               <View style={styles.rectangle} />
             </View>
-          </Camera>
+          </CameraView>
         ) : (
           <Modal
             isOpen={showModal}

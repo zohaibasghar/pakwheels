@@ -3,7 +3,7 @@ import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, Container, Flex, HStack, Image, Stack, Text, VStack, View } from "native-base";
 import { useAppDispatch } from "../../redux/Store";
-import { signIn } from "../../redux/authSlice";
+import { createTransaction, signIn } from "../../redux/authSlice";
 
 const CardDone = () => {
   const dispatch = useAppDispatch();
@@ -83,7 +83,10 @@ const CardDone = () => {
             bg={"#000"}
             w={"100%"}
             mt={6}
-            onPress={() => dispatch(signIn())}
+            onPress={() => {
+              dispatch(signIn());
+              dispatch(createTransaction());
+            }}
             _pressed={{ bg: "#f1f1f1" }}
           >
             <HStack alignItems={"center"} space={4}>

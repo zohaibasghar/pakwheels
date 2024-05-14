@@ -7,27 +7,27 @@ const HappyBanking = () => {
   const nav = useNavigation();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <VStack justifyContent={"space-between"} flex={1} mx={6}>
+      <VStack justifyContent={"space-between"} flex={1} mx={4}>
         <Box position={"relative"} h={"3/5"} mt={4}>
           <Image
             source={require("../../../assets/card_bg.png")}
             alt="People"
-            style={{ position: "absolute" }}
+            style={{ position: "absolute", objectFit: "contain" }}
           />
           <Image
             source={require("../../../assets/card_sample.png")}
             alt="Island bank"
-            style={{ position: "absolute", top: "30%", left: "12%" }}
+            style={{ position: "absolute", top: "30%", left: "7%", objectFit: "contain" }}
           />
           <Image
             source={require("../../../assets/girl.png")}
             alt="Girl"
-            style={{ position: "absolute", bottom: "24%", left: "17%" }}
+            style={{ position: "absolute", bottom: "22%", left: "12%", objectFit: "contain" }}
           />
           <Image
             source={require("../../../assets/man.png")}
             alt="Man"
-            style={{ position: "absolute", bottom: 40, right: 0 }}
+            style={{ position: "absolute", bottom: 30, right: 20, objectFit: "contain" }}
           />
         </Box>
         <VStack alignItems={"center"}>

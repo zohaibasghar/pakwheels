@@ -1,5 +1,5 @@
 import { View, Text, Button, VStack } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { FloatingLabelInput } from "react-native-floating-label-input";
@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const EmailContact = () => {
   const nav = useNavigation();
+  const [email, setEmail] = useState("");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <CustomHeaderHelp title="Help" />
@@ -30,10 +31,15 @@ const EmailContact = () => {
                 paddingVertical: 16,
                 paddingHorizontal: 12,
               }}
+              value={email}
+              onChangeText={(e) => setEmail(e)}
             />
           </VStack>
         </VStack>
-        <Button onPress={() => nav.navigate("EmploymentStatus" as never)} _pressed={{ bg: "#f1f1f1" }}>
+        <Button
+          onPress={() => nav.navigate("EmploymentStatus" as never)}
+          _pressed={{ bg: "#f1f1f1" }}
+        >
           Continue
         </Button>
       </VStack>
