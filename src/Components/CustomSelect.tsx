@@ -24,7 +24,7 @@ const CustomSelect = ({ label, data }: { label: string; data: string[] }) => {
 
       <Select
         selectedValue={selectedValue}
-        minWidth="200"
+        minWidth={185}
         pb={2}
         pt={6}
         borderColor={"#e0e0e0"}

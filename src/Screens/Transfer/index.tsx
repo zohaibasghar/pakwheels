@@ -68,7 +68,9 @@ export default function Index() {
                 <Text>Pay family and friends</Text>
               </HStack>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigate.navigate("Transfers", { screen: "WireTransfer" })}
+            >
               <HStack space={4}>
                 <View opacity={0.2}>
                   <Ionicons name="earth-outline" size={20} color="black" />

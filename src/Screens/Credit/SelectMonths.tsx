@@ -8,7 +8,7 @@ import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 
 const SelectMonths = () => {
   const nav = useNavigation();
-  const [value, setValue] = React.useState(1);
+  const [value, setValue] = React.useState(10);
   function handleFund(e: number) {
     setValue(e);
   }

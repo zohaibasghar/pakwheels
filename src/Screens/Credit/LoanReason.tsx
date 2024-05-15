@@ -35,7 +35,7 @@ const LoanReason = () => {
               },
             }}
           >
-            <VStack space={4}>
+            <VStack space={6}>
               <Radio value="1" size={"sm"}>
                 <HStack justifyContent={"space-between"} w={"89%"}>
                   <Text fontWeight={700}>Debt consolidation</Text>
