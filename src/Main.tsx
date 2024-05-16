@@ -8,8 +8,6 @@ import {
   MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import Transfer from "./Screens/Transfer/index";
-import Pay from "./Screens/Pay/Index";
-import Support from "./Screens/Support/Index";
 import Auth from "./Stacks/Auth";
 import { useAppSelector } from "./redux/Store";
 import Transfers from "./Stacks/Transfers";
@@ -17,6 +15,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./Screens/Home";
 import Credit from "./Stacks/Credit";
 import CreditHome from "./Screens/Credit/CreditHome";
+import PayHome from "./Screens/Pay/PayHome";
+import SupportHome from "./Screens/Support/SupportHome";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -55,9 +55,9 @@ const HomeTabs = () => {
     >
       <Tab.Screen name="HomeAcc" component={Home} options={{ tabBarLabel: "Accounts" }} />
       <Tab.Screen name="Transfer" component={Transfer} />
-      <Tab.Screen name="Pay" component={Pay} />
+      <Tab.Screen name="Pay" component={PayHome} />
       <Tab.Screen name="CreditHome" component={CreditHome} options={{ tabBarLabel: "Credit" }} />
-      <Tab.Screen name="Support" component={Support} />
+      <Tab.Screen name="Support" component={SupportHome} />
     </Tab.Navigator>
   );
 };

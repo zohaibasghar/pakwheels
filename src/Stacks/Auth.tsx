@@ -13,7 +13,6 @@ import ConfirmName from "../Screens/Auth/ConfirmName";
 import DOB from "../Screens/Auth/DOB";
 import HomeAddress from "../Screens/Auth/HomeAddress";
 import EmailContact from "../Screens/Auth/EmailContact";
-import Support from "../Screens/Support/Index";
 import EmploymentStatus from "../Screens/Auth/EmploymentStatus";
 import SalaryRange from "../Screens/Auth/SalaryRange";
 import AccountUsage from "../Screens/Auth/AccountUsage";
@@ -29,6 +28,7 @@ import SelectCard from "../Screens/Auth/SelectCard";
 import CreatePIN from "../Screens/Auth/CreatePIN";
 import DeliveryAdd from "../Screens/Auth/DeliveryAdd";
 import CardDone from "../Screens/Auth/CardDone";
+import SupportHome from "../Screens/Support/SupportHome";
 
 const Stack = createStackNavigator();
 export default function Auth() {
@@ -69,7 +69,7 @@ export default function Auth() {
       <Stack.Screen name="DeliveryAdd" component={DeliveryAdd} />
       <Stack.Screen name="CreatePIN" component={CreatePIN} />
       <Stack.Screen name="CardDone" component={CardDone} />
-      <Stack.Screen name="Support" component={Support} />
+      <Stack.Screen name="Support" component={SupportHome} />
     </Stack.Navigator>
   );
 }

@@ -31,7 +31,7 @@ const HowWeComp = () => {
               </Text>
             </VStack>
           </VStack>
-          <VStack space={8}>
+          <VStack space={10} mt={4}>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/island_comp.png")} alt="Island Bank" />
