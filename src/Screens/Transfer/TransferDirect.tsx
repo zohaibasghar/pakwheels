@@ -19,7 +19,7 @@ const TransferDirect = () => {
       setAmount("$");
     }
     return () => clearTimeout(timer);
-  }, []);
+  }, [amount]);
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <CustomHeader title="Transfer" />

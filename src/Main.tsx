@@ -15,8 +15,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./Screens/Home";
 import Credit from "./Stacks/Credit";
 import CreditHome from "./Screens/Credit/CreditHome";
-import PayHome from "./Screens/Pay/PayHome";
 import SupportHome from "./Screens/Support/SupportHome";
+import Pay from "./Stacks/Pay";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -46,7 +46,7 @@ const HomeTabs = () => {
               );
             case "CreditHome":
               return <MaterialCommunityIcons name="inbox-full-outline" size={24} color={color} />;
-            case "Support":
+            case "SupportHome":
               return <MaterialIcons name="chat-bubble-outline" size={24} color={color} />;
           }
         },
@@ -55,9 +55,17 @@ const HomeTabs = () => {
     >
       <Tab.Screen name="HomeAcc" component={Home} options={{ tabBarLabel: "Accounts" }} />
       <Tab.Screen name="Transfer" component={Transfer} />
-      <Tab.Screen name="Pay" component={PayHome} />
+      <Tab.Screen
+        name="Pay"
+        component={Pay}
+        options={{ tabBarLabel: "Support", tabBarStyle: { display: "none" } }}
+      />
       <Tab.Screen name="CreditHome" component={CreditHome} options={{ tabBarLabel: "Credit" }} />
-      <Tab.Screen name="Support" component={SupportHome} />
+      <Tab.Screen
+        name="SupportHome"
+        component={SupportHome}
+        options={{ tabBarLabel: "Support", tabBarStyle: { display: "none" } }}
+      />
     </Tab.Navigator>
   );
 };

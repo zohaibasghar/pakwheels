@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, VStack, Center, HStack, Container, Box, Hidden } from "native-base";
+import { Text, VStack, HStack, Container, Box } from "native-base";
 import CustomBackButton from "./CustomBackButton";
 
 const CustomHeader = ({ title, subtitle }: { title: string; subtitle?: string }) => {

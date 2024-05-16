@@ -1,7 +1,6 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Box, Button, Container, HStack, Image, ScrollView, Text, VStack } from "native-base";
-import { AntDesign } from "@expo/vector-icons";
+import { Box, Container, HStack, Image, ScrollView, Text, VStack } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";

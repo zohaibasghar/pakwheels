@@ -29,7 +29,7 @@ export default function Home() {
   ];
   const { transAdd, transaction } = useAppSelector((state) => state.auth);
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <ScrollView bg={"#f8f8f8"}>
         <Header />
         <CurrentAccounts />
