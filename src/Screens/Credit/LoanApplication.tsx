@@ -77,7 +77,7 @@ const LoanApplication = () => {
       </ScrollView>
       <Stack space={2} mx={6}>
         <Text fontSize={"xs"} textAlign={"left"} mx={0} color={"#616161"}>
-          By tapping "Turn on" you agree to the{" "}
+          By tapping "Get started" you agree to the{" "}
           <Text color={"#5E41E6"}>Island Bank's Loan Agreement</Text>
         </Text>
         <Button

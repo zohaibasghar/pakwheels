@@ -81,7 +81,7 @@ const DoneSavingAccount = () => {
             $0.00 • Savings **6272
           </Text>
         </Stack>
-        <VStack alignItems={"center"} mx={10}>
+        <VStack alignItems={"center"} mx={6}>
           <Text bold fontSize={"lg"} textAlign={"center"}>
             New account created. Do you want to spend from there?
           </Text>
@@ -92,8 +92,7 @@ const DoneSavingAccount = () => {
             mt={8}
             onPress={() => nav.navigate("HomeTabs" as never)}
             _pressed={{ bg: "#f1f1f1" }}
-            mx={6}
-            w={'100%'}
+            w={"100%"}
           >
             Spend from here
           </Button>

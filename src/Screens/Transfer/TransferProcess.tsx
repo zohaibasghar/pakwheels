@@ -11,11 +11,7 @@ const TransferProcess = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <View px={4}>
-        <CustomActionHeader
-          title="Give Feedback"
-          handleClose={() => nav.goBack()}
-          // handleFunc={() => setIsOpen(false)}
-        />
+        <CustomActionHeader title="Give Feedback" handleClose={() => nav.goBack()} />
       </View>
       <VStack justifyContent={"space-between"} flex={1}>
         <ScrollView>
@@ -36,7 +32,7 @@ const TransferProcess = () => {
               </Text>
             </VStack>
           </VStack>
-          <HStack space={8} my={8} mx={6} justifyContent={"center"}>
+          <HStack space={6} my={4} justifyContent={"center"}>
             <TouchableOpacity>
               <Stack alignItems={"center"} space={1}>
                 <Stack
@@ -122,16 +118,18 @@ const TransferProcess = () => {
               </Stack>
             </TouchableOpacity>
           </HStack>
-          <HStack my={6} alignItems={"center"} justifyContent={"space-between"} mx={6}>
-            <HStack space={2}>
-              <Image source={require("../../../assets/qr_code.png")} alt="QR Code" />
-              <VStack>
-                <Text bold>Get a QR code</Text>
-                <Text color={"#7B7B7B"}>Share directly to another smartphone</Text>
-              </VStack>
+          <TouchableOpacity>
+            <HStack my={6} alignItems={"center"} justifyContent={"space-between"} mx={6}>
+              <HStack space={2}>
+                <Image source={require("../../../assets/qr_code.png")} alt="QR Code" />
+                <VStack>
+                  <Text bold>Get a QR code</Text>
+                  <Text color={"#7B7B7B"}>Share directly to another smartphone</Text>
+                </VStack>
+              </HStack>
+              <MaterialIcons name="keyboard-arrow-right" size={24} color="#5E41E6" />
             </HStack>
-            <MaterialIcons name="keyboard-arrow-right" size={24} color="#5E41E6" />
-          </HStack>
+          </TouchableOpacity>
         </ScrollView>
         <Button
           mx={6}

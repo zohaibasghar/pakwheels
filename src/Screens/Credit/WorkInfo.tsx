@@ -2,7 +2,7 @@ import React from "react";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
-import { Button, HStack, Image, Radio, ScrollView, Stack, Text, VStack } from "native-base";
+import { Button, HStack, ScrollView, Stack, Text, VStack } from "native-base";
 import { FloatingLabelInput } from "react-native-floating-label-input";
 import CustomSelect from "../../Components/CustomSelect";
 
@@ -40,6 +40,7 @@ const WorkInfo = () => {
             />
             <HStack space={2}>
               <CustomSelect
+                width={"48.5%"}
                 label="Start year"
                 data={[
                   "2020",
@@ -67,13 +68,17 @@ const WorkInfo = () => {
                 ]}
               />
               <CustomSelect
+                width={"48.5%"}
                 label="Start month"
                 data={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
               />
             </HStack>
           </VStack>
         </ScrollView>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("IncomeAfterTax" as never)}>
+        <Button
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("IncomeAfterTax" as never)}
+        >
           Continue
         </Button>
       </Stack>

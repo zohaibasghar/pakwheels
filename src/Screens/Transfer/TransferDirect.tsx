@@ -4,11 +4,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeader from "../../Components/CustomHeader";
 import { MaterialIcons } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 const TransferDirect = () => {
   const [amount, setAmount] = useState("$");
   const textInputRef = useRef(null);
-
+  const nav = useNavigation();
   useEffect(() => {
     const timer = setTimeout(() => {
       if (textInputRef.current) {
@@ -86,6 +87,7 @@ const TransferDirect = () => {
           _disabled={{ background: "rgba(94, 65, 230, 0.4)" }}
           py={4}
           mb={6}
+          onPress={() => nav.navigate("HomeTabs", { screen: "Transfers" })}
           _pressed={{ bg: "#f1f1f1", borderWidth: 1, borderColor: "#5E41E6" }}
         >
           <HStack space={2}>

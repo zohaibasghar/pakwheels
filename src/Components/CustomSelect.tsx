@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { Select, Box, Text } from "native-base";
 
-const CustomSelect = ({ label, data }: { label: string; data: string[] }) => {
+const CustomSelect = ({
+  label,
+  data,
+  width,
+}: {
+  label: string;
+  data: string[];
+  width: string | number;
+}) => {
   const [selectedValue, setSelectedValue] = useState<any>();
 
-  const getSelectedCountry = (code: string) => {
-    return code;
-  };
   return (
-    <Box my={2}>
+    <Box my={2} w={width}>
       {label && (
         <Text
           position="absolute"
@@ -24,7 +29,6 @@ const CustomSelect = ({ label, data }: { label: string; data: string[] }) => {
 
       <Select
         selectedValue={selectedValue}
-        minWidth={185}
         pb={2}
         pt={6}
         borderColor={"#e0e0e0"}
@@ -37,7 +41,7 @@ const CustomSelect = ({ label, data }: { label: string; data: string[] }) => {
           },
         }}
         onValueChange={(itemValue) => {
-          setSelectedValue(getSelectedCountry(itemValue));
+          setSelectedValue(itemValue);
         }}
       >
         {data.map((country) => (

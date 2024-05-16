@@ -98,21 +98,27 @@ export default function SupportHome() {
         <VStack space={4} mb={4}>
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <HStack space={2}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setChat([...chat, { message: "Got it, thanks", time: "3:20 PM" }])}
+              >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"} ml={6}>
                   <Text px={4} py={1} color={"#5E41E6"} fontSize={16} fontWeight={600}>
                     Got it, thanks
                   </Text>
                 </VStack>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setChat([...chat, { message: "Start a transfer", time: "3:20 PM" }])}
+              >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"}>
                   <Text px={4} py={1} color={"#5E41E6"} fontSize={16} fontWeight={600}>
                     Start a transfer
                   </Text>
                 </VStack>
               </TouchableOpacity>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => setChat([...chat, { message: "I need more help", time: "3:20 PM" }])}
+              >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"} mr={2}>
                   <Text px={4} py={1} color={"#5E41E6"} fontSize={16} fontWeight={600}>
                     I need more help
@@ -132,7 +138,7 @@ export default function SupportHome() {
               value={message}
               onChangeText={(e) => setMessage(e)}
               onSubmitEditing={() => {
-                setChat([...chat, { message, time: "3:20" }]);
+                setChat([...chat, { message, time: "3:20 PM" }]);
                 setMessage("");
               }}
             />

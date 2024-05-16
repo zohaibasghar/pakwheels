@@ -37,7 +37,7 @@ const MonthlyAmount = () => {
               }}
               inputStyles={{ padding: 2 }}
             />
-            <CustomSelect label="Disburse frequency" data={["Weekly", "Monthly", "Yearly"]} />
+            <CustomSelect label="Disburse frequency" data={["Weekly", "Monthly", "Yearly"]} width={'100%'}/>
           </Stack>
         </Stack>
         <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("FundRules" as never)}>

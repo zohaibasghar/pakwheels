@@ -1,9 +1,8 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Header from "../../Components/Header";
 import HomeCards from "../../Components/HomeCards";
-import { VStack } from "native-base";
+import { ScrollView, VStack } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 
 export default function CreditHome() {
@@ -32,24 +31,33 @@ export default function CreditHome() {
       path: require("../../../assets/Lock.png"),
       handleFunc: () => navigation.navigate("Credit", { screen: "LoanApplication" }),
     },
+    {
+      id: 4,
+      title: "Line of Credit",
+      desc: "Earn travel loyalty points for every purchase and build a credit score to access other credit products",
+      link: "Apply now",
+      path: require("../../../assets/Send.png"),
+    },
   ];
   return (
-    <SafeAreaView>
-      <Header />
-      <VStack space={4} my={4}>
-        {cardsData.map((card) => {
-          return (
-            <HomeCards
-              title={card.title}
-              desc={card.desc}
-              handleFunc={card.handleFunc}
-              key={card.id}
-              path={card.path}
-              link={card.link}
-            />
-          );
-        })}
-      </VStack>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#f8f8f8" }}>
+      <ScrollView>
+        <Header />
+        <VStack space={4} my={4}>
+          {cardsData.map((card) => {
+            return (
+              <HomeCards
+                title={card.title}
+                desc={card.desc}
+                handleFunc={card.handleFunc}
+                key={card.id}
+                path={card.path}
+                link={card.link}
+              />
+            );
+          })}
+        </VStack>
+      </ScrollView>
     </SafeAreaView>
   );
 }

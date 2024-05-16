@@ -57,6 +57,7 @@ const LastStep = () => {
           </VStack>
         </ScrollView>
         <Button
+        mt={2}
           _pressed={{ bg: "#f1f1f1" }}
           onPress={() => nav.navigate("LoanDone" as never)}
         >

@@ -17,6 +17,7 @@ import Credit from "./Stacks/Credit";
 import CreditHome from "./Screens/Credit/CreditHome";
 import SupportHome from "./Screens/Support/SupportHome";
 import Pay from "./Stacks/Pay";
+import { Image } from "native-base";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -32,22 +33,23 @@ const HomeTabs = () => {
         tabBarIcon: ({ color }) => {
           switch (route.name) {
             case "HomeAcc":
-              return <FontAwesome5 name={"credit-card"} size={24} color={color} />;
+              return <Feather name="credit-card" size={24} color={color} />;
             case "Transfer":
-              return <Feather name="repeat" size={24} color={color} />;
+              return <Feather name="repeat" size={20} color={color} />;
             case "Pay":
               return (
                 <AntDesign
                   name="wifi"
-                  size={24}
+                  size={20}
                   color={color}
                   style={{ transform: [{ rotate: "90deg" }] }}
                 />
               );
             case "CreditHome":
-              return <MaterialCommunityIcons name="inbox-full-outline" size={24} color={color} />;
+              return <AntDesign name="inbox" size={22} color={color} />
+
             case "SupportHome":
-              return <MaterialIcons name="chat-bubble-outline" size={24} color={color} />;
+              return <MaterialIcons name="chat-bubble-outline" size={22} color={color} />;
           }
         },
         tabBarLabelStyle: { marginBottom: 4, fontSize: 11 },

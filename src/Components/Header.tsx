@@ -6,7 +6,7 @@ import { TouchableOpacity } from "react-native";
 export default function Header() {
   const navigate = useNavigation();
   return (
-    <View>
+    <View mb={1}>
       <Flex direction="row" align="center" justifyContent={"space-between"} mx={5} mt={10}>
         <Stack space={2} direction={"row"} alignItems={"center"}>
           <Avatar bg={"#5E41E6"}>R</Avatar>

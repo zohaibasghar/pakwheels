@@ -6,7 +6,7 @@ import { Button, Center, Input, ScrollView, Stack, Text } from "native-base";
 
 const IncomeAfterTax = () => {
   const nav = useNavigation();
-  const [income, setIncome] = React.useState("$");
+  const [income, setIncome] = React.useState("$4600");
   const textInputRef = useRef(null);
 
   useEffect(() => {
