@@ -18,7 +18,7 @@ export default function SupportHome() {
           mx={6}
           mb={4}
         >
-          <Text color={"#616161"} textAlign={"center"}>
+          <Text color={"#616161"} textAlign={"center"} mb={6}>
             Today
           </Text>
           <HStack alignItems={"center"} space={2} w={"93%"}>
@@ -77,8 +77,9 @@ export default function SupportHome() {
               </Text>
             </VStack>
           </HStack>
-          {chat?.length &&
-            chat?.map((mes: any, index: number) => (
+          {chat &&
+            chat.length > 0 &&
+            chat.map((mes: any, index: number) => (
               <VStack alignItems={"flex-end"} my={3} key={index}>
                 <VStack w={"87%"}>
                   <Box p={4} roundedTop={15} roundedBottomLeft={15} bg={"#2C64E3"}>

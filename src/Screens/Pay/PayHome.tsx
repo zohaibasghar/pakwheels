@@ -61,7 +61,8 @@ export default function PayHome() {
                 my={4}
                 value={amount}
                 onChangeText={(e) => setAmount(e)}
-                w={"1/2"}
+                w={"2/3"}
+                ml={6}
                 keyboardType="number-pad"
                 fontSize={"4xl"}
                 textAlign={"center"}
