@@ -17,7 +17,6 @@ import Credit from "./Stacks/Credit";
 import CreditHome from "./Screens/Credit/CreditHome";
 import SupportHome from "./Screens/Support/SupportHome";
 import Pay from "./Stacks/Pay";
-import { Image } from "native-base";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

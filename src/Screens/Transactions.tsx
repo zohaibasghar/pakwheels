@@ -3,17 +3,28 @@ import { HStack, ScrollView, Text, VStack, View } from "native-base";
 import TransactionList from "../Components/Transaction";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeader from "../Components/CustomHeader";
+import { Feather } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native";
 
 export default function Transactions() {
   return (
-    <SafeAreaView>
-      <CustomHeader title="All Activity" />
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
+      <HStack w={"100%"} alignItems={"center"}>
+        <CustomHeader title="All Activity" />
+        <TouchableOpacity>
+          <Feather name="search" size={24} color="black" style={{ top: 6, left: 12 }} />
+        </TouchableOpacity>
+      </HStack>
       <ScrollView>
         <VStack space={6} w={"90%"} mx={"auto"} mt={6}>
           <View>
             <HStack justifyContent={"space-between"}>
-              <Text fontSize={"xs"}>TODAY</Text>
-              <Text fontSize={"xs"}>SPENT $0.00</Text>
+              <Text fontSize={"xs"} fontFamily={"Manrope_500Medium"}>
+                TODAY
+              </Text>
+              <Text fontSize={"xs"} fontFamily={"Manrope_500Medium"}>
+                SPENT $0.00
+              </Text>
             </HStack>
             <TransactionList
               transaction={{
@@ -28,8 +39,12 @@ export default function Transactions() {
           </View>
           <View>
             <HStack justifyContent={"space-between"}>
-              <Text fontSize={"xs"}>YESTERDAY</Text>
-              <Text fontSize={"xs"}>SPENT $98.33</Text>
+              <Text fontSize={"xs"} fontFamily={"Manrope_500Medium"}>
+                YESTERDAY
+              </Text>
+              <Text fontSize={"xs"} fontFamily={"Manrope_500Medium"}>
+                SPENT $98.33
+              </Text>
             </HStack>
             <TransactionList
               transaction={{
@@ -64,8 +79,12 @@ export default function Transactions() {
           </View>
           <View>
             <HStack justifyContent={"space-between"}>
-              <Text fontSize={"xs"}>31 MARCH 2024</Text>
-              <Text fontSize={"xs"}>SPENT $0.00</Text>
+              <Text fontSize={"xs"} fontFamily={"Manrope_500Medium"}>
+                31 MARCH 2024
+              </Text>
+              <Text fontSize={"xs"} fontFamily={"Manrope_500Medium"}>
+                SPENT $0.00
+              </Text>
             </HStack>
             <TransactionList
               transaction={{

@@ -27,7 +27,7 @@ export default function BankCardDetails() {
 
           <VStack style={styles.row} space={4}>
             <HStack alignItems={"center"} space={2}>
-              <Text color="#f5f5f5" fontSize={"xl"}>
+              <Text color="#f5f5f5" fontSize={20} fontFamily={"Manrope_500Medium"}>
                 4111 6545 0239 4839
               </Text>
               <TouchableOpacity
@@ -43,8 +43,8 @@ export default function BankCardDetails() {
             </HStack>
             <HStack space={4} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
-                <Text color={"#fff6"}>EXP</Text>
-                <Text color={"white"}>12/27 </Text>
+                <Text color={"#fff6"} fontFamily={"Manrope_500Medium"}>EXP</Text>
+                <Text color={"white"} fontFamily={"Manrope_500Medium"}>12/27 </Text>
                 <TouchableOpacity
                   onPress={async () => {
                     await Clipboard.setStringAsync("12/27");
@@ -57,8 +57,8 @@ export default function BankCardDetails() {
                 </TouchableOpacity>
               </HStack>
               <HStack space={2} alignItems={"center"}>
-                <Text color={"#fff6"}>CVV</Text>
-                <Text color={"white"}>738</Text>
+                <Text color={"#fff6"} fontFamily={"Manrope_500Medium"}>CVV</Text>
+                <Text color={"white"} fontFamily={"Manrope_500Medium"}>738</Text>
                 <TouchableOpacity
                   onPress={async () => {
                     await Clipboard.setStringAsync("738");

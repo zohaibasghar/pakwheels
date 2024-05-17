@@ -12,7 +12,7 @@ const PushNotifications = () => {
       <CustomHeaderHelp title="Not now" />
       <Stack flex={1} mx={6} justifyContent={"space-between"}>
         <Stack mt={8}>
-          <Text bold fontSize={"3xl"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Don't miss anything
           </Text>
           <Text color={"#616161"} fontSize={"md"}>
@@ -24,7 +24,11 @@ const PushNotifications = () => {
           alt="Notification Bells"
           alignSelf={"center"}
         />
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("Residency" as never)}>
+        <Button
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("Residency" as never)}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Enable push notificaions
         </Button>
       </Stack>

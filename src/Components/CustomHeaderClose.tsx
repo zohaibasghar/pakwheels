@@ -19,7 +19,7 @@ const CustomHeaderClose = ({ title, subtitle }: { title: string; subtitle?: stri
             {title}
           </Text>
           {subtitle && (
-            <Text fontSize="sm" color="gray.500" m={0} lineHeight={16}>
+            <Text fontSize={12} color="gray.500" m={0} lineHeight={16}>
               {subtitle}
             </Text>
           )}

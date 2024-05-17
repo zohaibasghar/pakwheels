@@ -9,47 +9,46 @@ import {
   Image,
   ScrollView,
   Stack,
-  Switch,
   Text,
   VStack,
   View,
 } from "native-base";
 import { useNavigation } from "@react-navigation/native";
-import { Feather, FontAwesome6 } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 const LoanApplication = () => {
   const nav = useNavigation();
   return (
     <View flex={1} bg={"#fff"}>
+      <ImageBackground
+        source={require("../../../assets/plane.png")}
+        borderBottomLeftRadius={40}
+        borderBottomRightRadius={40}
+      >
+        <View my={16}>
+          <CustomHeader title="" />
+        </View>
+        <Center>
+          <Avatar
+            source={require("../../../assets/Lock.png")}
+            rounded={"full"}
+            w={"80px"}
+            h={"80px"}
+            bg={"#fff"}
+            p={3}
+            top={8}
+          />
+        </Center>
+      </ImageBackground>
       <ScrollView>
-        <ImageBackground
-          source={require("../../../assets/plane.png")}
-          borderBottomLeftRadius={40}
-          borderBottomRightRadius={40}
-        >
-          <View my={16}>
-            <CustomHeader title="" />
-          </View>
-          <Center>
-            <Avatar
-              source={require("../../../assets/Lock.png")}
-              rounded={"full"}
-              w={"80px"}
-              h={"80px"}
-              bg={"#fff"}
-              p={3}
-              top={8}
-            />
-          </Center>
-        </ImageBackground>
         <Center mt={12} mx={8}>
-          <Text bold fontSize={"2xl"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={24}>
             Apply for a personal loan
           </Text>
           <HStack my={4} space={4} mx={2}>
-            <Feather name="fast-forward" size={22} color="#aaa9" style={{ marginTop: 4 }} />
+            <Feather name="fast-forward" size={22} color="#aaa9" style={{ marginTop: 6 }} />
             <VStack w={"98%"}>
-              <Text bold fontSize={"md"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 Quick application
               </Text>
               <Text fontSize={"xs"}>
@@ -61,10 +60,10 @@ const LoanApplication = () => {
             <Image
               source={require("../../../assets/circle-percent.png")}
               alt="circle-percentage"
-              mt={1}
+              mt={2}
             />
             <VStack>
-              <Text bold fontSize={"md"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 See your chance of approval
               </Text>
               <Text fontSize={"xs"}>
@@ -81,8 +80,7 @@ const LoanApplication = () => {
           <Text color={"#5E41E6"}>Island Bank's Loan Agreement</Text>
         </Text>
         <Button
-          w={"100%"}
-          rounded={"full"}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           onPress={() => nav.navigate("Credit", { screen: "AmountNeeded" })}
           _pressed={{ bg: "#f1f1f1" }}
         >

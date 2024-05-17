@@ -1,4 +1,4 @@
-import { View, Text, Button, VStack } from "native-base";
+import { Text, Button, VStack } from "native-base";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
@@ -14,7 +14,7 @@ const EmailContact = () => {
       <VStack justifyContent={"space-between"} flex={1} mx={6}>
         <VStack space={4}>
           <VStack my={4}>
-            <Text bold fontSize={"3xl"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Contacting you
             </Text>
             <Text color={"#616161"}>
@@ -39,6 +39,7 @@ const EmailContact = () => {
         <Button
           onPress={() => nav.navigate("EmploymentStatus" as never)}
           _pressed={{ bg: "#f1f1f1" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
         >
           Continue
         </Button>

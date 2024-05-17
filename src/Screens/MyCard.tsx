@@ -9,6 +9,7 @@ import {
   Radio,
   View,
   Divider,
+  Button,
 } from "native-base";
 import React, { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
@@ -18,7 +19,6 @@ import OptionCards from "../Components/OptionCards";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeader from "../Components/CustomHeader";
 import BankCardDetails from "../Components/BankCardDetails";
-import Button from "../Components/Button";
 
 export default function MyCard() {
   const [details, setDetails] = useState(false);
@@ -44,13 +44,11 @@ export default function MyCard() {
             </Stack>
             <Stack>
               <Text fontSize={"xs"}>Debit Spending from</Text>
-              <Text bold fontSize={"md"}>
-                Checking **2830
-              </Text>
+              <Text fontFamily={"Manrope_700Bold"}>Checking **2830</Text>
             </Stack>
           </Stack>
           <TouchableOpacity onPress={onOpen}>
-            <Text bg={"#e1e1e1"} px={2} py={1} rounded={"2xl"}>
+            <Text bg={"#F2F5F7"} px={4} py={2} rounded={"2xl"} fontFamily={"Manrope_700Bold"}>
               Change
             </Text>
           </TouchableOpacity>
@@ -65,7 +63,7 @@ export default function MyCard() {
                 <TouchableOpacity style={styles.backButtonContainer} onPress={onClose}>
                   <AntDesign name="close" size={24} color="black" />
                 </TouchableOpacity>
-                <Text bold fontSize={"2xl"}>
+                <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                   Spending from
                 </Text>
                 <Text color={"#616161"} mb={2}>
@@ -101,12 +99,12 @@ export default function MyCard() {
                         <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
                         <Stack>
                           <Text fontSize={"xs"}>Checking **2830</Text>
-                          <Text bold fontSize={"md"} lineHeight={18}>
+                          <Text fontFamily={"Manrope_700Bold"} lineHeight={18}>
                             New Account
                           </Text>
                         </Stack>
                       </Stack>
-                      <Text bold textAlign={"right"}>
+                      <Text fontFamily={"Manrope_700Bold"} textAlign={"right"}>
                         $160.00
                       </Text>
                     </Flex>
@@ -134,19 +132,26 @@ export default function MyCard() {
                         <Image source={require("../../assets/rainy_day_fund.png")} alt="Funds" />
                         <Stack>
                           <Text fontSize={"xs"}>Savings **2619</Text>
-                          <Text bold fontSize={"md"} lineHeight={18}>
+                          <Text fontFamily={"Manrope_700Bold"} lineHeight={18}>
                             Rainy Day Fund
                           </Text>
                         </Stack>
                       </Stack>
-                      <Text bold textAlign={"right"}>
+                      <Text fontFamily={"Manrope_700Bold"} textAlign={"right"}>
                         $50.00
                       </Text>
                     </Flex>
                   </Radio>
                 </Radio.Group>
               </View>
-              <Button text="Continue" bgColor="#5E41E6" handleFunc={onClose} btnColor="white" />
+              <Button
+                onPress={onClose}
+                w={"full"}
+                _pressed={{ bg: "#f1f1f1" }}
+                _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+              >
+                Continue
+              </Button>
             </Actionsheet.Content>
           </Actionsheet>
         </Flex>
@@ -154,7 +159,7 @@ export default function MyCard() {
         <Stack bg={"blue.100"} w={"94%"} mx={"auto"} p={4} rounded={"2xl"} space={1}>
           <Stack space={2} direction={"row"} alignItems={"center"}>
             <AntDesign name="infocirlceo" size={16} color="black" />
-            <Text bold fontSize={16}>
+            <Text fontSize={16} fontFamily={"Manrope_600SemiBold"}>
               Your card is on its way!
             </Text>
           </Stack>

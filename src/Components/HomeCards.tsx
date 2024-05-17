@@ -15,16 +15,16 @@ export default function HomeCards({ title, desc, link, path, handleFunc }: any) 
       justifyContent={"space-between"}
       space={2}
     >
-      <Stack w={"65%"} space={2}>
+      <Stack w={"70%"} space={2}>
         <Stack>
-          <Text bold fontSize={17}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
             {title}
           </Text>
-          <Text fontSize={11}>{desc}</Text>
+          <Text fontSize={12}>{desc}</Text>
         </Stack>
         <TouchableOpacity onPress={handleFunc}>
           <Stack direction={"row"} alignItems={"center"}>
-            <Text color={"#5E41E6"} underline>
+            <Text color={"#5E41E6"} underline fontFamily={"Manrope_700Bold"}>
               {link}
             </Text>
             <Feather name="arrow-up-right" size={18} color="#5E41E6" />

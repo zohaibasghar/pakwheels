@@ -14,7 +14,7 @@ const TransactionDetail = () => {
       <ScrollView>
         <Center>
           <View position={"relative"}>
-            <Image source={require("../../assets/maps.png")} alt="Maps" h={"190px"}/>
+            <Image source={require("../../assets/maps.png")} alt="Maps" h={"190px"} />
           </View>
           <Box
             borderColor={"#F2F5F7"}
@@ -29,7 +29,7 @@ const TransactionDetail = () => {
             <Image source={transaction.image} alt={transaction.bankName} />
           </Box>
 
-          <Text bold fontSize={18} mb={2} mt={16}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={18} mb={2} mt={16}>
             {transaction.bankName}
           </Text>
           <Text fontSize={"xs"} color={"#7b7b7b"}>
@@ -39,11 +39,11 @@ const TransactionDetail = () => {
             {" "}
             St. Vincent & Grenadines
           </Text>
-          <Text bold fontSize={"2xl"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={24}>
             ${transaction.amount}
           </Text>
 
-          <HStack space={6} my={4}>
+          <HStack space={8} my={4}>
             <TouchableOpacity>
               <Stack alignItems={"center"} space={1}>
                 <Stack
@@ -60,8 +60,12 @@ const TransactionDetail = () => {
                   <Image source={require("../../assets/payback.png")} alt="Payback" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text>Pay back</Text>
-                  <Text>from Bucket</Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    Pay back
+                  </Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    from Bucket
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -81,8 +85,12 @@ const TransactionDetail = () => {
                   <Feather name="navigation" size={24} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text>Directions</Text>
-                  <Text>to store</Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    Directions
+                  </Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    to store
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -102,33 +110,45 @@ const TransactionDetail = () => {
                   <Feather name="info" size={24} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text>Customer</Text>
-                  <Text>Support</Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    Customer
+                  </Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    Support
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
           </HStack>
         </Center>
         <VStack w={"90%"} mx={"auto"} space={6} my={4}>
-          <Text>DETAILS</Text>
+          <Text fontFamily={"Manrope_500Medium"}>DETAILS</Text>
           <HStack justifyContent={"space-between"}>
-            <Text color={"#3e3e3e"}>Category</Text>
+            <Text color={"#3e3e3e"} fontFamily={"Manrope_500Medium"}>
+              Category
+            </Text>
             <HStack>
-              <Text bold>Food & Groceries</Text>
+              <Text fontFamily={"Manrope_700Bold"}>Food & Groceries</Text>
               <MaterialCommunityIcons name="dots-vertical" size={22} color="#D8D8D8" />
             </HStack>
           </HStack>
           <HStack justifyContent={"space-between"}>
-            <Text color={"#3e3e3e"}>From</Text>
-            <Text bold>Monthly Grocery **0291</Text>
+            <Text color={"#3e3e3e"} fontFamily={"Manrope_500Medium"}>
+              From
+            </Text>
+            <Text fontFamily={"Manrope_700Bold"}>Monthly Grocery **0291</Text>
           </HStack>
           <HStack justifyContent={"space-between"}>
-            <Text color={"#3e3e3e"}>Transaction Type</Text>
-            <Text bold>Contactless</Text>
+            <Text color={"#3e3e3e"} fontFamily={"Manrope_500Medium"}>
+              Transaction Type
+            </Text>
+            <Text fontFamily={"Manrope_700Bold"}>Contactless</Text>
           </HStack>
           <HStack justifyContent={"space-between"}>
-            <Text color={"#3e3e3e"}>Status</Text>
-            <Text bold>Completed</Text>
+            <Text color={"#3e3e3e"} fontFamily={"Manrope_500Medium"}>
+              Status
+            </Text>
+            <Text fontFamily={"Manrope_700Bold"}>Completed</Text>
           </HStack>
         </VStack>
       </ScrollView>

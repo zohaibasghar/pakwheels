@@ -12,7 +12,7 @@ const DeliveryAdd = () => {
       <VStack justifyContent={"space-between"} flex={1} mx={6}>
         <VStack space={4}>
           <VStack my={4}>
-            <Text bold fontSize={"3xl"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Card Delivery
             </Text>
             <Text color={"#616161"}>
@@ -32,7 +32,7 @@ const DeliveryAdd = () => {
                 }}
               >
                 <VStack alignItems={"center"} mt={2}>
-                  <Text bold fontSize={"md"} mb={2}>
+                  <Text fontFamily={"Manrope_700Bold"} fontSize={18} mb={2}>
                     Home Address
                   </Text>
                 </VStack>
@@ -52,7 +52,7 @@ const DeliveryAdd = () => {
                 _stack={{ marginTop: 8 }}
               >
                 <VStack alignItems={"center"} mt={2}>
-                  <Text bold fontSize={"md"} mb={2}>
+                  <Text fontFamily={"Manrope_700Bold"} fontSize={18} mb={2}>
                     Client Centre
                   </Text>
                 </VStack>
@@ -63,7 +63,11 @@ const DeliveryAdd = () => {
             </Radio.Group>
           </View>
         </VStack>
-        <Button onPress={() => nav.navigate("CardDone" as never)} _pressed={{ bg: "#f1f1f1" }}>
+        <Button
+          onPress={() => nav.navigate("CardDone" as never)}
+          _pressed={{ bg: "#f1f1f1" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Continue
         </Button>
       </VStack>

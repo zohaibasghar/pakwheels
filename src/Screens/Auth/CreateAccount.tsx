@@ -12,9 +12,9 @@ const CreateAccount = () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <CustomHeaderHelp title="Help" />
-      <Stack flex={1} mx={6} justifyContent={"space-between"}>
+      <Stack flex={1} mx={6} justifyContent={"space-between"} mt={4}>
         <Stack>
-          <Text bold fontSize={"2xl"}>
+          <Text fontSize={28} fontFamily={"Manrope_700Bold"}>
             Create account
           </Text>
           <Text>Enter your phone number. We'll send you a confirmation code.</Text>
@@ -72,13 +72,18 @@ const CreateAccount = () => {
           </Flex>
           <Text my={4}>
             Already have an account?{" "}
-            <Text color={"#5E41E6"} onPress={() => nav.navigate("Login" as never)}>
+            <Text
+              color={"#5E41E6"}
+              fontFamily={"Manrope_700Bold"}
+              onPress={() => nav.navigate("Login" as never)}
+            >
               Log in
             </Text>
           </Text>
         </Stack>
         <Button
           _pressed={{ bg: "#f1f1f1" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           disabled={!phone}
           onPress={() => nav.navigate("OtpVerification2", { phone })}
         >

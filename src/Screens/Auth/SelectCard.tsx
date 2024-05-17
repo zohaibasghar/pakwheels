@@ -12,18 +12,25 @@ const SelectCard = () => {
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <VStack flex={1} mt={12} h={"100%"} justifyContent={"space-between"}>
         <VStack>
-          <Text fontSize={"3xl"} bold mx={6}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28} mx={6}>
             Select Card
           </Text>
           <Text mx={6} color={"#616161"}>
             Choose one of our cards that matches your personality.
           </Text>
         </VStack>
-        <View h={"1/3"} w={"95%"} mx={"auto"} my={5} style={{ transform: [{ rotate: "90deg" }] }} justifyContent={'center'}>
+        <View
+          h={"1/3"}
+          w={"95%"}
+          mx={"auto"}
+          my={5}
+          style={{ transform: [{ rotate: "90deg" }] }}
+          justifyContent={"center"}
+        >
           <ImageBackground
             source={require("../../../assets/Card_Shape.png")}
-            style={styles.imageBackground} // Apply the style to control width, height, and alignment
-            imageStyle={styles.imageStyle} // Control the rounding of the corners
+            style={styles.imageBackground}
+            imageStyle={styles.imageStyle}
           >
             <Stack
               style={{
@@ -35,19 +42,14 @@ const SelectCard = () => {
                     ? "#013A7D"
                     : "transparent",
               }}
-              justifyContent="space-between" // Distribute space evenly
-              w="100%" // Ensure it takes the full width of the ImageBackground
-              rounded="2xl" // Apply border-radius to the whole stack
+              justifyContent="space-between"
+              w="100%"
+              rounded="2xl"
               h={"100%"}
               py={6}
               px={3}
             >
-              <Flex
-                justify="space-between" // Align content within the row
-                direction="row" // Horizontal layout
-                alignItems="center" // Align vertically
-                style={styles.row} // Apply custom styles
-              >
+              <Flex justify="space-between" direction="row" alignItems="center" style={styles.row}>
                 <Stack space={2} direction="row" alignItems="center">
                   <Image
                     source={require("../../../assets/island_logo.png")}
@@ -72,7 +74,9 @@ const SelectCard = () => {
           </ImageBackground>
         </View>
         <VStack>
-          <Text textAlign={"center"}>{cardColor}</Text>
+          <Text textAlign={"center"} fontFamily={"Manrope_700Bold"}>
+            {cardColor}
+          </Text>
           <HStack mx={6} alignItems={"center"} justifyContent={"center"} my={4} space={3}>
             <TouchableOpacity onPress={() => setCardColor("Sapphire Black")}>
               <View
@@ -108,7 +112,12 @@ const SelectCard = () => {
               />
             </TouchableOpacity>
           </HStack>
-          <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("CreatePIN" as never)} mx={6}>
+          <Button
+            _pressed={{ bg: "#f1f1f1" }}
+            onPress={() => nav.navigate("CreatePIN" as never)}
+            mx={6}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          >
             Continue
           </Button>
         </VStack>
@@ -121,24 +130,24 @@ export default SelectCard;
 
 const styles = StyleSheet.create({
   imageBackground: {
-    width: "100%", // Custom width for the ImageBackground
+    width: "100%",
     height: "100%",
-    marginHorizontal: "auto", // Center the card horizontally
-    marginVertical: 10, // Vertical margin
-    borderRadius: 20, // Rounded corners for the card
+    marginHorizontal: "auto",
+    marginVertical: 10,
+    borderRadius: 20,
   },
   imageStyle: {
-    borderRadius: 20, // Ensures the image has rounded corners
+    borderRadius: 20,
     objectFit: "cover",
   },
   card: {
-    padding: 20, // Add padding around the content
-    shadowColor: "#000030", // Shadow for a subtle effect
+    padding: 20,
+    shadowColor: "#000030",
     shadowOpacity: 1,
-    shadowOffset: { width: 0, height: 4 }, // Shadow offset
-    shadowRadius: 5, // Shadow blur
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 5,
   },
   row: {
-    paddingHorizontal: 15, // Horizontal padding to separate content
+    paddingHorizontal: 15,
   },
 });

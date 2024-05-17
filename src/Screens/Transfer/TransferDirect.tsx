@@ -29,6 +29,7 @@ const TransferDirect = () => {
           variant={"unstyled"}
           ref={textInputRef}
           my={4}
+          _input={{ fontFamily: "Manrope_400Regular" }}
           value={amount}
           onChangeText={(e) => setAmount(e)}
           w={"2/3"}
@@ -40,7 +41,7 @@ const TransferDirect = () => {
       <Stack space={2} w={"90%"} mx={"auto"} justifyContent={"space-between"} flex={1}>
         <Stack space={4}>
           <Stack>
-            <Text bold fontSize={"md"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
               From
             </Text>
             <TouchableOpacity>
@@ -48,7 +49,7 @@ const TransferDirect = () => {
                 <Stack direction={"row"} alignItems={"center"} space={2}>
                   <Image source={require("../../../assets/dollar_wings.png")} alt="Money" />
                   <Stack>
-                    <Text bold fontSize={"md"}>
+                    <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
                       New Account
                     </Text>
                     <Text fontSize={"xs"} color={"#616161"}>
@@ -61,7 +62,7 @@ const TransferDirect = () => {
             </TouchableOpacity>
           </Stack>
           <Stack>
-            <Text bold fontSize={"md"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
               To
             </Text>
             <TouchableOpacity>
@@ -69,7 +70,7 @@ const TransferDirect = () => {
                 <Stack direction={"row"} alignItems={"center"} space={2}>
                   <Image source={require("../../../assets/rainy_day_fund.png")} alt="Money" />
                   <Stack>
-                    <Text bold fontSize={"md"}>
+                    <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
                       Rainy Day Fund
                     </Text>
                     <Text fontSize={"xs"} color={"#616161"}>
@@ -91,8 +92,12 @@ const TransferDirect = () => {
           _pressed={{ bg: "#f1f1f1", borderWidth: 1, borderColor: "#5E41E6" }}
         >
           <HStack space={2}>
-            <Text color={"white"}>Transfer</Text>
-            <Text color={"white"}>{amount === "$" || !amount ? "" : amount}</Text>
+            <Text color={"white"} fontFamily={"Manrope_700Bold"} fontSize={16}>
+              Transfer
+            </Text>
+            <Text color={"white"} fontFamily={"Manrope_700Bold"} fontSize={16}>
+              {amount === "$" || !amount ? "" : amount}
+            </Text>
           </HStack>
         </Button>
       </Stack>

@@ -87,7 +87,7 @@ const Login = () => {
             Don't have an account?
           </Text>
           <TouchableOpacity onPress={() => nav.navigate("Signup" as never)}>
-            <Text textAlign={"center"} color={"#f8f8f8"} fontWeight={800}>
+            <Text textAlign={"center"} color={"#f8f8f8"} fontFamily={"Manrope_600SemiBold"}>
               Get one in 10mins
             </Text>
           </TouchableOpacity>

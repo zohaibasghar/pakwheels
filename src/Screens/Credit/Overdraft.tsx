@@ -19,29 +19,29 @@ const Overdraft = () => {
   const nav = useNavigation();
   return (
     <View flex={1} bg={"#fff"}>
+      <ImageBackground
+        source={require("../../../assets/overdraft_bg.jpeg")}
+        borderBottomLeftRadius={40}
+        borderBottomRightRadius={40}
+      >
+        <View my={16}>
+          <CustomHeader title="" />
+        </View>
+        <Center>
+          <Avatar
+            source={require("../../../assets/Shield.png")}
+            rounded={"full"}
+            w={"80px"}
+            h={"80px"}
+            bg={"#fff"}
+            p={3}
+            top={8}
+          />
+        </Center>
+      </ImageBackground>
       <ScrollView>
-        <ImageBackground
-          source={require("../../../assets/overdraft_bg.jpeg")}
-          borderBottomLeftRadius={40}
-          borderBottomRightRadius={40}
-        >
-          <View my={16}>
-            <CustomHeader title="" />
-          </View>
-          <Center>
-            <Avatar
-              source={require("../../../assets/Shield.png")}
-              rounded={"full"}
-              w={"80px"}
-              h={"80px"}
-              bg={"#fff"}
-              p={3}
-              top={8}
-            />
-          </Center>
-        </ImageBackground>
         <Center mt={12} mx={8}>
-          <Text bold fontSize={"2xl"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={24}>
             Turn on Overdrafts
           </Text>
           <Text textAlign={"center"} color={"#2b2b2b"}>
@@ -51,7 +51,7 @@ const Overdraft = () => {
           </Text>
           <HStack alignItems={"center"} my={4}>
             <VStack w={"75%"}>
-              <Text fontSize={"xl"} bold>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 Overdarft Alerts
               </Text>
               <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -70,7 +70,7 @@ const Overdraft = () => {
           </HStack>
           <HStack alignItems={"center"} my={4} mb={16}>
             <VStack w={"75%"}>
-              <Text fontSize={"xl"} bold>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 Transfer when i get paid
               </Text>
               <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -97,6 +97,7 @@ const Overdraft = () => {
         <Button
           w={"100%"}
           rounded={"full"}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           onPress={() => nav.navigate("HomeTabs", { screen: "Credit" })}
           _pressed={{ bg: "#f1f1f1" }}
         >

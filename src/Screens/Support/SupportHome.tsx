@@ -30,10 +30,10 @@ export default function SupportHome() {
             />
             <VStack>
               <VStack bg={"#fff"} p={2} space={1} roundedRight={15} roundedTopLeft={15}>
-                <Text color={"#5E41E6"} fontWeight={600}>
+                <Text color={"#5E41E6"} fontFamily={"Manrope_600SemiBold"}>
                   Aunt Mable
                 </Text>
-                <Text fontWeight={500}>
+                <Text  fontFamily={"Manrope_500Medium"}>
                   I am island Bank's Chat Assistant, Aunt Mable. How can i help you?
                 </Text>
               </VStack>
@@ -45,7 +45,7 @@ export default function SupportHome() {
           <VStack alignItems={"flex-end"} my={3}>
             <VStack w={"87%"}>
               <Box p={4} roundedTop={15} roundedBottomLeft={15} bg={"#2C64E3"}>
-                <Text color={"white"}>Which banks in St. Lucia can i transfer funds to?</Text>
+                <Text color={"white"} fontFamily={"Manrope_500Medium"}>Which banks in St. Lucia can i transfer funds to?</Text>
               </Box>
               <HStack space={2} ml={3}>
                 <Text fontSize={12} color={"#616161"}>
@@ -64,10 +64,10 @@ export default function SupportHome() {
             />
             <VStack>
               <VStack bg={"#fff"} p={2} space={1} roundedRight={15} roundedTopLeft={15}>
-                <Text color={"#5E41E6"} fontWeight={600}>
+                <Text color={"#5E41E6"} fontFamily={"Manrope_600SemiBold"}>
                   Aunt Mable
                 </Text>
-                <Text fontWeight={500}>
+                <Text fontFamily={"Manrope_500Medium"}>
                   You can transfer funds to the following banks: CIBC FirstCaribbean, Bank of St.
                   Lucia, 1st National Bank, and Republic Bank.
                 </Text>
@@ -83,7 +83,7 @@ export default function SupportHome() {
               <VStack alignItems={"flex-end"} my={3} key={index}>
                 <VStack w={"87%"}>
                   <Box p={4} roundedTop={15} roundedBottomLeft={15} bg={"#2C64E3"}>
-                    <Text color={"white"}>{mes.message}</Text>
+                    <Text color={"white"} fontFamily={"Manrope_500Medium"}>{mes.message}</Text>
                   </Box>
                   <HStack space={2} ml={3}>
                     <Text fontSize={12} color={"#616161"}>
@@ -102,7 +102,13 @@ export default function SupportHome() {
                 onPress={() => setChat([...chat, { message: "Got it, thanks", time: "3:20 PM" }])}
               >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"} ml={6}>
-                  <Text px={4} py={1} color={"#5E41E6"} fontSize={16} fontWeight={600}>
+                  <Text
+                    px={4}
+                    py={1}
+                    color={"#5E41E6"}
+                    fontSize={16}
+                    fontFamily={"Manrope_600SemiBold"}
+                  >
                     Got it, thanks
                   </Text>
                 </VStack>
@@ -111,7 +117,13 @@ export default function SupportHome() {
                 onPress={() => setChat([...chat, { message: "Start a transfer", time: "3:20 PM" }])}
               >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"}>
-                  <Text px={4} py={1} color={"#5E41E6"} fontSize={16} fontWeight={600}>
+                  <Text
+                    px={4}
+                    py={1}
+                    color={"#5E41E6"}
+                    fontSize={16}
+                    fontFamily={"Manrope_600SemiBold"}
+                  >
                     Start a transfer
                   </Text>
                 </VStack>
@@ -120,7 +132,13 @@ export default function SupportHome() {
                 onPress={() => setChat([...chat, { message: "I need more help", time: "3:20 PM" }])}
               >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"} mr={2}>
-                  <Text px={4} py={1} color={"#5E41E6"} fontSize={16} fontWeight={600}>
+                  <Text
+                    px={4}
+                    py={1}
+                    color={"#5E41E6"}
+                    fontSize={16}
+                    fontFamily={"Manrope_600SemiBold"}
+                  >
                     I need more help
                   </Text>
                 </VStack>

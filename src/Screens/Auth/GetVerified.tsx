@@ -1,15 +1,4 @@
-import {
-  View,
-  Text,
-  Stack,
-  Box,
-  Flex,
-  VStack,
-  ScrollView,
-  Button,
-  HStack,
-  Image,
-} from "native-base";
+import { Text, VStack, ScrollView, Button, HStack, Image } from "native-base";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
@@ -25,7 +14,7 @@ const GetVerified = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Get verified
               </Text>
               <Text color={"#616161"}>
@@ -57,6 +46,7 @@ const GetVerified = () => {
             onPress={() => nav.navigate("AllowCamera" as never)}
             w={"100%"}
             mb={0}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           >
             Continue
           </Button>

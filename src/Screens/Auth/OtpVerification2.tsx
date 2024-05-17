@@ -28,14 +28,23 @@ const OtpVerification2 = () => {
       </View>
       <Stack w={"92%"} mx={"auto"} mt={8}>
         <Stack space={4}>
-          <Title style={{ fontWeight: "bold", fontSize: 28 }}>6-digit code</Title>
-          <Text fontSize={18} color={"#616161"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
+            6-digit code
+          </Text>
+          <Text fontSize={16} color={"#616161"} mb={6}>
             Code sent to + 1784 {phone}, enter it below to continue.
           </Text>
           <FloatingLabelInput
             label="Code"
             value={otp}
             ref={inputRef}
+            containerStyles={{
+              borderColor: "#e0e0e0",
+              borderWidth: 1,
+              borderRadius: 12,
+              paddingVertical: 16,
+              paddingHorizontal: 12,
+            }}
             keyboardType="number-pad"
             maxLength={6}
             onChangeText={(e) => {
@@ -46,7 +55,7 @@ const OtpVerification2 = () => {
             }}
           />
           <Text>
-            Resend code in <Text bold>00:14</Text>
+            Resend code in <Text fontFamily={"Manrope_700Bold"}>00:14</Text>
           </Text>
         </Stack>
       </Stack>

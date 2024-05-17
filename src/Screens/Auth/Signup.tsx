@@ -1,4 +1,4 @@
-import { Text, HStack, VStack, Image, Button, View } from "native-base";
+import { Text, HStack, VStack, Image, Button } from "native-base";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
@@ -17,20 +17,19 @@ const Signup = () => {
         >
           <Ionicons name="arrow-back" size={22} color="#fff" />
         </TouchableOpacity>
-        <Text color={"white"} fontSize={"md"}>
+        <Text color={"white"} fontSize={"md"} fontFamily={"Manrope_600SemiBold"}>
           Login
         </Text>
       </HStack>
       <VStack mx={6} space={2} position={"relative"} mb={16}>
-        <Text color={"#fff"} bold fontSize={48} lineHeight={52}>
+        <Text fontFamily={"Manrope_700Bold"} color={"#fff"} fontSize={48} lineHeight={52}>
           Banking you need. Service you deserve.
         </Text>
         <Text color={"#fff"} fontSize={"md"}>
           Create accounts, earn cash back and rewards, save effortlessly, and much more
         </Text>
-      </VStack >
+      </VStack>
       <Image
-        
         source={require("../../../assets/bank_app.png")}
         alt="Island bank app opened on iphone 13"
       />
@@ -44,9 +43,9 @@ const Signup = () => {
       </Svg>
       <Button
         bg={"white"}
-        _text={{ color: "black" }}
+        _text={{ color: "black", fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
         mx={6}
-        position={'absolute'}
+        position={"absolute"}
         bottom={0}
         left={0}
         right={0}

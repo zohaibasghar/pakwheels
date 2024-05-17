@@ -35,7 +35,7 @@ const HappyBanking = () => {
             Your Island Bank account is open,
           </Text>
           <Text fontSize={"xl"} bold>
-            heppy banking!
+            happy banking!
           </Text>
           <Text color={"#616161"} fontSize={"md"} mt={2}>
             Good news, you've joined Island Bank, You
@@ -44,7 +44,11 @@ const HappyBanking = () => {
             can add more accounts in a moment
           </Text>
         </VStack>
-        <Button onPress={() => nav.navigate("SelectCard" as never)} _pressed={{ bg: "#f1f1f1" }}>
+        <Button
+          onPress={() => nav.navigate("SelectCard" as never)}
+          _pressed={{ bg: "#f1f1f1" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Get my card
         </Button>
       </VStack>

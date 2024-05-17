@@ -12,7 +12,7 @@ const TransactionList = ({ transaction }: any) => {
         <Stack direction={"row"} alignItems={"center"} space={2}>
           <Image source={transaction.image} alt="Other Bank" />
           <Stack>
-            <Text fontSize={"md"} bold lineHeight={18}>
+            <Text fontFamily={"Manrope_700Bold"} lineHeight={18}>
               {transaction.bankName} {transaction.recipient}
             </Text>
             <Text color={"#616161"} fontSize={"xs"}>

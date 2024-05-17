@@ -14,7 +14,7 @@ const RecordVideo = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Record a video
               </Text>
               <Text color={"#616161"}>For security, we need a live capture</Text>
@@ -55,6 +55,7 @@ const RecordVideo = () => {
             onPress={() => nav.navigate("Video" as never)}
             w={"100%"}
             mb={0}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           >
             Record video
           </Button>

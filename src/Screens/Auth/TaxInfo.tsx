@@ -1,4 +1,4 @@
-import { Text, VStack, Image, Button, ScrollView, Stack, Checkbox, View } from "native-base";
+import { Text, VStack, Button, ScrollView, Stack, Checkbox, View } from "native-base";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
@@ -20,7 +20,7 @@ const TaxInfo = () => {
         <ScrollView>
           <VStack space={4} mx={6}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Tax information
               </Text>
               <Text color={"#616161"}>In which country(s) are you a tax resident?</Text>
@@ -41,6 +41,7 @@ const TaxInfo = () => {
                         paddingHorizontal: 12,
                       }}
                       isPassword
+                      keyboardType="number-pad"
                       value={item.pin}
                       onChangeText={(e) => {
                         const copy = [...data];
@@ -99,7 +100,11 @@ const TaxInfo = () => {
               I'm the beneficial own of the account
             </Checkbox>
           </View>
-          <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("GetVerified" as never)}>
+          <Button
+            _pressed={{ bg: "#f1f1f1" }}
+            onPress={() => nav.navigate("GetVerified" as never)}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          >
             Done
           </Button>
         </VStack>

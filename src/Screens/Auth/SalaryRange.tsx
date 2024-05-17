@@ -14,7 +14,7 @@ const SalaryRange = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Salary range
               </Text>
               <Text color={"#616161"}>What is the range of your annual salary?</Text>
@@ -103,7 +103,11 @@ const SalaryRange = () => {
             </VStack>
           </VStack>
         </ScrollView>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("AccountUsage" as never)}>
+        <Button
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("AccountUsage" as never)}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Continue
         </Button>
       </VStack>

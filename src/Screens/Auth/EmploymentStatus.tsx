@@ -1,9 +1,8 @@
 import { useNavigation } from "@react-navigation/native";
-import { View, Text, VStack, Image, Button, Radio, ScrollView } from "native-base";
+import { Text, VStack, Button, Radio, ScrollView } from "native-base";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
-import { FloatingLabelInput } from "react-native-floating-label-input";
 import CountrySelect from "../../Components/CountrySelect";
 
 const EmploymentStatus = () => {
@@ -16,7 +15,7 @@ const EmploymentStatus = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Employment Status
               </Text>
               <Text color={"#616161"}>What is your main employment status?</Text>
@@ -106,7 +105,11 @@ const EmploymentStatus = () => {
             </VStack>
           </VStack>
         </ScrollView>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("SalaryRange" as never)}>
+        <Button
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("SalaryRange" as never)}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Continue
         </Button>
       </VStack>

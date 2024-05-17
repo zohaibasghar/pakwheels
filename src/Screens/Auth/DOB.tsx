@@ -16,7 +16,7 @@ const DOB = () => {
       <VStack justifyContent={"space-between"} flex={1} mx={6}>
         <VStack space={4}>
           <VStack my={4}>
-            <Text bold fontSize={"3xl"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Date of birth
             </Text>
             <Text color={"#616161"}>
@@ -65,7 +65,11 @@ const DOB = () => {
             />
           </HStack>
         </VStack>
-        <Button onPress={() => nav.navigate("HomeAddress" as never)} _pressed={{ bg: "#f1f1f1" }}>
+        <Button
+          onPress={() => nav.navigate("HomeAddress" as never)}
+          _pressed={{ bg: "#f1f1f1" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Continue
         </Button>
       </VStack>

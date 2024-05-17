@@ -19,7 +19,7 @@ const ReviewVideo = () => {
               </TouchableOpacity>
             </Box>
             <TouchableOpacity onPress={() => nav.goBack()}>
-              <Text fontSize="md" color={"#401EE1"} left={6}>
+              <Text fontFamily={"Manrope_600SemiBold"} fontSize={16} color={"#401EE1"} left={6}>
                 Retake
               </Text>
             </TouchableOpacity>
@@ -28,7 +28,7 @@ const ReviewVideo = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Review video
               </Text>
               <Text color={"#616161"}>Your video has been recorded</Text>
@@ -63,6 +63,7 @@ const ReviewVideo = () => {
             onPress={() => nav.navigate("HappyBanking" as never)}
             w={"100%"}
             mb={0}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           >
             Upload video
           </Button>

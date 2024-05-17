@@ -10,11 +10,17 @@ const CustomHeader = ({ title, subtitle }: { title: string; subtitle?: string })
           <CustomBackButton />
         </Box>
         <VStack alignItems="center" w={"85%"}>
-          <Text fontSize="lg" fontWeight="bold" textAlign={"center"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={18} textAlign={"center"}>
             {title}
           </Text>
           {subtitle && (
-            <Text fontSize="sm" color="gray.500" m={0} lineHeight={16}>
+            <Text
+              fontFamily={"Manrope_500Medium"}
+              fontSize={12}
+              color="gray.500"
+              m={0}
+              lineHeight={16}
+            >
               {subtitle}
             </Text>
           )}

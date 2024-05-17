@@ -66,8 +66,8 @@ export default function Auth() {
       <Stack.Screen name="ReviewVideo" component={ReviewVideo} />
       <Stack.Screen name="HappyBanking" component={HappyBanking} />
       <Stack.Screen name="SelectCard" component={SelectCard} />
-      <Stack.Screen name="DeliveryAdd" component={DeliveryAdd} />
       <Stack.Screen name="CreatePIN" component={CreatePIN} />
+      <Stack.Screen name="DeliveryAdd" component={DeliveryAdd} />
       <Stack.Screen name="CardDone" component={CardDone} />
       <Stack.Screen name="Support" component={SupportHome} />
     </Stack.Navigator>

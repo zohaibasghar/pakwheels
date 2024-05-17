@@ -22,7 +22,7 @@ const AllowCamera = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Allow camera access
               </Text>
               <Text color={"#616161"}>
@@ -41,11 +41,11 @@ const AllowCamera = () => {
             bg={"#E8F8F5"}
             py={3}
             px={6}
-            rounded={"md"}
+            rounded={16}
             alignItems={"center"}
           >
             <Feather name="info" size={18} color="black" />
-            <Text>We can't verify you without your camera</Text>
+            <Text fontFamily={"Manrope_500Medium"}>We can't verify you without your camera</Text>
           </HStack>
           <Button
             _pressed={{ bg: "#f1f1f1" }}
@@ -57,8 +57,9 @@ const AllowCamera = () => {
             }}
             w={"100%"}
             mb={0}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           >
-            Enable camera
+            {permission?.granted ? "Open camera" : "Enable camera"}
           </Button>
           <HStack alignItems={"center"} mb={3}>
             <Text fontSize={"2xs"}>Powered by </Text>

@@ -30,21 +30,21 @@ const listData = [
 const InviteFriends = () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
-      <ScrollView>
         <CustomHeader title="Get $1,000" />
+      <ScrollView>
         <Stack w={"92%"} mx={"auto"} space={4} my={4}>
           <VStack space={2} mb={4}>
-            <Text bold fontSize={"2xl"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Get $10, Give $10.
             </Text>
-            <Text color={"#616161"}>
+            <Text color={"#616161"} fontSize={16}>
               Earn up to $1000. Each friend you refer gets $10 when they enroll and create a
               checking account within 30 days! Details apply.
             </Text>
           </VStack>
           <VStack alignItems={"center"} space={2} mb={4}>
             <Progress value={3} _filledTrack={{ bg: "#5E41E6" }} w={"100%"} />
-            <Text>$0 / $1,000 earned</Text>
+            <Text fontFamily={'Manrope_500Medium'}>$0 / $1,000 earned</Text>
           </VStack>
           <Button
             bg={"transparent"}
@@ -53,14 +53,14 @@ const InviteFriends = () => {
             borderColor={"#5E41E6"}
             py={4}
           >
-            <HStack space={2}>
-              <Feather name="share" size={20} color="#5E41E6" />
-              <Text color={"#5E41E6"} fontWeight={600}>
+            <HStack space={2} alignItems={"center"}>
+              <Feather name="share" size={22} color="#5E41E6" />
+              <Text color={"#5E41E6"} fontFamily={"Manrope_600SemiBold"} fontSize={16}>
                 Share your link
               </Text>
             </HStack>
           </Button>
-          <Text bold mt={4} fontSize={"md"}>
+          <Text mt={4} fontFamily={"Manrope_700Bold"} fontSize={18}>
             Invite friends
           </Text>
           <VStack space={6}>
@@ -68,10 +68,16 @@ const InviteFriends = () => {
               return (
                 <HStack key={index} justifyContent={"space-between"} alignItems={"center"}>
                   <HStack space={4} alignItems={"center"}>
-                    <Text bg={"#f1f1f1"} p={1} rounded={"lg"} fontSize={"xs"}>
+                    <Text
+                      bg={"#f1f1f1"}
+                      p={1}
+                      rounded={"lg"}
+                      fontFamily={"Manrope_500Medium"}
+                      fontSize={12}
+                    >
                       {user.initials}
                     </Text>
-                    <Text>{user.name}</Text>
+                    <Text fontFamily={"Manrope_700Bold"}>{user.name}</Text>
                   </HStack>
                   <TouchableOpacity
                     style={{
@@ -81,7 +87,7 @@ const InviteFriends = () => {
                       paddingHorizontal: 10,
                     }}
                   >
-                    <Text>Get $10</Text>
+                    <Text fontFamily={"Manrope_700Bold"}>Get $10</Text>
                   </TouchableOpacity>
                 </HStack>
               );

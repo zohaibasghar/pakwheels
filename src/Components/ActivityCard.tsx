@@ -21,7 +21,7 @@ export default function ActivityCard({ details }: any) {
             py={1}
             px={2}
           >
-            <Text>View all</Text>
+            <Text fontFamily={"Manrope_700Bold"}>View all</Text>
             <Feather name="arrow-up-right" size={20} color="gray" />
           </Stack>
         </TouchableOpacity>
@@ -30,7 +30,7 @@ export default function ActivityCard({ details }: any) {
         <Stack direction={"row"} alignItems={"center"} space={2}>
           <Image source={require("../../assets/other_bank.png")} alt="Other Bank" />
           <Stack>
-            <Text fontSize={"md"} bold>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
               {details.bankName} {details.recipient}
             </Text>
             <Text fontSize={"xs"} color={"#616161"}>

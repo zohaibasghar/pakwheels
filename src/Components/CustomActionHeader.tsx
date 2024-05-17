@@ -21,7 +21,7 @@ const CustomActionHeader = ({
           </TouchableOpacity>
         </Box>
         <TouchableOpacity onPress={handleFunc}>
-          <Text fontSize="md" color={"#401EE1"} left={8}>
+          <Text fontSize="md" color={"#401EE1"} left={8} fontFamily={"Manrope_600SemiBold"}>
             {title}
           </Text>
         </TouchableOpacity>

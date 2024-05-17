@@ -28,7 +28,13 @@ const Button = ({
           borderRadius: 40,
         }}
       >
-        <Text color={btnColor ? btnColor : "black"}>{text}</Text>
+        <Text
+          color={btnColor ? btnColor : "black"}
+          fontSize={16}
+          fontFamily={"Manrope_600SemiBold"}
+        >
+          {text}
+        </Text>
       </TouchableOpacity>
     </View>
   );

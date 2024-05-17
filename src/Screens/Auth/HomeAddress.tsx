@@ -17,7 +17,7 @@ const HomeAddress = () => {
         <ScrollView flex={1}>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Home Address
               </Text>
               <Text color={"#616161"}>
@@ -65,7 +65,11 @@ const HomeAddress = () => {
             </VStack>
           </VStack>
         </ScrollView>
-        <Button onPress={() => nav.navigate("EmailContact" as never)} _pressed={{ bg: "#f1f1f1" }}>
+        <Button
+          onPress={() => nav.navigate("EmailContact" as never)}
+          _pressed={{ bg: "#f1f1f1" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+        >
           Continue
         </Button>
       </VStack>

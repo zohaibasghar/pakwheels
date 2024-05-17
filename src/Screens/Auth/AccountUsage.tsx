@@ -14,7 +14,7 @@ const AccountUsage = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 How do you plan to spend?
               </Text>
               <Text color={"#616161"}>How do you plan to use your account?</Text>
@@ -103,7 +103,11 @@ const AccountUsage = () => {
             </VStack>
           </VStack>
         </ScrollView>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("TaxInfo" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("TaxInfo" as never)}
+        >
           Continue
         </Button>
       </VStack>

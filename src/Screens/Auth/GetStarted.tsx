@@ -13,7 +13,7 @@ const GetStarted = () => {
       <VStack justifyContent={"space-between"} flex={1}>
         <View>
           <Stack mx={6}>
-            <Text fontSize={"3xl"} bold>
+            <Text fontSize={"3xl"} fontFamily={"Manrope_700Bold"}>
               Let's get started
             </Text>
             <Text fontSize={"md"} color={"#616161"}>
@@ -41,7 +41,7 @@ const GetStarted = () => {
         </View>
         <VStack mx={6} space={4}>
           <Stack bg={"#E8F8F5"} rounded={16} p={4} space={1}>
-            <HStack space={2} alignItems={'center'}>
+            <HStack space={2} alignItems={"center"}>
               <Feather name="info" size={20} color="black" />
               <Text bold>You'll need photo ID</Text>
             </HStack>
@@ -52,6 +52,7 @@ const GetStarted = () => {
           </Stack>
           <Button
             _pressed={{ bg: "#f1f1f1" }}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
             onPress={() => nav.navigate("CreateAccount" as never)}
           >
             I'm ready

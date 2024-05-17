@@ -26,7 +26,9 @@ const CreatePIN = () => {
       </View>
       <Stack w={"92%"} mx={"auto"} mt={8} space={4}>
         <Stack>
-          <Title style={{ fontWeight: "bold", fontSize: 28 }}>Create PIN</Title>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
+            Create PIN
+          </Text>
           <Text color={"#616161"} fontSize={"16px"}>
             Set a PIN code for your Island Bank Visa Debit Card
           </Text>
@@ -34,6 +36,13 @@ const CreatePIN = () => {
         <FloatingLabelInput
           label="PIN Code"
           ref={inputRef}
+          containerStyles={{
+            borderColor: "#e0e0e0",
+            borderWidth: 1,
+            borderRadius: 12,
+            paddingVertical: 16,
+            paddingHorizontal: 12,
+          }}
           isPassword
           value={otp}
           keyboardType="number-pad"
@@ -41,7 +50,7 @@ const CreatePIN = () => {
           onChangeText={(e) => {
             setOtp(e);
             if (e.length === 4) {
-                nav.navigate("DeliveryAdd" as never)
+              nav.navigate("DeliveryAdd" as never);
             }
           }}
         />

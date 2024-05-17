@@ -10,12 +10,14 @@ export default function Header() {
       <Flex direction="row" align="center" justifyContent={"space-between"} mx={5} mt={10}>
         <Stack space={2} direction={"row"} alignItems={"center"}>
           <Avatar bg={"#5E41E6"}>R</Avatar>
-          <Text>Hello, Richard</Text>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
+            Hello, Richard
+          </Text>
         </Stack>
         <TouchableOpacity
           onPress={() => navigate.navigate("Accounts", { screen: "InviteFriends" })}
         >
-          <Text bg={"#fff"} rounded={"full"} px={2} py={1}>
+          <Text bg={"#fff"} rounded={"full"} px={4} py={2} fontFamily={"Manrope_500Medium"}>
             Get $1,000
           </Text>
         </TouchableOpacity>

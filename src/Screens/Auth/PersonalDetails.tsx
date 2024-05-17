@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
-import { Camera,  CameraView, useCameraPermissions } from "expo-camera";
+import { Camera, CameraView, useCameraPermissions } from "expo-camera";
 import { StyleSheet } from "react-native";
 
 const PersonalDetails = () => {
@@ -20,7 +20,7 @@ const PersonalDetails = () => {
       <VStack justifyContent={"space-between"} flex={1}>
         <VStack space={4} mx={6}>
           <VStack my={4}>
-            <Text bold fontSize={"3xl"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Personal Details
             </Text>
             <Text color={"#616161"}>
@@ -59,6 +59,7 @@ const PersonalDetails = () => {
                   requestPermission();
                   setShowModal(false);
                 }}
+                _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
                 _pressed={{ bg: "#f1f1f1" }}
               >
                 Grant permission
@@ -69,6 +70,7 @@ const PersonalDetails = () => {
         <Button
           mx={6}
           onPress={() => nav.navigate("ConfirmDetails" as never)}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           _pressed={{ bg: "#f1f1f1" }}
         >
           Capture

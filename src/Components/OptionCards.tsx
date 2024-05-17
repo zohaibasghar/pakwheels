@@ -5,7 +5,7 @@ import { TouchableOpacity } from "react-native";
 
 export default function OptionCards({ setDetails, details }: any) {
   return (
-    <Stack m={4} direction="row" space={5} mx={"auto"}>
+    <Stack m={4} direction="row" space={6} mx={"auto"}>
       {details ? (
         <TouchableOpacity onPress={() => setDetails(false)}>
           <Stack alignItems={"center"} space={1}>
@@ -21,8 +21,12 @@ export default function OptionCards({ setDetails, details }: any) {
               <Feather name="eye-off" size={24} color="black" />
             </Stack>
             <Stack alignItems={"center"}>
-              <Text>Hide</Text>
-              <Text>details</Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                Hide
+              </Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                details
+              </Text>
             </Stack>
           </Stack>
         </TouchableOpacity>
@@ -41,8 +45,12 @@ export default function OptionCards({ setDetails, details }: any) {
               <AntDesign name="eyeo" size={24} color="black" />
             </Stack>
             <Stack alignItems={"center"}>
-              <Text>See</Text>
-              <Text>details</Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                See
+              </Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                details
+              </Text>
             </Stack>
           </Stack>
         </TouchableOpacity>
@@ -64,8 +72,12 @@ export default function OptionCards({ setDetails, details }: any) {
             <FontAwesome5 name="asterisk" size={15} color="#555" />
           </Stack>
           <Stack alignItems={"center"}>
-            <Text>Change</Text>
-            <Text>PIN</Text>
+            <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+              Change
+            </Text>
+            <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+              PIN
+            </Text>
           </Stack>
         </Stack>
       </TouchableOpacity>
@@ -83,8 +95,12 @@ export default function OptionCards({ setDetails, details }: any) {
             <FontAwesome name="snowflake-o" size={24} color="black" />
           </Stack>
           <Stack alignItems={"center"}>
-            <Text>Freeze</Text>
-            <Text>card</Text>
+            <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+              Freeze
+            </Text>
+            <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+              card
+            </Text>
           </Stack>
         </Stack>
       </TouchableOpacity>
@@ -109,8 +125,12 @@ export default function OptionCards({ setDetails, details }: any) {
                   <FontAwesome name="sliders" size={24} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text>Manage</Text>
-                  <Text>card</Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    Manage
+                  </Text>
+                  <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                    card
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -131,19 +151,25 @@ export default function OptionCards({ setDetails, details }: any) {
               >
                 <AntDesign name="poweroff" size={14} color="#D4D2D2" />
               </Flex>
-              <Text>Trun on Overdraft</Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                Trun on Overdraft
+              </Text>
             </HStack>
           </Menu.Item>
           <Menu.Item px={0}>
             <HStack space={2}>
               <SimpleLineIcons name="shield" size={20} color="#D4D2D2" />
-              <Text>Report Stolen</Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                Report Stolen
+              </Text>
             </HStack>
           </Menu.Item>
           <Menu.Item px={0}>
             <HStack space={2}>
               <AntDesign name="creditcard" size={20} color="#D4D2D2" />
-              <Text>Replace Card</Text>
+              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
+                Replace Card
+              </Text>
             </HStack>
           </Menu.Item>
         </Menu.Group>

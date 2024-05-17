@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
-import { Camera, CameraType, CameraView } from "expo-camera";
-import { StyleSheet, TouchableOpacity } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
+import { CameraView } from "expo-camera";
+import { StyleSheet } from "react-native";
 import CustomActionHeader from "../../Components/CustomActionHeader";
 
 const FrontCard = () => {
@@ -19,9 +18,8 @@ const FrontCard = () => {
     if (cameraRef.current) {
       console.log("ref");
       const photo = await cameraRef.current?.takePictureAsync();
-      console.log(photo);
-      setCapturedImage(photo.uri); // Store the image URI
-      setIsOpen(true); // Open the action sheet
+      setCapturedImage(photo.uri);
+      setIsOpen(true);
     }
   };
 
@@ -30,7 +28,7 @@ const FrontCard = () => {
       <CustomHeaderHelp title="" />
       <VStack justifyContent={"space-between"} flex={1}>
         <VStack my={6} mx={6}>
-          <Text bold fontSize={"3xl"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Front of driver's license
           </Text>
         </VStack>
@@ -40,14 +38,10 @@ const FrontCard = () => {
         ) : (
           <CameraView style={{ flex: 1, marginVertical: 24 }} facing="back" ref={cameraRef}>
             <View style={styles.overlay}>
-              {/* Create a black overlay with a cutout for the rectangle */}
-              {/* Top, Bottom, Left, and Right views create the overlay */}
               <View style={styles.topOverlay} />
               <View style={styles.leftOverlay} />
               <View style={styles.rightOverlay} />
               <View style={styles.bottomOverlay} />
-
-              {/* The transparent rectangle in the center */}
               <View style={styles.rectangle} />
             </View>
           </CameraView>
@@ -59,6 +53,7 @@ const FrontCard = () => {
             onPress={captureImage}
             w={"100%"}
             mb={0}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
             disabled={loading}
           >
             Capture
@@ -83,7 +78,7 @@ const FrontCard = () => {
           />
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Review photo
               </Text>
               <Text color={"#616161"}>Make sure your details are clear and unobstructed</Text>
@@ -107,6 +102,7 @@ const FrontCard = () => {
                 setIsOpen(false);
                 nav.navigate("RecordVideo" as never);
               }}
+              _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
             >
               Upload photo
             </Button>

@@ -13,7 +13,7 @@ const CardDone = () => {
         <Container mb={1} mt={4} mx={7}>
           <HStack w={"110%"} alignContent={"end"} justifyContent={"flex-end"}>
             <TouchableOpacity onPress={() => dispatch(signIn())}>
-              <Text fontSize="md" color={"#401EE1"}>
+              <Text color={"#401EE1"} fontFamily={"Manrope_600SemiBold"} fontSize={16}>
                 Done
               </Text>
             </TouchableOpacity>
@@ -29,24 +29,19 @@ const CardDone = () => {
         >
           <ImageBackground
             source={require("../../../assets/Card_Shape.png")}
-            style={styles.imageBackground} // Apply the style to control width, height, and alignment
-            imageStyle={styles.imageStyle} // Control the rounding of the corners
+            style={styles.imageBackground}
+            imageStyle={styles.imageStyle}
           >
             <Stack
               style={styles.card}
-              justifyContent="space-between" // Distribute space evenly
-              w="100%" // Ensure it takes the full width of the ImageBackground
-              rounded="2xl" // Apply border-radius to the whole stack
+              justifyContent="space-between"
+              w="100%"
+              rounded="2xl"
               h={"100%"}
               py={6}
               px={3}
             >
-              <Flex
-                justify="space-between" // Align content within the row
-                direction="row" // Horizontal layout
-                alignItems="center" // Align vertically
-                style={styles.row} // Apply custom styles
-              >
+              <Flex justify="space-between" direction="row" alignItems="center" style={styles.row}>
                 <Stack space={2} direction="row" alignItems="center">
                   <Image
                     source={require("../../../assets/island_logo.png")}
@@ -72,7 +67,7 @@ const CardDone = () => {
         </View>
 
         <VStack alignItems={"center"} mx={8}>
-          <Text bold fontSize={"lg"}>
+          <Text fontFamily={"Manrope_600SemiBold"} fontSize={24}>
             Your card is on way!
           </Text>
           <Text color={"#616161"} textAlign={"center"} fontSize={"15px"}>
@@ -91,7 +86,9 @@ const CardDone = () => {
           >
             <HStack alignItems={"center"} space={4}>
               <Image source={require("../../../assets/apple.png")} alt="Apple wallet" />
-              <Text color={"white"}>Add to Apple Wallet</Text>
+              <Text color={"white"} fontFamily={"Manrope_600SemiBold"} fontSize={16}>
+                Add to Apple Wallet
+              </Text>
             </HStack>
           </Button>
         </VStack>
@@ -104,24 +101,24 @@ export default CardDone;
 
 const styles = StyleSheet.create({
   imageBackground: {
-    width: "100%", // Custom width for the ImageBackground
+    width: "100%",
     height: "100%",
-    marginHorizontal: "auto", // Center the card horizontally
-    marginVertical: 10, // Vertical margin
-    borderRadius: 20, // Rounded corners for the card
+    marginHorizontal: "auto",
+    marginVertical: 10,
+    borderRadius: 20,
   },
   imageStyle: {
-    borderRadius: 20, // Ensures the image has rounded corners
+    borderRadius: 20,
     objectFit: "cover",
   },
   card: {
-    padding: 20, // Add padding around the content
-    shadowColor: "#000030", // Shadow for a subtle effect
+    padding: 20,
+    shadowColor: "#000030",
     shadowOpacity: 1,
-    shadowOffset: { width: 0, height: 4 }, // Shadow offset
-    shadowRadius: 5, // Shadow blur
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 5,
   },
   row: {
-    paddingHorizontal: 15, // Horizontal padding to separate content
+    paddingHorizontal: 15,
   },
 });

@@ -7,29 +7,21 @@ export default function BankCard() {
     <View h={"1/3"} w={"95%"} mx={"auto"} my={5}>
       <ImageBackground
         source={require("../../assets/Card_Shape.png")}
-        style={styles.imageBackground} // Apply the style to control width, height, and alignment
-        imageStyle={styles.imageStyle} // Control the rounding of the corners
+        style={styles.imageBackground}
+        imageStyle={styles.imageStyle}
       >
         <Stack
           style={styles.card}
-          justifyContent="space-between" // Distribute space evenly
-          w="100%" // Ensure it takes the full width of the ImageBackground
-          rounded="2xl" // Apply border-radius to the whole stack
+          justifyContent="space-between"
+          w="100%"
+          rounded="2xl"
           h={"100%"}
           py={6}
           px={3}
         >
-          <Flex
-            justify="space-between" // Align content within the row
-            direction="row" // Horizontal layout
-            alignItems="center" // Align vertically
-            style={styles.row} // Apply custom styles
-          >
+          <Flex justify="space-between" direction="row" alignItems="center" style={styles.row}>
             <Stack space={2} direction="row" alignItems="center">
-              <Image
-                source={require("../../assets/island_logo.png")}
-                alt="PITG island bank"
-              />
+              <Image source={require("../../assets/island_logo.png")} alt="PITG island bank" />
               <Text color="white" bold fontSize="md">
                 Island Bank
               </Text>
@@ -38,25 +30,14 @@ export default function BankCard() {
             <TouchableOpacity onPress={() => console.log("Navigate to MyCard")}>
               <Stack direction="row" space={1} alignItems="center">
                 <Text color="white">Debit</Text>
-                <Image
-                  source={require("../../assets/connection.png")}
-                  alt="Connection NFC"
-                />
+                <Image source={require("../../assets/connection.png")} alt="Connection NFC" />
               </Stack>
             </TouchableOpacity>
           </Flex>
 
-          <Flex
-            justify="space-between"
-            direction="row"
-            align="center"
-            style={styles.row}
-          >
+          <Flex justify="space-between" direction="row" align="center" style={styles.row}>
             <Text color="#f5f5f5">Richard Reyes</Text>
-            <Image
-              source={require("../../assets/visa-logo.png")}
-              alt="VISA logo"
-            />
+            <Image source={require("../../assets/visa-logo.png")} alt="VISA logo" />
           </Flex>
         </Stack>
       </ImageBackground>
@@ -66,24 +47,24 @@ export default function BankCard() {
 
 const styles = StyleSheet.create({
   imageBackground: {
-    width: "100%", // Custom width for the ImageBackground
+    width: "100%",
     height: "100%",
-    marginHorizontal: "auto", // Center the card horizontally
-    marginVertical: 10, // Vertical margin
-    borderRadius: 20, // Rounded corners for the card
+    marginHorizontal: "auto",
+    marginVertical: 10,
+    borderRadius: 20,
   },
   imageStyle: {
-    borderRadius: 20, // Ensures the image has rounded corners
+    borderRadius: 20,
     objectFit: "cover",
   },
   card: {
-    padding: 20, // Add padding around the content
-    shadowColor: "#000030", // Shadow for a subtle effect
+    padding: 20,
+    shadowColor: "#000030",
     shadowOpacity: 1,
-    shadowOffset: { width: 0, height: 4 }, // Shadow offset
-    shadowRadius: 5, // Shadow blur
+    shadowOffset: { width: 0, height: 4 },
+    shadowRadius: 5,
   },
   row: {
-    paddingHorizontal: 15, // Horizontal padding to separate content
+    paddingHorizontal: 15,
   },
 });

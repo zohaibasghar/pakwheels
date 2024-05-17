@@ -5,7 +5,6 @@ import { TouchableOpacity } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { ImageBackground } from "react-native";
 import { useAppSelector } from "../redux/Store";
-
 import CustomMenu from "./CustomMenu";
 
 export default function CurrentAccounts() {
@@ -23,14 +22,14 @@ export default function CurrentAccounts() {
             <Text color={"white"}>Debit</Text>
           </Stack>
           <Link onPress={() => navigation.navigate("Accounts", { screen: "MyCard" })}>
-            <Text color={"white"}>Show card</Text>
+            <Text color={"white"} fontFamily={"Manrope_700Bold"}>Show card</Text>
             <Feather name="chevron-down" size={24} color="white" />
           </Link>
         </Flex>
         <View bg={"#fff"} p={"5"} rounded={"2xl"}>
           <Flex direction="row" justify="space-between" align="center">
             <Stack>
-              <Text bold fontSize={"xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 Current Accounts
               </Text>
               <Text fontSize={"xs"} color={"#616161"}>
@@ -48,7 +47,7 @@ export default function CurrentAccounts() {
                 py={1}
                 px={2}
               >
-                <Text>Add</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Add</Text>
                 <Feather name="plus" size={18} color={"black"} />
               </Stack>
             </TouchableOpacity>
@@ -60,7 +59,7 @@ export default function CurrentAccounts() {
                 <Text fontSize={"xs"} color={"#616161"}>
                   Debit Spending from
                 </Text>
-                <Text bold fontSize={"md"}>
+                <Text fontFamily={"Manrope_700Bold"}>
                   Checking **2830
                 </Text>
               </Stack>
@@ -77,7 +76,7 @@ export default function CurrentAccounts() {
                 <Text fontSize={"xs"} color={"#616161"}>
                   Checking **2830
                 </Text>
-                <Text fontSize={"md"} bold>
+                <Text fontFamily={"Manrope_700Bold"}>
                   New Account
                 </Text>
               </Stack>
