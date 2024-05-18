@@ -52,7 +52,7 @@ const CountrySelect = ({ label }: { label: string }) => {
       {selectedCountry && (
         <Image
           position={"absolute"}
-          top={"22px"}
+          top={Platform.OS === "ios" ? "22px" : "26px"}
           left={3}
           source={{ uri: selectedCountry.flag }}
           alt="Country flag"
