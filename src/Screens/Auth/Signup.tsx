@@ -47,6 +47,7 @@ const Signup = () => {
         mx={6}
         position={"absolute"}
         bottom={0}
+        mb={12}
         left={0}
         right={0}
         onPress={() => nav.navigate("GetStarted" as never)}

@@ -17,14 +17,16 @@ export default function SimpleCard({ title, desc, link, handleFunc }: any) {
     >
       <Stack space={2}>
         <Stack>
-          <Text bold fontSize={17}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
             {title}
           </Text>
-          <Text fontSize={12} color={"#3E3E3E"}>{desc}</Text>
+          <Text fontSize={12} color={"#3E3E3E"}>
+            {desc}
+          </Text>
         </Stack>
         <TouchableOpacity onPress={handleFunc}>
           <Stack direction={"row"} alignItems={"center"}>
-            <Text color={"#5E41E6"} fontWeight={700}>
+            <Text color={"#5E41E6"} fontFamily={"Manrope_700Bold"}>
               {link}
             </Text>
             <Feather name="arrow-up-right" size={18} color="#5E41E6" />

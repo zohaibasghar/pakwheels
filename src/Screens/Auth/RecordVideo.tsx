@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
-import { Button, HStack, Image, ScrollView, Text, VStack } from "native-base";
+import { Button, HStack, Image, ScrollView, Text, VStack, View } from "native-base";
 import { useNavigation } from "@react-navigation/native";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -33,19 +33,16 @@ const RecordVideo = () => {
                 w={"100%"}
                 style={{ objectFit: "cover" }}
               />
-              <AntDesign
-                name="caretright"
-                size={24}
-                color="white"
-                style={{
-                  backgroundColor: "#5E41E6",
-                  padding: 12,
-                  borderRadius: 40,
-                  position: "absolute",
-                  bottom: 5,
-                  right: 5,
-                }}
-              />
+              <View bg={"#5E41E6"} position={"absolute"} bottom={3} right={3} rounded={"full"}>
+                <AntDesign
+                  name="caretright"
+                  size={24}
+                  color="white"
+                  style={{
+                    padding: 12,
+                  }}
+                />
+              </View>
             </VStack>
           </VStack>
         </ScrollView>

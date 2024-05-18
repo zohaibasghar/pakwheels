@@ -47,7 +47,7 @@ export default function PayHome() {
           </HStack>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Enter amount
               </Text>
               <Text color={"#616161"}>
@@ -60,21 +60,23 @@ export default function PayHome() {
                 ref={textInputRef}
                 my={4}
                 value={amount}
+                fontFamily={"Manrope_400Regular"}
                 onChangeText={(e) => setAmount(e)}
                 w={"2/3"}
-                ml={6}
+                ml={16}
                 keyboardType="number-pad"
-                fontSize={"4xl"}
+                fontSize={48}
                 textAlign={"center"}
               />
             </Center>
           </VStack>
         </Container>
         <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 17 }}
           _pressed={{ bg: "#f1f1f1", borderWidth: 1, borderColor: "#5E41E6" }}
           onPress={() => nav.navigate("TapToPay" as never)}
         >
-          <Text color={"white"}>Continue</Text>
+          Continue
         </Button>
       </VStack>
     </SafeAreaView>

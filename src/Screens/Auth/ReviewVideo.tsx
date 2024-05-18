@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Box, Button, Container, HStack, Image, ScrollView, Text, VStack } from "native-base";
+import { Box, Button, Container, HStack, Image, ScrollView, Text, VStack, View } from "native-base";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import { StyleSheet, TouchableOpacity } from "react-native";
@@ -41,19 +41,16 @@ const ReviewVideo = () => {
                 w={"100%"}
                 style={{ objectFit: "cover" }}
               />
-              <AntDesign
-                name="caretright"
-                size={24}
-                color="white"
-                style={{
-                  backgroundColor: "#5E41E6",
-                  padding: 12,
-                  borderRadius: 40,
-                  position: "absolute",
-                  bottom: 5,
-                  right: 5,
-                }}
-              />
+              <View bg={"#5E41E6"} position={"absolute"} bottom={3} right={3} rounded={"full"}>
+                <AntDesign
+                  name="caretright"
+                  size={24}
+                  color="white"
+                  style={{
+                    padding: 12,
+                  }}
+                />
+              </View>
             </VStack>
           </VStack>
         </ScrollView>

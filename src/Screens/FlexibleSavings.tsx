@@ -18,7 +18,7 @@ const FlexibleSavings = () => {
       </Stack>
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Flexible Savings
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
@@ -43,7 +43,11 @@ const FlexibleSavings = () => {
             onChangeText={(e) => setName(e)}
           />
         </Stack>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("SelectBudget" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("SelectBudget" as never)}
+        >
           Continue
         </Button>
       </Stack>

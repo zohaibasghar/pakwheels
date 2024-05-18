@@ -18,7 +18,7 @@ const CustomSelect = ({
         <Text
           position="absolute"
           left={3}
-          top={selectedValue ? 1 : 5}
+          top={selectedValue ? 1 : 3}
           fontSize={selectedValue ? "xs" : "sm"}
           color={"#616161"}
           zIndex={-1}

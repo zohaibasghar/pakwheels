@@ -19,7 +19,9 @@ export default function Index() {
       <Header />
       <Center>
         <Box rounded={"xl"} w={"90%"} bg={"#fff"} p={4} mt={6}>
-          <Text bold>Money to/from Island Bank</Text>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
+            Money to/from Island Bank
+          </Text>
           <VStack space={6} mt={4}>
             <TouchableOpacity>
               <HStack space={4}>
@@ -48,7 +50,9 @@ export default function Index() {
           </VStack>
         </Box>
         <Box rounded={"xl"} w={"90%"} bg={"#fff"} p={4} mt={6}>
-          <Text bold>Transferring money and payments</Text>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
+            Transferring money and payments
+          </Text>
           <VStack space={6} mt={4}>
             <TouchableOpacity
               onPress={() => navigate.navigate("Transfers", { screen: "TransferDirect" })}

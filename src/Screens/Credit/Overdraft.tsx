@@ -49,7 +49,7 @@ const Overdraft = () => {
             base starts at $20 and can increase up to $250 base on your account activity and
             history.
           </Text>
-          <HStack alignItems={"center"} my={4}>
+          <HStack alignItems={"center"} justifyContent={"space-between"} my={4}>
             <VStack w={"75%"}>
               <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 Overdarft Alerts
@@ -60,6 +60,7 @@ const Overdraft = () => {
             </VStack>
             <View w={"25%"}>
               <Switch
+                alignSelf={"flex-end"}
                 offTrackColor="#e6e6e6"
                 onTrackColor="#24AD3B"
                 onThumbColor="white"
@@ -79,6 +80,7 @@ const Overdraft = () => {
             </VStack>
             <View w={"25%"}>
               <Switch
+                alignSelf={"flex-end"}
                 offTrackColor="#e6e6e6"
                 onTrackColor="#24AD3B"
                 onThumbColor="white"

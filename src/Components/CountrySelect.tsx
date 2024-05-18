@@ -40,7 +40,7 @@ const CountrySelect = ({ label }: { label: string }) => {
         <Text
           position="absolute"
           left={3}
-          top={selectedCountry ? 1 : 5}
+          top={selectedCountry ? 1 : 3}
           fontSize={selectedCountry ? "xs" : "sm"}
           color={"#616161"}
           zIndex={-1}
@@ -51,7 +51,7 @@ const CountrySelect = ({ label }: { label: string }) => {
       {selectedCountry && (
         <Image
           position={"absolute"}
-          top={"26px"}
+          top={"22px"}
           left={3}
           source={{ uri: selectedCountry.flag }}
           alt="Country flag"

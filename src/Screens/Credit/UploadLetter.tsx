@@ -39,7 +39,7 @@ const UploadLetter = () => {
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <ScrollView>
           <Stack mb={6}>
-            <Text fontSize={"3xl"} bold>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Upload your job letter
             </Text>
             <Text color={"#616161"} fontSize={"16px"}>
@@ -47,7 +47,7 @@ const UploadLetter = () => {
             </Text>
           </Stack>
           {Object.keys(file).length ? (
-            <VStack bg={"#F7F6FE"} w={"2/3"} mx={"auto"} alignItems={'center'} space={4} py={4}>
+            <VStack bg={"#F7F6FE"} w={"2/3"} mx={"auto"} alignItems={"center"} space={4} py={4}>
               <Image source={require("../../../assets/pdf.png")} alt="Uploaded file" />
               <Text>{file?.name}</Text>
               <TouchableOpacity onPress={() => setfile({})}>
@@ -70,7 +70,11 @@ const UploadLetter = () => {
             </TouchableOpacity>
           )}
         </ScrollView>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("LastStep" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("LastStep" as never)}
+        >
           Continue
         </Button>
       </Stack>

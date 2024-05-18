@@ -20,7 +20,7 @@ const AmountNeeded = () => {
       />
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             How much do you need?
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
@@ -36,7 +36,11 @@ const AmountNeeded = () => {
           </Text>
           <CustomSlider handleFunc={handleFund} min={100} max={20000} value={value} />
         </Stack>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("SelectMonths" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("SelectMonths" as never)}
+        >
           Continue
         </Button>
       </Stack>

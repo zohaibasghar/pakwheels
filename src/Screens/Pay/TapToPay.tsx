@@ -18,7 +18,7 @@ export default function TapToPay() {
                 <Ionicons name="close" size={22} color="#000" />
               </TouchableOpacity>
             </Box>
-            <Text fontSize={18} bold textAlign={"center"} mx={"auto"}>
+            <Text fontSize={18} fontFamily={"Manrope_700Bold"} textAlign={"center"} mx={"auto"}>
               Tap to Pay
             </Text>
           </HStack>

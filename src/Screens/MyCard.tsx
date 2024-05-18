@@ -48,9 +48,9 @@ export default function MyCard() {
             </Stack>
           </Stack>
           <TouchableOpacity onPress={onOpen}>
-            <Text bg={"#F2F5F7"} px={4} py={2} rounded={"2xl"} fontFamily={"Manrope_700Bold"}>
-              Change
-            </Text>
+            <Stack bg={"#F2F5F7"} px={4} py={2} rounded={"full"} borderRadius={"full"}>
+              <Text fontFamily={"Manrope_700Bold"}>Change</Text>
+            </Stack>
           </TouchableOpacity>
           <Actionsheet isOpen={isOpen} onClose={onClose} hideDragIndicator>
             <Actionsheet.Content

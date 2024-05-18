@@ -17,9 +17,9 @@ const FrontCard = () => {
   const captureImage = async () => {
     if (cameraRef.current) {
       console.log("ref");
+      setIsOpen(true);
       const photo = await cameraRef.current?.takePictureAsync();
       setCapturedImage(photo.uri);
-      setIsOpen(true);
     }
   };
 

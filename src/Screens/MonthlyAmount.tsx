@@ -1,5 +1,5 @@
 import { Text, Stack, Button } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
@@ -9,7 +9,7 @@ import CustomSelect from "../Components/CustomSelect";
 
 const MonthlyAmount = () => {
   const nav = useNavigation();
-
+  const [amount, setAmount] = useState("250");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <Stack alignSelf={"flex-start"} ml={6} mt={4}>
@@ -19,7 +19,7 @@ const MonthlyAmount = () => {
       </Stack>
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Monthly amount
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
@@ -36,11 +36,21 @@ const MonthlyAmount = () => {
                 borderRadius: 12,
               }}
               inputStyles={{ padding: 2 }}
+              value={amount}
+              onChangeText={(e) => setAmount(e)}
             />
-            <CustomSelect label="Disburse frequency" data={["Weekly", "Monthly", "Yearly"]} width={'100%'}/>
+            <CustomSelect
+              label="Disburse frequency"
+              data={["Weekly", "Monthly", "Yearly"]}
+              width={"100%"}
+            />
           </Stack>
         </Stack>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("FundRules" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("FundRules" as never)}
+        >
           Continue
         </Button>
       </Stack>

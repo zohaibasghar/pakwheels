@@ -18,7 +18,7 @@ const AddParticipants = () => {
       </Stack>
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Add participants
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
@@ -67,13 +67,16 @@ const AddParticipants = () => {
                 bg={"#F2F5F7"}
                 rounded={12}
               >
-                <Text fontSize={"16px"}>Add another</Text>
+                <Text fontSize={"16px"} fontFamily={"Manrope_500Medium"}>
+                  Add another
+                </Text>
                 <Feather name="plus" size={18} color={"black"} />
               </HStack>
             </TouchableOpacity>
           </Stack>
         </Stack>
         <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           _pressed={{ bg: "#f1f1f1" }}
           onPress={() => nav.navigate("Accounts", { screen: "ISuSuTransfer" })}
         >

@@ -8,8 +8,8 @@ import CustomSlider from "../Components/CustomSlider";
 
 const SelectMonths = () => {
   const nav = useNavigation();
-  const [value, setValue] = React.useState(1);
-  function handleFund(e: number) {
+  const [value, setValue] = React.useState(10);
+  function handleFund(e: string) {
     setValue(e);
   }
   return (
@@ -21,7 +21,7 @@ const SelectMonths = () => {
       </Stack>
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             For how long?
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
@@ -30,9 +30,13 @@ const SelectMonths = () => {
           <Text fontWeight={400} fontSize={"5xl"} textAlign={"center"} my={6}>
             {value} mo
           </Text>
-          <CustomSlider handleFunc={handleFund} min={1} max={12} />
+          <CustomSlider handleFunc={handleFund} min={1} max={12} value={value} />
         </Stack>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("MonthlyAmount" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("MonthlyAmount" as never)}
+        >
           Continue
         </Button>
       </Stack>

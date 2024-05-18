@@ -12,7 +12,7 @@ const DoneiSuSu = () => {
         <Container mb={1} mt={4} mx={7}>
           <HStack w={"110%"} alignContent={"end"} justifyContent={"flex-end"}>
             <TouchableOpacity onPress={() => nav.navigate("HomeTabs" as never)}>
-              <Text fontSize="md" color={"#401EE1"}>
+              <Text fontSize={16} fontFamily={"Manrope_600SemiBold"} color={"#401EE1"}>
                 Done
               </Text>
             </TouchableOpacity>
@@ -29,7 +29,7 @@ const DoneiSuSu = () => {
           />
           <Image source={require("../../assets/gold_card.png")} alt="iSuSu Gold card" />
           <Stack position={"absolute"} bottom={16} left={0} right={0} alignItems={"center"}>
-            <Text bold fontSize={"md"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={"md"}>
               Honey Pot
             </Text>
             <Text color={"#7B7B7B"} fontSize={"xs"}>
@@ -38,15 +38,16 @@ const DoneiSuSu = () => {
           </Stack>
         </View>
         <Stack alignItems={"center"}></Stack>
-        <VStack alignItems={"center"} mx={10}>
-          <Text bold fontSize={"lg"} textAlign={"center"}>
+        <VStack alignItems={"center"} mx={8}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={20} textAlign={"center"}>
             New iSuSu Fund created. Meet all your goals with friends now.
           </Text>
-          <Text color={"#616161"} textAlign={"center"} fontSize={"15px"}>
+          <Text color={"#616161"} textAlign={"center"} fontSize={16}>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, modi.
           </Text>
         </VStack>
         <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           mt={6}
           onPress={() => nav.navigate("HomeTabs" as never)}
           _pressed={{ bg: "#f1f1f1" }}

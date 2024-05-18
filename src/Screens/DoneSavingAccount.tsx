@@ -12,7 +12,7 @@ const DoneSavingAccount = () => {
         <Container mb={1} mt={4} mx={7}>
           <HStack w={"110%"} alignContent={"end"} justifyContent={"flex-end"}>
             <TouchableOpacity onPress={() => nav.navigate("HomeTabs" as never)}>
-              <Text fontSize="md" color={"#401EE1"}>
+              <Text fontSize={16} fontFamily={"Manrope_600SemiBold"} color={"#401EE1"}>
                 Done
               </Text>
             </TouchableOpacity>
@@ -74,7 +74,7 @@ const DoneSavingAccount = () => {
           </ImageBackground>
         </View>
         <Stack alignItems={"center"} mt={4}>
-          <Text bold fontSize={"md"}>
+          <Text fontFamily={"Manrope_600SemiBold"} fontSize={"md"}>
             Rainy Day Fund
           </Text>
           <Text color={"#7B7B7B"} fontSize={"xs"}>
@@ -82,7 +82,7 @@ const DoneSavingAccount = () => {
           </Text>
         </Stack>
         <VStack alignItems={"center"} mx={6}>
-          <Text bold fontSize={"lg"} textAlign={"center"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={20} textAlign={"center"}>
             New account created. Do you want to spend from there?
           </Text>
           <Text color={"#616161"} textAlign={"center"} fontSize={"15px"}>
@@ -90,6 +90,7 @@ const DoneSavingAccount = () => {
           </Text>
           <Button
             mt={8}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
             onPress={() => nav.navigate("HomeTabs" as never)}
             _pressed={{ bg: "#f1f1f1" }}
             w={"100%"}

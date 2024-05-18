@@ -8,24 +8,18 @@ import StoreProvider from "./src/redux/Store";
 import { StatusBar } from "expo-status-bar";
 import {
   useFonts,
-  Manrope_200ExtraLight,
-  Manrope_300Light,
   Manrope_400Regular,
   Manrope_500Medium,
   Manrope_600SemiBold,
   Manrope_700Bold,
-  Manrope_800ExtraBold,
 } from "@expo-google-fonts/manrope";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
-    Manrope_200ExtraLight,
-    Manrope_300Light,
     Manrope_400Regular,
     Manrope_500Medium,
     Manrope_600SemiBold,
     Manrope_700Bold,
-    Manrope_800ExtraBold,
   });
   const theme = extendTheme({
     components: {

@@ -54,7 +54,7 @@ const WireTransfer = () => {
         <ScrollView>
           <Stack space={4}>
             <Stack>
-              <Text bold fontSize={"md"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                 From
               </Text>
               <TouchableOpacity>
@@ -62,7 +62,7 @@ const WireTransfer = () => {
                   <Stack direction={"row"} alignItems={"center"} space={2}>
                     <Image source={require("../../../assets/dollar_wings.png")} alt="Money" />
                     <Stack>
-                      <Text bold fontSize={"md"}>
+                      <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                         New Account
                       </Text>
                       <Text fontSize={"2xs"} color={"#616161"}>
@@ -75,7 +75,7 @@ const WireTransfer = () => {
               </TouchableOpacity>
             </Stack>
             <Stack>
-              <Text bold fontSize={"md"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                 To
               </Text>
               <TouchableOpacity>
@@ -83,7 +83,7 @@ const WireTransfer = () => {
                   <Stack direction={"row"} alignItems={"center"} space={2}>
                     <Image source={require("../../../assets/citi_bank.png")} alt="Money" />
                     <Stack>
-                      <Text bold fontSize={"md"}>
+                      <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                         Wade Cross
                       </Text>
                       <Text fontSize={"2xs"} color={"#616161"}>
@@ -98,50 +98,50 @@ const WireTransfer = () => {
           </Stack>
           <VStack my={4} space={6}>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
-              <Text color={"#3E3E3E"} fontWeight={500}>
+              <Text color={"#3E3E3E"} fontFamily={"Manrope_500Medium"}>
                 Recipient gets
               </Text>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$518.03 USD</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$518.03 USD</Text>
                 <Text fontSize={"2xs"} color={"#7B7B7B"}>
                   Exchange rate: 1XCD = 0.37 USD
                 </Text>
               </VStack>
             </HStack>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
-              <Text color={"#3E3E3E"} fontWeight={500}>
+              <Text color={"#3E3E3E"} fontFamily={"Manrope_500Medium"}>
                 Fee
               </Text>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$50 XCD</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$50 XCD</Text>
                 <Text fontSize={"2xs"} color={"#7B7B7B"}>
                   You save upto $18.75
                 </Text>
               </VStack>
             </HStack>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
-              <Text color={"#3E3E3E"} fontWeight={500}>
+              <Text color={"#3E3E3E"} fontFamily={"Manrope_500Medium"}>
                 Delivery
               </Text>
               <VStack alignItems={"flex-end"}>
-                <Text bold>Within 24hrs</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Within 24hrs</Text>
                 <Text fontSize={"2xs"} color={"#7B7B7B"}>
                   International Swift Transfer • USA
                 </Text>
               </VStack>
             </HStack>
             <HStack justifyContent={"space-between"} alignItems={"center"}>
-              <Text color={"#3E3E3E"} fontWeight={500}>
+              <Text color={"#3E3E3E"} fontFamily={"Manrope_500Medium"}>
                 Total cost
               </Text>
-              <Text bold>$1450.00</Text>
+              <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
             </HStack>
           </VStack>
         </ScrollView>
         <VStack space={6} alignItems={"center"}>
           <TouchableOpacity onPress={() => nav.navigate("Transfers", { screen: "HowWeComp" })}>
             <HStack alignItems={"center"}>
-              <Text color={"#3F3D4C"} fontWeight={700}>
+              <Text color={"#3F3D4C"} fontFamily={"Manrope_700Bold"}>
                 Get Price Comparison
               </Text>
               <Feather name="arrow-up-right" size={18} color="#3F3D4C" />
@@ -149,10 +149,9 @@ const WireTransfer = () => {
           </TouchableOpacity>
           <Button
             w={"100%"}
-            disabled={!amount || amount === "$"}
-            _disabled={{ background: "rgba(94, 65, 230, 0.4)" }}
             py={4}
             mb={6}
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
             onPress={() => nav.navigate("Transfers", { screen: "TransferProcess" })}
             _pressed={{ bg: "#f1f1f1", borderWidth: 1, borderColor: "#5E41E6" }}
           >

@@ -15,7 +15,7 @@ const CustomHeaderClose = ({ title, subtitle }: { title: string; subtitle?: stri
           </TouchableOpacity>
         </Box>
         <VStack alignItems="center" w={"85%"}>
-          <Text fontSize="lg" fontWeight="bold" textAlign={"center"}>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={18} textAlign={"center"}>
             {title}
           </Text>
           {subtitle && (

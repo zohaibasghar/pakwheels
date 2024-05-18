@@ -16,7 +16,7 @@ const FundRules = () => {
       </Stack>
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Fund rules
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
@@ -25,7 +25,7 @@ const FundRules = () => {
           <Stack space={4} mt={6}>
             <HStack alignItems={"center"}>
               <VStack w={"75%"}>
-                <Text fontSize={"xl"} bold>
+                <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                   Rule # 1
                 </Text>
                 <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -34,6 +34,7 @@ const FundRules = () => {
               </VStack>
               <View w={"25%"}>
                 <Switch
+                  alignSelf={"flex-end"}
                   offTrackColor="#e6e6e6"
                   onTrackColor="#24AD3B"
                   onThumbColor="white"
@@ -44,7 +45,7 @@ const FundRules = () => {
             </HStack>
             <HStack alignItems={"center"}>
               <VStack w={"75%"}>
-                <Text fontSize={"xl"} bold>
+                <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                   Rule # 2
                 </Text>
                 <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -53,6 +54,7 @@ const FundRules = () => {
               </VStack>
               <View w={"25%"}>
                 <Switch
+                  alignSelf={"flex-end"}
                   offTrackColor="#e6e6e6"
                   onTrackColor="#24AD3B"
                   onThumbColor="white"
@@ -63,7 +65,7 @@ const FundRules = () => {
             </HStack>
             <HStack alignItems={"center"}>
               <VStack w={"75%"}>
-                <Text fontSize={"xl"} bold>
+                <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                   Rule # 3
                 </Text>
                 <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -72,6 +74,7 @@ const FundRules = () => {
               </VStack>
               <View w={"25%"}>
                 <Switch
+                  alignSelf={"flex-end"}
                   offTrackColor="#e6e6e6"
                   onTrackColor="#24AD3B"
                   onThumbColor="white"
@@ -82,7 +85,7 @@ const FundRules = () => {
             </HStack>
             <HStack alignItems={"center"}>
               <VStack w={"75%"}>
-                <Text fontSize={"xl"} bold>
+                <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                   Rule # 4
                 </Text>
                 <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -91,6 +94,7 @@ const FundRules = () => {
               </VStack>
               <View w={"25%"}>
                 <Switch
+                  alignSelf={"flex-end"}
                   offTrackColor="#e6e6e6"
                   onTrackColor="#24AD3B"
                   onThumbColor="white"
@@ -101,7 +105,7 @@ const FundRules = () => {
             </HStack>
             <HStack alignItems={"center"}>
               <VStack w={"75%"}>
-                <Text fontSize={"xl"} bold>
+                <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                   Rule # 5
                 </Text>
                 <Text color={"#3e3e3e"} fontSize={"xs"}>
@@ -110,6 +114,7 @@ const FundRules = () => {
               </VStack>
               <View w={"25%"}>
                 <Switch
+                  alignSelf={"flex-end"}
                   offTrackColor="#e6e6e6"
                   onTrackColor="#24AD3B"
                   onThumbColor="white"
@@ -120,7 +125,11 @@ const FundRules = () => {
             </HStack>
           </Stack>
         </Stack>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("AddParticipants" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("AddParticipants" as never)}
+        >
           Continue
         </Button>
       </Stack>

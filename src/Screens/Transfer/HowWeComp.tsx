@@ -22,7 +22,7 @@ const HowWeComp = () => {
         <ScrollView>
           <VStack space={4}>
             <VStack my={4}>
-              <Text bold fontSize={"3xl"}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 How we compare
               </Text>
               <Text color={"#616161"}>
@@ -34,10 +34,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/island_comp.png")} alt="Island Bank" />
-                <Text bold>Island Bank</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Island Bank</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   Best Price
                 </Text>
@@ -46,10 +46,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/wise.png")} alt="Island Bank" />
-                <Text bold>Wise</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Wise</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   +$18.75
                 </Text>
@@ -58,10 +58,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/paypal.png")} alt="Island Bank" />
-                <Text bold>PayPal</Text>
+                <Text fontFamily={"Manrope_700Bold"}>PayPal</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   +$18.75
                 </Text>
@@ -70,10 +70,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/pioneer.png")} alt="Island Bank" />
-                <Text bold>Payoneer</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Payoneer</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   +$18.75
                 </Text>
@@ -82,10 +82,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/Remitly.png")} alt="Island Bank" />
-                <Text bold>Remitly</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Remitly</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   +$18.75
                 </Text>
@@ -94,10 +94,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/western_union.png")} alt="Island Bank" />
-                <Text bold>Western Union</Text>
+                <Text fontFamily={"Manrope_700Bold"}>Western Union</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   +$18.75
                 </Text>
@@ -106,10 +106,10 @@ const HowWeComp = () => {
             <HStack justifyContent={"space-between"} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
                 <Image source={require("../../../assets/money_gram.png")} alt="Island Bank" />
-                <Text bold>MoneyGram</Text>
+                <Text fontFamily={"Manrope_700Bold"}>MoneyGram</Text>
               </HStack>
               <VStack alignItems={"flex-end"}>
-                <Text bold>$1450.00</Text>
+                <Text fontFamily={"Manrope_700Bold"}>$1450.00</Text>
                 <Text fontSize={10} color={"#7B7B7B"}>
                   +$18.75
                 </Text>

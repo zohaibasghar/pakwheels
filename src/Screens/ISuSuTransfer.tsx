@@ -30,25 +30,26 @@ const ISuSuTransfer = () => {
           ref={textInputRef}
           my={4}
           value={amount}
+          fontFamily={"Manrope_400Regular"}
           onChangeText={(e) => setAmount(e)}
-          w={"1/2"}
+          w={"2/3"}
           keyboardType="number-pad"
-          fontSize={"4xl"}
+          fontSize={48}
           textAlign={"center"}
         />
       </Center>
       <Stack space={2} w={"90%"} mx={"auto"} justifyContent={"space-between"} flex={1}>
         <Stack space={4}>
           <Stack>
-            <Text bold fontSize={"md"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
               From
             </Text>
             <TouchableOpacity>
               <Flex align="center" direction="row" justify="space-between" mb={2} mt={4}>
                 <Stack direction={"row"} alignItems={"center"} space={2}>
-                  <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
+                  <Image source={require("../../assets/bank.png")} alt="Money" />
                   <Stack>
-                    <Text bold fontSize={"md"}>
+                    <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                       New Account
                     </Text>
                     <Text fontSize={"xs"} color={"#616161"}>
@@ -61,15 +62,15 @@ const ISuSuTransfer = () => {
             </TouchableOpacity>
           </Stack>
           <Stack>
-            <Text bold fontSize={"md"}>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
               To
             </Text>
             <TouchableOpacity>
               <Flex align="center" direction="row" justify="space-between" mb={2} mt={4}>
                 <Stack direction={"row"} alignItems={"center"} space={2}>
-                  <Image source={require("../../assets/rainy_day_fund.png")} alt="Money" />
+                  <Image source={require("../../assets/honey_small.png")} alt="Money" />
                   <Stack>
-                    <Text bold fontSize={"md"}>
+                    <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                       Rainy Day Fund
                     </Text>
                     <Text fontSize={"xs"} color={"#616161"}>
@@ -90,9 +91,13 @@ const ISuSuTransfer = () => {
           onPress={() => nav.navigate("DoneiSuSu" as never)}
           _pressed={{ bg: "#f1f1f1", borderWidth: 1, borderColor: "#5E41E6" }}
         >
-          <HStack space={2}>
-            <Text color={"white"}>Transfdfer</Text>
-            <Text color={"white"}>{amount === "$" || !amount ? "" : amount}</Text>
+          <HStack space={2} alignItems={"center"}>
+            <Text color={"white"} fontFamily={"Manrope_700Bold"} fontSize={16}>
+              Transfer
+            </Text>
+            <Text mt={1} fontFamily={"Manrope_700Bold"} fontSize={16} color={"white"}>
+              {amount === "$" || !amount ? "" : amount}
+            </Text>
           </HStack>
         </Button>
       </Stack>

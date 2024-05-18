@@ -20,13 +20,13 @@ const TransferProcess = () => {
               <Image source={require("../../../assets/Send_big.png")} alt="send" />
             </Center>
             <VStack alignItems={"center"} mx={6}>
-              <Text bold fontSize={28}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Transfer's on the way,
               </Text>
-              <Text bold fontSize={28} lineHeight={32} mb={2}>
+              <Text fontFamily={"Manrope_700Bold"} fontSize={28} lineHeight={32} mb={2}>
                 Share your transfer link
               </Text>
-              <Text textAlign={"center"} color={"#616161"}>
+              <Text textAlign={"center"} color={"#616161"} fontSize={16} mx={1}>
                 Give this link to the person you're paying. It'll expire after 7 days from a
                 completed transfer. By sharing your link, you can track the transfer's details.
               </Text>
@@ -49,7 +49,9 @@ const TransferProcess = () => {
                   <Feather name="mail" size={24} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text fontSize={12}>Email</Text>
+                  <Text fontSize={12} fontFamily={"Manrope_500Medium"}>
+                    Email
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -73,7 +75,9 @@ const TransferProcess = () => {
                   />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text fontSize={12}>Text</Text>
+                  <Text fontSize={12} fontFamily={"Manrope_500Medium"}>
+                    Text
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -93,7 +97,9 @@ const TransferProcess = () => {
                   <MaterialCommunityIcons name="link-variant" size={24} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text fontSize={12}>Copy</Text>
+                  <Text fontSize={12} fontFamily={"Manrope_500Medium"}>
+                    Copy
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -113,7 +119,9 @@ const TransferProcess = () => {
                   <Feather name="share" size={24} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
-                  <Text fontSize={12}>Share</Text>
+                  <Text fontSize={12} fontFamily={"Manrope_500Medium"}>
+                    Share
+                  </Text>
                 </Stack>
               </Stack>
             </TouchableOpacity>
@@ -123,8 +131,10 @@ const TransferProcess = () => {
               <HStack space={2}>
                 <Image source={require("../../../assets/qr_code.png")} alt="QR Code" />
                 <VStack>
-                  <Text bold>Get a QR code</Text>
-                  <Text color={"#7B7B7B"}>Share directly to another smartphone</Text>
+                  <Text fontFamily={"Manrope_700Bold"}>Get a QR code</Text>
+                  <Text color={"#7B7B7B"} fontSize={12}>
+                    Share directly to another smartphone
+                  </Text>
                 </VStack>
               </HStack>
               <MaterialIcons name="keyboard-arrow-right" size={24} color="#5E41E6" />
@@ -133,7 +143,7 @@ const TransferProcess = () => {
         </ScrollView>
         <Button
           mx={6}
-          _disabled={{ background: "rgba(94, 65, 230, 0.4)" }}
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           onPress={() => nav.navigate("HomeTabs", { screen: "Transfers" })}
           _pressed={{ bg: "#f1f1f1", borderWidth: 1, borderColor: "#5E41E6" }}
         >

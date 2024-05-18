@@ -8,7 +8,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 export default function SupportHome() {
   const [chat, setChat] = useState<any>([]);
   const [message, setMessage] = useState<string>("");
-  console.log(message, chat);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F2F5F7" }}>
       <CustomHeaderClose title="Aunt Mable" subtitle="Helping you 24/7" />
@@ -33,7 +33,7 @@ export default function SupportHome() {
                 <Text color={"#5E41E6"} fontFamily={"Manrope_600SemiBold"}>
                   Aunt Mable
                 </Text>
-                <Text  fontFamily={"Manrope_500Medium"}>
+                <Text fontFamily={"Manrope_500Medium"}>
                   I am island Bank's Chat Assistant, Aunt Mable. How can i help you?
                 </Text>
               </VStack>
@@ -45,7 +45,9 @@ export default function SupportHome() {
           <VStack alignItems={"flex-end"} my={3}>
             <VStack w={"87%"}>
               <Box p={4} roundedTop={15} roundedBottomLeft={15} bg={"#2C64E3"}>
-                <Text color={"white"} fontFamily={"Manrope_500Medium"}>Which banks in St. Lucia can i transfer funds to?</Text>
+                <Text color={"white"} fontFamily={"Manrope_500Medium"}>
+                  Which banks in St. Lucia can i transfer funds to?
+                </Text>
               </Box>
               <HStack space={2} ml={3}>
                 <Text fontSize={12} color={"#616161"}>
@@ -83,7 +85,9 @@ export default function SupportHome() {
               <VStack alignItems={"flex-end"} my={3} key={index}>
                 <VStack w={"87%"}>
                   <Box p={4} roundedTop={15} roundedBottomLeft={15} bg={"#2C64E3"}>
-                    <Text color={"white"} fontFamily={"Manrope_500Medium"}>{mes.message}</Text>
+                    <Text color={"white"} fontFamily={"Manrope_500Medium"}>
+                      {mes.message}
+                    </Text>
                   </Box>
                   <HStack space={2} ml={3}>
                     <Text fontSize={12} color={"#616161"}>
@@ -153,6 +157,7 @@ export default function SupportHome() {
               borderWidth={1}
               borderColor={"#E0E0E0"}
               bg={"#fff"}
+              py={4}
               value={message}
               onChangeText={(e) => setMessage(e)}
               onSubmitEditing={() => {

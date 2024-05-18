@@ -1,12 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Accounts from "./Stacks/Accounts";
-import {
-  FontAwesome5,
-  AntDesign,
-  MaterialIcons,
-  Feather,
-  MaterialCommunityIcons,
-} from "@expo/vector-icons";
+import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
 import Transfer from "./Screens/Transfer/index";
 import Auth from "./Stacks/Auth";
 import { useAppSelector } from "./redux/Store";
@@ -27,7 +21,6 @@ const HomeTabs = () => {
       screenOptions={({ route }) => ({
         headerShown: false,
         tabBarActiveTintColor: "#5E41E6",
-        tabBarInactiveTintColor: "gray",
         tabBarLabelPosition: "below-icon",
         tabBarIcon: ({ color }) => {
           switch (route.name) {
@@ -45,13 +38,13 @@ const HomeTabs = () => {
                 />
               );
             case "CreditHome":
-              return <AntDesign name="inbox" size={22} color={color} />
+              return <AntDesign name="inbox" size={22} color={color} />;
 
             case "SupportHome":
               return <MaterialIcons name="chat-bubble-outline" size={22} color={color} />;
           }
         },
-        tabBarLabelStyle: { marginBottom: 4, fontSize: 11 },
+        tabBarLabelStyle: { fontSize: 11 },
       })}
     >
       <Tab.Screen name="HomeAcc" component={Home} options={{ tabBarLabel: "Accounts" }} />
@@ -59,7 +52,7 @@ const HomeTabs = () => {
       <Tab.Screen
         name="Pay"
         component={Pay}
-        options={{ tabBarLabel: "Support", tabBarStyle: { display: "none" } }}
+        options={{ tabBarLabel: "Pay", tabBarStyle: { display: "none" } }}
       />
       <Tab.Screen name="CreditHome" component={CreditHome} options={{ tabBarLabel: "Credit" }} />
       <Tab.Screen

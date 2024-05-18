@@ -16,7 +16,7 @@ const LoanReason = () => {
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <ScrollView>
           <Stack mb={6}>
-            <Text fontSize={"3xl"} bold>
+            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               What's this loan for?
             </Text>
             <Text color={"#616161"} fontSize={"16px"}>
@@ -81,7 +81,11 @@ const LoanReason = () => {
             </VStack>
           </Radio.Group>
         </ScrollView>
-        <Button _pressed={{ bg: "#f1f1f1" }} onPress={() => nav.navigate("WorkInfo" as never)}>
+        <Button
+          _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
+          _pressed={{ bg: "#f1f1f1" }}
+          onPress={() => nav.navigate("WorkInfo" as never)}
+        >
           Continue
         </Button>
       </Stack>

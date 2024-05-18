@@ -137,7 +137,7 @@ export default function OptionCards({ setDetails, details }: any) {
           );
         }}
       >
-        <Menu.Group title="Manage Card" _title={{ fontWeight: 900, color: "black" }}>
+        <Menu.Group title="Manage Card" _title={{ fontFamily: "Manrope_700Bold", color: "black" }}>
           <Menu.Item px={0}>
             <HStack space={2}>
               <Flex

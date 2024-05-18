@@ -14,14 +14,19 @@ const LoanDone = () => {
       />
       <Stack w={"92%"} mx={"auto"} mt={6} justifyContent={"space-between"} flex={1}>
         <Stack>
-          <Text fontSize={"3xl"} bold>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Last step - almost there!
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
             Please confirm that following details are correct.
           </Text>
         </Stack>
-        <Image source={require("../../../assets/Document.png")} alt="Documents" mx={"auto"} mb={24}/>
+        <Image
+          source={require("../../../assets/Document.png")}
+          alt="Documents"
+          mx={"auto"}
+          mb={24}
+        />
         <VStack space={4}>
           <HStack space={3} mx={2}>
             <Checkbox
@@ -44,6 +49,7 @@ const LoanDone = () => {
             </Text>
           </HStack>
           <Button
+            _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
             _pressed={{ bg: "#f1f1f1" }}
             onPress={() => nav.navigate("HomeTabs", { screen: "Credit" })}
           >
