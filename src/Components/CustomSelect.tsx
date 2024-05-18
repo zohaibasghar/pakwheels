@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Select, Box, Text } from "native-base";
+import { Platform } from "react-native";
 
 const CustomSelect = ({
   label,
@@ -18,7 +19,7 @@ const CustomSelect = ({
         <Text
           position="absolute"
           left={3}
-          top={selectedValue ? 1 : 3}
+          top={selectedValue ? 1 : Platform.OS === "ios" ? 3 : 5}
           fontSize={selectedValue ? "xs" : "sm"}
           color={"#616161"}
           zIndex={-1}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Select, Box, Image, CheckIcon, HStack, Text } from "native-base";
+import { Platform } from "react-native";
 const countriesData = [
   {
     name: "St. Vincent & the Grenadines",
@@ -40,7 +41,7 @@ const CountrySelect = ({ label }: { label: string }) => {
         <Text
           position="absolute"
           left={3}
-          top={selectedCountry ? 1 : 3}
+          top={selectedCountry ? 1 : Platform.OS === "ios" ? 3 : 5}
           fontSize={selectedCountry ? "xs" : "sm"}
           color={"#616161"}
           zIndex={-1}

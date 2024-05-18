@@ -24,7 +24,7 @@ const HomeAddress = () => {
                 Enter your home address exactly as it appears on your utility bill.
               </Text>
             </VStack>
-            <VStack space={2}>
+            <VStack space={2} mb={6}>
               <FloatingLabelInput
                 label="Street name, building"
                 containerStyles={{
@@ -57,7 +57,6 @@ const HomeAddress = () => {
                   borderRadius: 12,
                   paddingVertical: 16,
                   paddingHorizontal: 12,
-                  marginBottom: 12,
                 }}
                 value={parish}
                 onChangeText={(e) => setParish(e)}
