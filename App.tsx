@@ -2,7 +2,7 @@ import "react-native-gesture-handler";
 import Main from "./src/Main";
 import { NavigationContainer } from "@react-navigation/native";
 import { NativeBaseProvider, extendTheme } from "native-base";
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import StoreProvider from "./src/redux/Store";
 import { StatusBar } from "expo-status-bar";
@@ -13,6 +13,7 @@ import {
   Manrope_600SemiBold,
   Manrope_700Bold,
 } from "@expo-google-fonts/manrope";
+import Splash from "./src/Splash";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -43,7 +44,21 @@ export default function App() {
       },
     },
   });
-  if (fontsLoaded) {
+  const [isReady, setIsReady] = useState(false);
+
+  if (!isReady || !fontsLoaded) {
+    return (
+      <View style={styles.container}>
+        <NativeBaseProvider theme={theme} config={{ strictMode: "warn" }}>
+          <StatusBar style="light" />
+          <StoreProvider>
+            <Splash isReady={isReady} setIsReady={setIsReady} />
+          </StoreProvider>
+        </NativeBaseProvider>
+      </View>
+    );
+  }
+  if (fontsLoaded && isReady) {
     return (
       <View style={styles.container}>
         <NativeBaseProvider theme={theme} config={{ strictMode: "warn" }}>

@@ -8,6 +8,7 @@ interface AppState {
   transAdd: boolean;
   transaction: any;
   user: any;
+  splash: boolean;
 }
 const initialState: AppState = {
   loading: 0,
@@ -18,6 +19,7 @@ const initialState: AppState = {
   transAdd: false,
   transaction: { amount: "0.00" },
   user: {},
+  splash: true,
 };
 
 export const authSlice = createSlice({
@@ -52,10 +54,14 @@ export const authSlice = createSlice({
       state.user = undefined;
       state.token = "";
     },
+    splashDone: (state) => {
+      state.splash = false;
+    },
   },
 });
 
-export const { logout, setSignupDetails, signIn, createTransaction } = authSlice.actions;
+export const { logout, setSignupDetails, signIn, createTransaction, splashDone } =
+  authSlice.actions;
 const authReducer = authSlice.reducer;
 
 export default authReducer;
