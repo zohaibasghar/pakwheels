@@ -1,41 +1,58 @@
 import * as SplashScreen from "expo-splash-screen";
-import { Image } from "native-base";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { Animated, StyleSheet, View } from "react-native";
+import { Animated, Dimensions, Image, StyleSheet, View } from "react-native";
 import { useAppDispatch, useAppSelector } from "./redux/Store";
 import { splashDone } from "./redux/authSlice";
 
 SplashScreen.preventAutoHideAsync();
+
 interface State {
-  isReady: boolean;
   setIsReady: React.Dispatch<React.SetStateAction<boolean>>;
   children?: any;
 }
-export default function Splash({ isReady, setIsReady }: State) {
+
+export default function Splash({ setIsReady }: State) {
   return (
-    <AnimatedSplashScreen isReady={isReady} setIsReady={setIsReady}>
+    <AnimatedSplashScreen setIsReady={setIsReady}>
       <MainScreen />
     </AnimatedSplashScreen>
   );
 }
 
-function AnimatedSplashScreen({ children, isReady, setIsReady }: State) {
-  const animation = useMemo(() => new Animated.Value(1), []);
+function AnimatedSplashScreen({ children, setIsReady }: State) {
+  const { height, width } = Dimensions.get("window");
+  const dispatch = useAppDispatch();
   const [isAppReady, setAppReady] = useState(false);
   const [isSplashAnimationComplete, setAnimationComplete] = useState(false);
-  const dispatch = useAppDispatch();
+
+  const animationUpper = useMemo(() => new Animated.Value(100), []);
+  const animationLower = useMemo(() => new Animated.Value(-100), []);
+  const animationCenter = useMemo(() => new Animated.Value(0), []);
+
   useEffect(() => {
     if (isAppReady) {
-      Animated.timing(animation, {
-        toValue: 0,
-        duration: 1500,
-        useNativeDriver: true,
-      }).start(() => {
+      Animated.parallel([
+        Animated.timing(animationUpper, {
+          toValue: height / 2.6,
+          duration: 1500,
+          useNativeDriver: true,
+        }),
+        Animated.timing(animationLower, {
+          toValue: -height / 1.87,
+          duration: 1500,
+          useNativeDriver: true,
+        }),
+        Animated.timing(animationCenter, {
+          toValue: 1,
+          duration: 1500,
+          useNativeDriver: true,
+        }),
+      ]).start(() => {
         dispatch(splashDone());
-        setAnimationComplete(true);
         setTimeout(() => {
           setIsReady(true);
-        }, 300);
+          setAnimationComplete(true);
+        }, 1000);
       });
     }
   }, [isAppReady]);
@@ -52,32 +69,55 @@ function AnimatedSplashScreen({ children, isReady, setIsReady }: State) {
     <View style={{ flex: 1 }}>
       {isAppReady && children}
       {!isSplashAnimationComplete && (
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            StyleSheet.absoluteFill,
-            {
-              backgroundColor: "#5E41E6",
-              opacity: animation,
-            },
-          ]}
-        >
+        <View style={[StyleSheet.absoluteFill, { backgroundColor: "#5E41E6" }]}>
           <Animated.Image
             style={{
-              width: "100%",
-              height: "100%",
-              resizeMode: "cover",
+              position: "absolute",
+              alignSelf: "center",
+              width: 68,
+              height: 43,
+              left: "39%",
+              top: 0,
               transform: [
                 {
-                  scale: animation,
+                  translateY: animationUpper,
                 },
               ],
             }}
-            source={require("../assets/island_logo_big.png")}
+            source={require("../assets/island_upper.png")}
             onLoadEnd={onImageLoaded}
             fadeDuration={0}
           />
-        </Animated.View>
+          <Animated.Image
+            style={{
+              position: "absolute",
+              alignSelf: "center",
+              width: 95,
+              height: 43,
+              top: "40%",
+              opacity: animationCenter,
+            }}
+            source={require("../assets/island_center.png")}
+            fadeDuration={0}
+          />
+          <Animated.Image
+            style={{
+              position: "absolute",
+              alignSelf: "center",
+              width: 68,
+              right: "39%",
+              height: 43,
+              bottom: 0,
+              transform: [
+                {
+                  translateY: animationLower,
+                },
+              ],
+            }}
+            source={require("../assets/island_lower.png")}
+            fadeDuration={0}
+          />
+        </View>
       )}
     </View>
   );

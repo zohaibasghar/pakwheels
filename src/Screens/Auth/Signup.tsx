@@ -1,6 +1,6 @@
 import { Text, HStack, VStack, Image, Button } from "native-base";
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { Platform, StyleSheet, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 import Svg, { LinearGradient, Stop, Rect } from "react-native-svg";
@@ -47,7 +47,7 @@ const Signup = () => {
         mx={6}
         position={"absolute"}
         bottom={0}
-        mb={12}
+        mb={Platform.OS === "android" ? 6 : 12}
         left={0}
         right={0}
         onPress={() => nav.navigate("GetStarted" as never)}

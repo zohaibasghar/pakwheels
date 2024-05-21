@@ -47,16 +47,14 @@ export default function App() {
   const [isReady, setIsReady] = useState(false);
 
   if (!isReady || !fontsLoaded) {
-    return (
-      <View style={styles.container}>
-        <NativeBaseProvider theme={theme} config={{ strictMode: "warn" }}>
-          <StatusBar style="light" />
-          <StoreProvider>
-            <Splash isReady={isReady} setIsReady={setIsReady} />
-          </StoreProvider>
-        </NativeBaseProvider>
-      </View>
-    );
+  return (
+    <View style={styles.container}>
+      <StatusBar style="light" />
+      <StoreProvider>
+        <Splash setIsReady={setIsReady} />
+      </StoreProvider>
+    </View>
+  );
   }
   if (fontsLoaded && isReady) {
     return (
