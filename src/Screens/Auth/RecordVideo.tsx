@@ -17,11 +17,13 @@ const RecordVideo = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Record a video
               </Text>
-              <Text color={"#616161"}>For security, we need a live capture</Text>
-              <Text color={"#616161"} ml={2}>
+              <Text color={"#616161"} fontSize={16}>
+                For security, we need a live capture
+              </Text>
+              <Text color={"#616161"} ml={2} fontSize={16}>
                 • You have 25 seconds to finish
               </Text>
-              <Text color={"#616161"} ml={2}>
+              <Text color={"#616161"} ml={2} fontSize={16}>
                 • Follow the instructions to move or speak
               </Text>
             </VStack>

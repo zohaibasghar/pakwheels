@@ -18,7 +18,9 @@ const EmploymentStatus = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Employment Status
               </Text>
-              <Text color={"#616161"}>What is your main employment status?</Text>
+              <Text color={"#616161"} fontSize={16}>
+                What is your main employment status?
+              </Text>
             </VStack>
             <VStack>
               {/* // TODO: Still not confirm input or select */}

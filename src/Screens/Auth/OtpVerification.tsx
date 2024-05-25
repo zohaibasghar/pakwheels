@@ -27,7 +27,7 @@ const OtpVerification = () => {
       <View mt={16}>
         <CustomHeader title="" />
       </View>
-      <Stack w={"92%"} mx={"auto"} mt={8}>
+      <Stack w={"92%"} mx={"auto"} mt={4}>
         <Stack space={2}>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             6-digit code
@@ -38,6 +38,7 @@ const OtpVerification = () => {
           <FloatingLabelInput
             label="Code"
             ref={inputRef}
+            mask="123-456"
             containerStyles={{
               borderColor: "#e0e0e0",
               borderWidth: 1,
@@ -45,12 +46,12 @@ const OtpVerification = () => {
               paddingVertical: 16,
               paddingHorizontal: 12,
             }}
+            inputStyles={{ fontWeight: "500" }}
             value={otp}
             keyboardType="number-pad"
-            maxLength={6}
             onChangeText={(e) => {
               setOtp(e);
-              if (e.length === 6) {
+              if (e.length === 7) {
                 dispatch(signIn());
                 dispatch(createTransaction());
               }

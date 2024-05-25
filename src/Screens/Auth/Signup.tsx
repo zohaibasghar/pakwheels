@@ -17,7 +17,7 @@ const Signup = () => {
         >
           <Ionicons name="arrow-back" size={22} color="#fff" />
         </TouchableOpacity>
-        <Text color={"white"} fontSize={"md"} fontFamily={"Manrope_600SemiBold"}>
+        <Text color={"white"} fontSize={16} fontFamily={"Manrope_600SemiBold"}>
           Login
         </Text>
       </HStack>
@@ -47,7 +47,7 @@ const Signup = () => {
         mx={6}
         position={"absolute"}
         bottom={0}
-        mb={Platform.OS === "android" ? 6 : 12}
+        mb={Platform.OS === "android" ? 7 : 12}
         left={0}
         right={0}
         onPress={() => nav.navigate("GetStarted" as never)}

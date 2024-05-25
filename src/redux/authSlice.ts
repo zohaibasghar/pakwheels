@@ -9,6 +9,7 @@ interface AppState {
   transaction: any;
   user: any;
   splash: boolean;
+  photo: string | null;
 }
 const initialState: AppState = {
   loading: 0,
@@ -20,6 +21,7 @@ const initialState: AppState = {
   transaction: { amount: "0.00" },
   user: {},
   splash: true,
+  photo: null,
 };
 
 export const authSlice = createSlice({
@@ -57,10 +59,13 @@ export const authSlice = createSlice({
     splashDone: (state) => {
       state.splash = false;
     },
+    capturePhoto: (state, action) => {
+      state.photo = action.payload;
+    },
   },
 });
 
-export const { logout, setSignupDetails, signIn, createTransaction, splashDone } =
+export const { logout, setSignupDetails, signIn, createTransaction, splashDone, capturePhoto } =
   authSlice.actions;
 const authReducer = authSlice.reducer;
 

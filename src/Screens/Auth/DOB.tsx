@@ -19,7 +19,7 @@ const DOB = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Date of birth
             </Text>
-            <Text color={"#616161"}>
+            <Text color={"#616161"} fontSize={16}>
               Enter your date of birth as on your official documents you'll be uploading
             </Text>
           </VStack>

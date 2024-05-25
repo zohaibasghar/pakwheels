@@ -9,7 +9,7 @@ const PushNotifications = () => {
   const nav = useNavigation();
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
-      <CustomHeaderHelp title="Not now" />
+      <CustomHeaderHelp title="Not now" handleFunc={() => nav.navigate("Residency" as never)} />
       <Stack flex={1} mx={6} justifyContent={"space-between"}>
         <Stack mt={8}>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>

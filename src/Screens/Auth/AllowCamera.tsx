@@ -25,7 +25,7 @@ const AllowCamera = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Allow camera access
               </Text>
-              <Text color={"#616161"}>
+              <Text color={"#616161"} fontSize={16}>
                 When prompted, you must enable camera access to continue.
               </Text>
             </VStack>
@@ -35,15 +35,7 @@ const AllowCamera = () => {
           </VStack>
         </ScrollView>
         <VStack alignItems={"center"}>
-          <HStack
-            mb={4}
-            space={2}
-            bg={"#E8F8F5"}
-            py={3}
-            px={6}
-            rounded={16}
-            alignItems={"center"}
-          >
+          <HStack mb={4} space={2} bg={"#E8F8F5"} py={3} px={6} rounded={16} alignItems={"center"}>
             <Feather name="info" size={18} color="black" />
             <Text fontFamily={"Manrope_500Medium"}>We can't verify you without your camera</Text>
           </HStack>

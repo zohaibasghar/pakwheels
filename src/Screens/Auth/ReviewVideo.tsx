@@ -31,7 +31,9 @@ const ReviewVideo = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Review video
               </Text>
-              <Text color={"#616161"}>Your video has been recorded</Text>
+              <Text color={"#616161"} fontSize={16}>
+                Your video has been recorded
+              </Text>
             </VStack>
             <VStack alignItems={"center"} mt={12} w={"100%"} position={"relative"}>
               <Image

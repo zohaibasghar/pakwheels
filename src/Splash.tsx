@@ -20,25 +20,25 @@ export default function Splash({ setIsReady }: State) {
 }
 
 function AnimatedSplashScreen({ children, setIsReady }: State) {
-  const { height, width } = Dimensions.get("window");
+  const { height } = Dimensions.get("window");
   const dispatch = useAppDispatch();
   const [isAppReady, setAppReady] = useState(false);
   const [isSplashAnimationComplete, setAnimationComplete] = useState(false);
 
-  const animationUpper = useMemo(() => new Animated.Value(100), []);
-  const animationLower = useMemo(() => new Animated.Value(-100), []);
+  const animationUpper = useMemo(() => new Animated.Value(-height * 0.5), [height]);
+  const animationLower = useMemo(() => new Animated.Value(height * 0.5), [height]);
   const animationCenter = useMemo(() => new Animated.Value(0), []);
 
   useEffect(() => {
     if (isAppReady) {
       Animated.parallel([
         Animated.timing(animationUpper, {
-          toValue: height / 2.6,
+          toValue: 0,
           duration: 1500,
           useNativeDriver: true,
         }),
         Animated.timing(animationLower, {
-          toValue: -height / 1.87,
+          toValue: 0,
           duration: 1500,
           useNativeDriver: true,
         }),
@@ -55,7 +55,7 @@ function AnimatedSplashScreen({ children, setIsReady }: State) {
         }, 1000);
       });
     }
-  }, [isAppReady]);
+  }, [isAppReady, height, dispatch, setIsReady, animationUpper, animationLower, animationCenter]);
 
   const onImageLoaded = useCallback(async () => {
     try {
@@ -76,8 +76,8 @@ function AnimatedSplashScreen({ children, setIsReady }: State) {
               alignSelf: "center",
               width: 68,
               height: 43,
+              top: "46%",
               left: "39%",
-              top: 0,
               transform: [
                 {
                   translateY: animationUpper,
@@ -94,7 +94,7 @@ function AnimatedSplashScreen({ children, setIsReady }: State) {
               alignSelf: "center",
               width: 95,
               height: 43,
-              top: "40%",
+              top: "50%",
               opacity: animationCenter,
             }}
             source={require("../assets/island_center.png")}
@@ -105,9 +105,9 @@ function AnimatedSplashScreen({ children, setIsReady }: State) {
               position: "absolute",
               alignSelf: "center",
               width: 68,
-              right: "39%",
               height: 43,
-              bottom: 0,
+              bottom: "41%",
+              right: "39%", // Move lower image to the right
               transform: [
                 {
                   translateY: animationLower,

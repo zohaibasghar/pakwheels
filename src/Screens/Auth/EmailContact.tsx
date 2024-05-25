@@ -17,7 +17,7 @@ const EmailContact = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Contacting you
             </Text>
-            <Text color={"#616161"}>
+            <Text color={"#616161"} fontSize={16}>
               Enter your email address, we'll communicate important information about your account.
             </Text>
           </VStack>

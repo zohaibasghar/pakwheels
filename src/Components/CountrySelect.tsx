@@ -67,6 +67,8 @@ const CountrySelect = ({ label }: { label: string }) => {
         pb={2}
         pt={6}
         borderColor={"#e0e0e0"}
+        fontSize={16}
+        fontWeight={500}
         rounded={12}
         _selectedItem={{
           bg: "#5E41E6",

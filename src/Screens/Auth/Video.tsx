@@ -53,7 +53,7 @@ const Video = () => {
         )}
       </CameraView>
       <VStack mx={6} alignItems={"center"} position={"absolute"} bottom={0} w={"87%"} zIndex={99}>
-        <Text color={"#fff"} mb={8} fontSize={"md"} textAlign={"center"}>
+        <Text color={"#fff"} mb={8} fontSize={16} textAlign={"center"}>
           Keep your face within the oval to start recording
         </Text>
         <Button

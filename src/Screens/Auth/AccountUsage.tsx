@@ -9,7 +9,7 @@ const AccountUsage = () => {
   const [value, setValue] = React.useState("1");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
-      <CustomHeaderHelp title="Skip" />
+      <CustomHeaderHelp title="Skip" handleFunc={() => nav.navigate("TaxInfo" as never)} />
       <VStack justifyContent={"space-between"} flex={1} mx={6}>
         <ScrollView>
           <VStack space={4}>
@@ -17,7 +17,9 @@ const AccountUsage = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 How do you plan to spend?
               </Text>
-              <Text color={"#616161"}>How do you plan to use your account?</Text>
+              <Text color={"#616161"} fontSize={16}>
+                How do you plan to use your account?
+              </Text>
             </VStack>
             <VStack>
               {/* // TODO: Still not confirm input or select */}

@@ -16,14 +16,14 @@ const Login = () => {
   }
   return (
     <SafeAreaView style={{ backgroundColor: "#5E41E6", flex: 1 }}>
-      <Stack alignItems={"center"} justifyContent={"space-around"} w={"92%"} flex={1} mx={"auto"}>
+      <Stack alignItems={"center"} justifyContent={"space-around"} flex={1} mx={6}>
         <Stack alignItems={"center"} space={3}>
           <Image source={require("../../../assets/main_logo.png")} alt="Logo" />
           <Flex direction="row" justify="space-between" mx={"auto"} w={"100%"} mt={12}>
             <Box
               w={"33%"}
               bg={"#f8f8f8"}
-              rounded={"md"}
+              rounded={12}
               p={2}
               flexDirection={"row"}
               alignItems={"center"}
@@ -52,6 +52,7 @@ const Login = () => {
               keyboardType="number-pad"
               placeholder="Enter Phone number"
               type="text"
+              rounded={12}
               bg={"#f8f8f8"}
               _focus={{ bg: "#f8f8f8" }}
               variant={"filled"}
@@ -63,7 +64,7 @@ const Login = () => {
                     name="close"
                     size={16}
                     style={{
-                      marginRight: 8,
+                      marginRight: 16,
                       backgroundColor: "#e1e1e1",
                       borderRadius: 50,
                       padding: 2,
@@ -75,12 +76,7 @@ const Login = () => {
             />
           </Flex>
 
-          <Button
-            text={"Log in"}
-            bgColor={"#f8f8f8"}
-            handleFunc={handleLogin}
-            disability={!phone}
-          />
+          <Button text={"Log in"} bgColor={"#f8f8f8"} handleFunc={handleLogin} />
         </Stack>
         <Stack>
           <Text color={"#f8f8f8"} fontWeight={400}>

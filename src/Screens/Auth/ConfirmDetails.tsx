@@ -15,7 +15,9 @@ const ConfirmDetails = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Is this correct?
             </Text>
-            <Text color={"#616161"}>Ensure that the information we've captured is correct.</Text>
+            <Text color={"#616161"} fontSize={16}>
+              Ensure that the information we've captured is correct.
+            </Text>
           </VStack>
           <VStack space={6} bg={"#FAFAFA"} p={6}>
             <VStack>

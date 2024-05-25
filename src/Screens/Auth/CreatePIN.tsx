@@ -25,11 +25,11 @@ const CreatePIN = () => {
         <CustomHeader title="" />
       </View>
       <Stack w={"92%"} mx={"auto"} mt={8} space={4}>
-        <Stack>
+        <Stack mb={4}>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             Create PIN
           </Text>
-          <Text color={"#616161"} fontSize={"16px"}>
+          <Text color={"#616161"} fontSize={16}>
             Set a PIN code for your Island Bank Visa Debit Card
           </Text>
         </Stack>

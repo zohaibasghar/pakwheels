@@ -9,7 +9,6 @@ import { useNavigation } from "@react-navigation/native";
 import CountrySelect from "../../Components/CountrySelect";
 
 const TaxInfo = () => {
-  const [show, setShow] = React.useState(false);
   const nav = useNavigation();
   const [data, setData] = React.useState([{ country: "", pin: "" }]);
 
@@ -23,7 +22,9 @@ const TaxInfo = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Tax information
               </Text>
-              <Text color={"#616161"}>In which country(s) are you a tax resident?</Text>
+              <Text color={"#616161"} fontSize={16}>
+                In which country(s) are you a tax resident?
+              </Text>
             </VStack>
             <VStack space={4}>
               {Array.from(data).map((item, index) => {
@@ -48,7 +49,7 @@ const TaxInfo = () => {
                         copy.splice(index, 1);
                         setData([...copy, { ...item, pin: e }]);
                       }}
-                      togglePassword={show}
+                      togglePassword
                       customShowPasswordComponent={
                         <Feather name="eye-off" size={24} color="#d4d2d2" />
                       }
@@ -86,7 +87,7 @@ const TaxInfo = () => {
               defaultIsChecked
               _checked={{ bg: "#401EE1", borderColor: "#401EE1", borderWidth: 1 }}
             >
-              I'm not a U.S citizen
+              I'm not a U.S. citizen
             </Checkbox>
           </View>
           <View bg={"#fff"} py={4} px={4} rounded={"xl"}>

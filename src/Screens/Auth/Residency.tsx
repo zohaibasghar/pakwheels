@@ -16,7 +16,7 @@ const Residency = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Confirm residency
             </Text>
-            <Text color={"#616161"}>
+            <Text color={"#616161"} fontSize={16}>
               Let us know where you currently live within the Eastern Caribbean.
             </Text>
           </VStack>

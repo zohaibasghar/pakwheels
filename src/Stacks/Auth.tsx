@@ -29,6 +29,7 @@ import CreatePIN from "../Screens/Auth/CreatePIN";
 import DeliveryAdd from "../Screens/Auth/DeliveryAdd";
 import CardDone from "../Screens/Auth/CardDone";
 import SupportHome from "../Screens/Support/SupportHome";
+import ReviewPhoto from "../Screens/Auth/ReviewPhoto";
 
 const Stack = createStackNavigator();
 export default function Auth() {
@@ -61,6 +62,7 @@ export default function Auth() {
       <Stack.Screen name="GetVerified" component={GetVerified} />
       <Stack.Screen name="AllowCamera" component={AllowCamera} />
       <Stack.Screen name="FrontCard" component={FrontCard} />
+      <Stack.Screen name="ReviewPhoto" component={ReviewPhoto} />
       <Stack.Screen name="RecordVideo" component={RecordVideo} />
       <Stack.Screen name="Video" component={Video} />
       <Stack.Screen name="ReviewVideo" component={ReviewVideo} />

@@ -23,7 +23,7 @@ const PersonalDetails = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Personal Details
             </Text>
-            <Text color={"#616161"}>
+            <Text color={"#616161"} fontSize={16}>
               Capture your ID card to automatically fill in your personal information.
             </Text>
           </VStack>
@@ -94,37 +94,36 @@ const styles = StyleSheet.create({
 
   rectangle: {
     position: "absolute",
-    top: "28%", // Adjust based on where you want the rectangle
+    top: "28%",
     left: "15%",
-    width: "70%", // Adjust the size of the rectangle
+    width: "70%",
     height: "44%",
-    borderWidth: 1, // Optional border to visualize the rectangle
+    borderWidth: 1,
     borderColor: "#e0e0e0",
     backgroundColor: "transparent",
   },
-  // Black overlay parts that surround the rectangle
   topOverlay: {
     position: "absolute",
     top: 0,
     left: 0,
     right: 0,
-    height: "28%", // Matches the top position of the rectangle
-    backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent black
+    height: "28%",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   bottomOverlay: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    height: "28%", // Matches the bottom position of the rectangle
+    height: "28%",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   leftOverlay: {
     position: "absolute",
-    top: "28%", // Matches the top position of the rectangle
-    bottom: "28%", // Matches the bottom position
+    top: "28%",
+    bottom: "28%",
     left: 0,
-    width: "15%", // Matches the left position of the rectangle
+    width: "15%",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   rightOverlay: {

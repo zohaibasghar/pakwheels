@@ -1,25 +1,24 @@
-import { View, Text, VStack, Button, HStack, Image, Actionsheet, Spinner } from "native-base";
-import React, { useState } from "react";
+import { View, Text, VStack, Button, HStack, Image, Actionsheet } from "native-base";
+import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderHelp from "../../Components/CustomHeaderHelp";
 import { useNavigation } from "@react-navigation/native";
 import { CameraView } from "expo-camera";
 import { StyleSheet } from "react-native";
-import CustomActionHeader from "../../Components/CustomActionHeader";
+import { useAppDispatch } from "../../redux/Store";
+import { capturePhoto } from "../../redux/authSlice";
 
 const FrontCard = () => {
   const nav = useNavigation();
   const cameraRef = React.useRef(null);
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [capturedImage, setCapturedImage] = React.useState(null);
-  const [loading, setLoading] = useState(false);
 
+  const dispatch = useAppDispatch();
   const captureImage = async () => {
     if (cameraRef.current) {
-      console.log("ref");
-      setIsOpen(true);
       const photo = await cameraRef.current?.takePictureAsync();
-      setCapturedImage(photo.uri);
+
+      dispatch(capturePhoto(photo.uri));
+      nav.navigate("ReviewPhoto" as never);
     }
   };
 
@@ -29,23 +28,19 @@ const FrontCard = () => {
       <VStack justifyContent={"space-between"} flex={1}>
         <VStack my={6} mx={6}>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
-            Front of driver's license
+            Front of driver’s license
           </Text>
         </VStack>
 
-        {loading ? (
-          <Spinner size={"lg"} />
-        ) : (
-          <CameraView style={{ flex: 1, marginVertical: 24 }} facing="back" ref={cameraRef}>
-            <View style={styles.overlay}>
-              <View style={styles.topOverlay} />
-              <View style={styles.leftOverlay} />
-              <View style={styles.rightOverlay} />
-              <View style={styles.bottomOverlay} />
-              <View style={styles.rectangle} />
-            </View>
-          </CameraView>
-        )}
+        <CameraView style={{ flex: 1, marginVertical: 24 }} facing="back" ref={cameraRef}>
+          <View style={styles.overlay}>
+            <View style={styles.topOverlay} />
+            <View style={styles.leftOverlay} />
+            <View style={styles.rightOverlay} />
+            <View style={styles.bottomOverlay} />
+            <View style={styles.rectangle} />
+          </View>
+        </CameraView>
 
         <VStack alignItems={"center"} mx={6}>
           <Button
@@ -54,7 +49,6 @@ const FrontCard = () => {
             w={"100%"}
             mb={0}
             _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
-            disabled={loading}
           >
             Capture
           </Button>
@@ -64,55 +58,6 @@ const FrontCard = () => {
           </HStack>
         </VStack>
       </VStack>
-      <Actionsheet isOpen={isOpen} onClose={() => setIsOpen(false)} hideDragIndicator>
-        <Actionsheet.Content
-          alignItems={"flex-start"}
-          p={6}
-          justifyContent={"space-between"}
-          w={"100%"}
-        >
-          <CustomActionHeader
-            title="Retake"
-            handleClose={() => setIsOpen(false)}
-            handleFunc={() => setIsOpen(false)}
-          />
-          <VStack space={4}>
-            <VStack my={4}>
-              <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
-                Review photo
-              </Text>
-              <Text color={"#616161"}>Make sure your details are clear and unobstructed</Text>
-            </VStack>
-          </VStack>
-          <Image
-            source={{ uri: capturedImage ?? undefined }}
-            my={6}
-            mx={"auto"}
-            w={"100%"}
-            style={{ objectFit: "cover" }}
-            h={250}
-            alt="Captured Image"
-          />
-          <VStack alignItems={"center"} w={"100%"}>
-            <Button
-              _pressed={{ bg: "#f1f1f1" }}
-              w={"100%"}
-              mb={0}
-              onPress={() => {
-                setIsOpen(false);
-                nav.navigate("RecordVideo" as never);
-              }}
-              _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
-            >
-              Upload photo
-            </Button>
-            <HStack alignItems={"center"} mb={3}>
-              <Text fontSize={"2xs"}>Powered by </Text>
-              <Image source={require("../../../assets/metamap.png")} alt="Metamap" />
-            </HStack>
-          </VStack>
-        </Actionsheet.Content>
-      </Actionsheet>
     </SafeAreaView>
   );
 };
@@ -131,10 +76,6 @@ const styles = StyleSheet.create({
     width: 56,
     marginBottom: 24,
   },
-  capturedImage: {
-    width: 200,
-    height: 200,
-  },
   overlay: {
     flex: 1,
     position: "relative",
@@ -142,37 +83,36 @@ const styles = StyleSheet.create({
 
   rectangle: {
     position: "absolute",
-    top: "28%", // Adjust based on where you want the rectangle
+    top: "28%",
     left: "15%",
-    width: "70%", // Adjust the size of the rectangle
+    width: "70%",
     height: "44%",
-    borderWidth: 1, // Optional border to visualize the rectangle
+    borderWidth: 1,
     borderColor: "#e0e0e0",
     backgroundColor: "transparent",
   },
-  // Black overlay parts that surround the rectangle
   topOverlay: {
     position: "absolute",
     top: 0,
     left: 0,
     right: 0,
-    height: "28%", // Matches the top position of the rectangle
-    backgroundColor: "rgba(0, 0, 0, 0.7)", // Semi-transparent black
+    height: "28%",
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   bottomOverlay: {
     position: "absolute",
     bottom: 0,
     left: 0,
     right: 0,
-    height: "28%", // Matches the bottom position of the rectangle
+    height: "28%",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   leftOverlay: {
     position: "absolute",
-    top: "28%", // Matches the top position of the rectangle
-    bottom: "28%", // Matches the bottom position
+    top: "28%",
+    bottom: "28%",
     left: 0,
-    width: "15%", // Matches the left position of the rectangle
+    width: "15%",
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   rightOverlay: {

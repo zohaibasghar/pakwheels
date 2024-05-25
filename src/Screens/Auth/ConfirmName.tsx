@@ -18,7 +18,7 @@ const ConfirmName = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               Name as on ID
             </Text>
-            <Text color={"#616161"}>
+            <Text color={"#616161"} fontSize={16}>
               Enter your name as on your official documents you'll be uploading.
             </Text>
           </VStack>

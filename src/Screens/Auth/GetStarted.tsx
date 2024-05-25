@@ -10,11 +10,11 @@ const GetStarted = () => {
   return (
     <SafeAreaView style={{ backgroundColor: "#fff", flex: 1 }}>
       <CustomHeaderHelp title="Help" />
-      <VStack justifyContent={"space-between"} flex={1}>
+      <VStack justifyContent={"space-between"} flex={1} mt={4}>
         <View>
           <Stack mx={6}>
             <Text fontSize={"3xl"} fontFamily={"Manrope_700Bold"}>
-              Let's get started
+              Let’s get started
             </Text>
             <Text fontSize={"md"} color={"#616161"}>
               To bank with us, you must

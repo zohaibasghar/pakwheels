@@ -20,7 +20,7 @@ const HomeAddress = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Home Address
               </Text>
-              <Text color={"#616161"}>
+              <Text color={"#616161"} fontSize={16}>
                 Enter your home address exactly as it appears on your utility bill.
               </Text>
             </VStack>

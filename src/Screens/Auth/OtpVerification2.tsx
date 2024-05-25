@@ -26,12 +26,12 @@ const OtpVerification2 = () => {
       <View mt={12}>
         <CustomHeaderHelp title="Help" />
       </View>
-      <Stack w={"92%"} mx={"auto"} mt={8}>
-        <Stack space={4}>
+      <Stack w={"92%"} mx={"auto"} mt={4}>
+        <Stack space={2}>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             6-digit code
           </Text>
-          <Text fontSize={16} color={"#616161"} mb={6}>
+          <Text fontSize={16} color={"#616161"} mb={8}>
             Code sent to + 1784 {phone}, enter it below to continue.
           </Text>
           <FloatingLabelInput
@@ -46,10 +46,10 @@ const OtpVerification2 = () => {
               paddingHorizontal: 12,
             }}
             keyboardType="number-pad"
-            maxLength={6}
+            mask="123-456"
             onChangeText={(e) => {
               setOtp(e);
-              if (e.length === 6) {
+              if (e.length === 7) {
                 nav.navigate("PushNotifications" as never);
               }
             }}

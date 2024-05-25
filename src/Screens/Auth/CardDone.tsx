@@ -12,7 +12,12 @@ const CardDone = () => {
       <VStack flex={1} justifyContent={"space-between"}>
         <Container mb={1} mt={4} mx={7}>
           <HStack w={"110%"} alignContent={"end"} justifyContent={"flex-end"}>
-            <TouchableOpacity onPress={() => dispatch(signIn())}>
+            <TouchableOpacity
+              onPress={() => {
+                dispatch(signIn());
+                dispatch(createTransaction());
+              }}
+            >
               <Text color={"#401EE1"} fontFamily={"Manrope_600SemiBold"} fontSize={16}>
                 Done
               </Text>

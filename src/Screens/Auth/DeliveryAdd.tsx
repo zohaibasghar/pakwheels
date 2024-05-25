@@ -13,10 +13,10 @@ const DeliveryAdd = () => {
         <VStack space={4}>
           <VStack my={4}>
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
-              Card Delivery
+              Card delivery
             </Text>
-            <Text color={"#616161"}>
-              We'll only deliver to nearest post office of our home address or local client centre.
+            <Text color={"#616161"} fontSize={16}>
+              We'll only deliver to nearest post office of your home address or local client centre.
             </Text>
           </VStack>
           <View mx={6}>

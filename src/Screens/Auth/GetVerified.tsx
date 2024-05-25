@@ -17,13 +17,13 @@ const GetVerified = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Get verified
               </Text>
-              <Text color={"#616161"}>
+              <Text color={"#616161"} fontSize={16}>
                 We need a valid document to verify who you are, your data is processed securely.
               </Text>
             </VStack>
             <VStack>
               <CountrySelect label="Issuing country" />
-              <VStack px={6} my={4} space={4}>
+              <VStack px={6} my={8} space={4}>
                 <HStack alignItems={"center"} space={4}>
                   <Image source={require("../../../assets/globe.png")} alt="Globe" />
                   <Text fontSize={"md"}>Passport</Text>
