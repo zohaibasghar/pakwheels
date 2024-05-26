@@ -18,13 +18,13 @@ const SelectMonths = () => {
         title="Cancel"
         handleFunc={() => nav.navigate("HomeTabs", { screen: "Credit" })}
       />
-      <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
+      <Stack w={"90%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
         <Stack>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             For how long?
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
-            Select months for how long you want to iSuSu account
+            Select the amount of time over which you'll pay back the loan.
           </Text>
           <Text fontWeight={400} fontSize={"5xl"} textAlign={"center"} my={6}>
             {value} mo

@@ -23,7 +23,7 @@ const AmountNeeded = () => {
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
             How much do you need?
           </Text>
-          <Text color={"#616161"} fontSize={"16px"}>
+          <Text color={"#616161"} fontSize={16}>
             Choose the amount you wish to borrow up to $20,000.
           </Text>
           <Text fontWeight={400} fontSize={"5xl"} textAlign={"center"} my={6}>

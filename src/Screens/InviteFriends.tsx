@@ -49,7 +49,7 @@ const InviteFriends = () => {
           <Button
             bg={"transparent"}
             rounded={"full"}
-            borderWidth={1}
+            borderWidth={1.5}
             borderColor={"#5E41E6"}
             py={4}
           >

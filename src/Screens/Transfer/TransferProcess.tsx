@@ -26,7 +26,7 @@ const TransferProcess = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28} lineHeight={32} mb={2}>
                 Share your transfer link
               </Text>
-              <Text textAlign={"center"} color={"#616161"} fontSize={16} mx={1}>
+              <Text textAlign={"center"} color={"#616161"} fontSize={16}>
                 Give this link to the person you're paying. It'll expire after 7 days from a
                 completed transfer. By sharing your link, you can track the transfer's details.
               </Text>
@@ -94,7 +94,7 @@ const TransferProcess = () => {
                   space={1}
                   direction={"row"}
                 >
-                  <MaterialCommunityIcons name="link-variant" size={24} color="black" />
+                  <MaterialCommunityIcons name="link-variant" size={28} color="black" />
                 </Stack>
                 <Stack alignItems={"center"}>
                   <Text fontSize={12} fontFamily={"Manrope_500Medium"}>

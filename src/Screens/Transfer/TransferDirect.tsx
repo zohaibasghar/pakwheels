@@ -29,7 +29,7 @@ const TransferDirect = () => {
           variant={"unstyled"}
           ref={textInputRef}
           my={4}
-          _input={{ fontFamily: "Manrope_400Regular" }}
+          _input={{ fontFamily: "Manrope_400Regular", fontSize: 48 }}
           value={amount}
           onChangeText={(e) => setAmount(e)}
           w={"2/3"}
@@ -52,7 +52,7 @@ const TransferDirect = () => {
                     <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
                       New Account
                     </Text>
-                    <Text fontSize={"xs"} color={"#616161"}>
+                    <Text fontSize={"xs"} color={"#7B7B7B"}>
                       $2,738.00 • Checking **2830
                     </Text>
                   </Stack>
@@ -73,7 +73,7 @@ const TransferDirect = () => {
                     <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
                       Rainy Day Fund
                     </Text>
-                    <Text fontSize={"xs"} color={"#616161"}>
+                    <Text fontSize={"xs"} color={"#7B7B7B"}>
                       $147.02 • Savings **6272
                     </Text>
                   </Stack>

@@ -17,7 +17,7 @@ const CustomHeader = ({ title, subtitle }: { title: string; subtitle?: string })
             <Text
               fontFamily={"Manrope_500Medium"}
               fontSize={12}
-              color="gray.500"
+              color="#7B7B7B"
               m={0}
               lineHeight={16}
             >

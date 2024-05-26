@@ -25,7 +25,7 @@ const HowWeComp = () => {
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 How we compare
               </Text>
-              <Text color={"#616161"}>
+              <Text color={"#616161"} fontSize={16}>
                 Looks like we're the cheapest way to send $1400.00 XCD to USD, see for yourself.
               </Text>
             </VStack>

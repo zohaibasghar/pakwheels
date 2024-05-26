@@ -45,12 +45,12 @@ export default function PayHome() {
               Tap to Pay
             </Text>
           </HStack>
-          <VStack space={4}>
+          <VStack space={4} w={"100%"}>
             <VStack my={4}>
               <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                 Enter amount
               </Text>
-              <Text color={"#616161"}>
+              <Text color={"#616161"} w={'110%'}>
                 Input the amount the merchant is charging you to continue to tap to pay
               </Text>
             </VStack>
@@ -62,7 +62,7 @@ export default function PayHome() {
                 value={amount}
                 fontFamily={"Manrope_400Regular"}
                 onChangeText={(e) => setAmount(e)}
-                w={"2/3"}
+                w={"4/4"}
                 ml={16}
                 keyboardType="number-pad"
                 fontSize={48}

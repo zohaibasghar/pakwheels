@@ -8,7 +8,7 @@ export default function ActivityCard({ details }: any) {
   const nav = useNavigation();
   return (
     <Stack bg={"#fff"} w={"95%"} mx={"auto"} p={5} rounded={"2xl"}>
-      <Flex direction="row" justify="space-between">
+      <Flex direction="row" justify="space-between" mb={4}>
         <Text bold fontSize={"lg"}>
           Activity
         </Text>
@@ -33,16 +33,16 @@ export default function ActivityCard({ details }: any) {
             <Text fontFamily={"Manrope_700Bold"} fontSize={14}>
               {details.bankName} {details.recipient}
             </Text>
-            <Text fontSize={"xs"} color={"#616161"}>
+            <Text fontSize={"xs"} color={"#7b7b7b"}>
               {details.type} • {details.time}
             </Text>
           </Stack>
         </Stack>
         <Stack alignItems={"flex-end"}>
-          <Text color={details.type === "Deposit" ? "green.500" : "red.500"}>
+          <Text color={details.type === "Deposit" ? "green.500" : "red.500"} fontFamily={"Manrope_700Bold"}>
             {details.type === "Deposit" ? "+" : "-"} ${details.amount}
           </Text>
-          <Text fontSize={"xs"}>${details.amount}</Text>
+          <Text fontSize={"xs"} color={"#7b7b7b"}>${details.amount}</Text>
         </Stack>
       </Flex>
     </Stack>

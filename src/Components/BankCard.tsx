@@ -36,7 +36,9 @@ export default function BankCard() {
           </Flex>
 
           <Flex justify="space-between" direction="row" align="center" style={styles.row}>
-            <Text color="#f5f5f5">Richard Reyes</Text>
+            <Text color="#f5f5f5" fontFamily={"Manrope_500Medium"}>
+              Richard Reyes
+            </Text>
             <Image source={require("../../assets/visa-logo.png")} alt="VISA logo" />
           </Flex>
         </Stack>

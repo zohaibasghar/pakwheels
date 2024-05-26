@@ -20,11 +20,11 @@ export default function HomeCards({ title, desc, link, path, handleFunc }: any) 
           <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
             {title}
           </Text>
-          <Text fontSize={12}>{desc}</Text>
+          <Text fontSize={12} color={"#2b2b2b"}>{desc}</Text>
         </Stack>
         <TouchableOpacity onPress={handleFunc}>
           <Stack direction={"row"} alignItems={"center"}>
-            <Text color={"#5E41E6"} underline fontFamily={"Manrope_700Bold"}>
+            <Text color={"#5E41E6"} fontFamily={"Manrope_700Bold"}>
               {link}
             </Text>
             <Feather name="arrow-up-right" size={18} color="#5E41E6" />

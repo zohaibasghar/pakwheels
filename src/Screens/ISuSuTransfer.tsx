@@ -52,7 +52,7 @@ const ISuSuTransfer = () => {
                     <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                       New Account
                     </Text>
-                    <Text fontSize={"xs"} color={"#616161"}>
+                    <Text fontSize={"xs"} color={"#7b7b7b"}>
                       $2,738.00 • Checking **2830
                     </Text>
                   </Stack>
@@ -73,7 +73,7 @@ const ISuSuTransfer = () => {
                     <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                       Rainy Day Fund
                     </Text>
-                    <Text fontSize={"xs"} color={"#616161"}>
+                    <Text fontSize={"xs"} color={"#7b7b7b"}>
                       $147.02 • Savings **6272
                     </Text>
                   </Stack>

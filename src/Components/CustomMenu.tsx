@@ -19,24 +19,24 @@ const CustomMenu = () => {
     >
       <Menu.Group
         title="New Account **2830"
-        _title={{ fontFamily: "Manrope_700Bold", color: "black" }}
+        _title={{ fontFamily: "Manrope_700Bold", color: "black", textTransform: "none" }}
       >
         <Menu.Item px={0}>
           <HStack space={2}>
             <MaterialCommunityIcons name="information-outline" size={20} color="#D4D2D2" />
-            <Text>Get account details</Text>
+            <Text fontFamily={"Manrope_500Medium"}>Get account details</Text>
           </HStack>
         </Menu.Item>
         <Menu.Item px={0}>
           <HStack space={2}>
             <MaterialCommunityIcons name="file-document-outline" size={20} color="#D4D2D2" />
-            <Text>Go to account</Text>
+            <Text fontFamily={"Manrope_500Medium"}>Go to account</Text>
           </HStack>
         </Menu.Item>
         <Menu.Item px={0}>
           <HStack space={2}>
             <AntDesign name="creditcard" size={20} color="#D4D2D2" />
-            <Text>Spend from here</Text>
+            <Text fontFamily={"Manrope_500Medium"}>Spend from here</Text>
           </HStack>
         </Menu.Item>
       </Menu.Group>

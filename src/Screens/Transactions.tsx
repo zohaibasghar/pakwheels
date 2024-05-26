@@ -12,7 +12,7 @@ export default function Transactions() {
       <HStack w={"100%"} alignItems={"center"}>
         <CustomHeader title="All Activity" />
         <TouchableOpacity>
-          <Feather name="search" size={24} color="black" style={{ top: 6, left: 12 }} />
+          <Feather name="search" size={24} color="black" style={{ top: 6, left: 20 }} />
         </TouchableOpacity>
       </HStack>
       <ScrollView>

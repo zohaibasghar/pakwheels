@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import CustomHeaderClose from "../../Components/CustomHeaderClose";
 import { Box, HStack, Image, Input, ScrollView, Text, VStack } from "native-base";
-import { TouchableOpacity } from "react-native";
+import { Platform, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function SupportHome() {
@@ -75,7 +75,7 @@ export default function SupportHome() {
                 </Text>
               </VStack>
               <Text fontSize={12} color={"#616161"} ml={2}>
-                2:55 PM
+                3:20 PM
               </Text>
             </VStack>
           </HStack>
@@ -103,7 +103,7 @@ export default function SupportHome() {
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <HStack space={2}>
               <TouchableOpacity
-                onPress={() => setChat([...chat, { message: "Got it, thanks", time: "3:20 PM" }])}
+                onPress={() => setChat([...chat, { message: "Got it, thanks", time: "3:25 PM" }])}
               >
                 <VStack rounded={"full"} borderColor={"#5E41E6"} borderWidth={"1.5px"} ml={6}>
                   <Text
@@ -157,7 +157,7 @@ export default function SupportHome() {
               borderWidth={1}
               borderColor={"#E0E0E0"}
               bg={"#fff"}
-              py={4}
+              py={Platform.OS === "ios" ? 4 : 2}
               value={message}
               onChangeText={(e) => setMessage(e)}
               onSubmitEditing={() => {
@@ -166,9 +166,16 @@ export default function SupportHome() {
               }}
             />
             <TouchableOpacity>
-              <Box p={2} rounded={"xl"} borderWidth={1} borderColor={"#E0E0E0"} bg={"#fff"}>
+              <VStack
+                p={2}
+                rounded={"xl"}
+                borderWidth={1}
+                borderColor={"#E0E0E0"}
+                bg={"#fff"}
+                alignItems={"center"}
+              >
                 <MaterialIcons name="mic" size={28} color="#5E41E6" />
-              </Box>
+              </VStack>
             </TouchableOpacity>
           </HStack>
         </VStack>

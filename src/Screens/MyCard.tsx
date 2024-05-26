@@ -43,7 +43,9 @@ export default function MyCard() {
               <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
             </Stack>
             <Stack>
-              <Text fontSize={"xs"}>Debit Spending from</Text>
+              <Text fontSize={"xs"} color={"#7b7b7b"}>
+                Debit Spending from
+              </Text>
               <Text fontFamily={"Manrope_700Bold"}>Checking **2830</Text>
             </Stack>
           </Stack>
@@ -66,7 +68,7 @@ export default function MyCard() {
                 <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
                   Spending from
                 </Text>
-                <Text color={"#616161"} mb={2}>
+                <Text color={"#616161"} mb={2} fontSize={16}>
                   Select a default account which you'd like your card to spend from
                 </Text>
                 <Radio.Group
@@ -98,7 +100,7 @@ export default function MyCard() {
                       <Stack direction={"row"} alignItems={"center"} space={2}>
                         <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
                         <Stack>
-                          <Text fontSize={"xs"}>Checking **2830</Text>
+                          <Text fontSize={"xs"} color={"#7b7b7b"}>Checking **2830</Text>
                           <Text fontFamily={"Manrope_700Bold"} lineHeight={18}>
                             New Account
                           </Text>
@@ -131,7 +133,7 @@ export default function MyCard() {
                       <Stack direction={"row"} alignItems={"center"} space={2}>
                         <Image source={require("../../assets/rainy_day_fund.png")} alt="Funds" />
                         <Stack>
-                          <Text fontSize={"xs"}>Savings **2619</Text>
+                          <Text fontSize={"xs"} color={"#7b7b7b"}>Savings **2619</Text>
                           <Text fontFamily={"Manrope_700Bold"} lineHeight={18}>
                             Rainy Day Fund
                           </Text>
@@ -156,7 +158,7 @@ export default function MyCard() {
           </Actionsheet>
         </Flex>
         <OptionCards setDetails={setDetails} details={details} />
-        <Stack bg={"blue.100"} w={"94%"} mx={"auto"} p={4} rounded={"2xl"} space={1}>
+        <Stack bg={"#E8F8F5"} w={"94%"} mx={"auto"} mt={4} p={4} rounded={"2xl"} space={1}>
           <Stack space={2} direction={"row"} alignItems={"center"}>
             <AntDesign name="infocirlceo" size={16} color="black" />
             <Text fontSize={16} fontFamily={"Manrope_600SemiBold"}>

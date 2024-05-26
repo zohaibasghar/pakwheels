@@ -81,11 +81,11 @@ const DoneSavingAccount = () => {
             $0.00 • Savings **6272
           </Text>
         </Stack>
-        <VStack alignItems={"center"} mx={6}>
+        <VStack alignItems={"center"} mx={4}>
           <Text fontFamily={"Manrope_700Bold"} fontSize={20} textAlign={"center"}>
             New account created. Do you want to spend from there?
           </Text>
-          <Text color={"#616161"} textAlign={"center"} fontSize={"15px"}>
+          <Text color={"#616161"} textAlign={"center"} fontSize={"15px"} mx={2}>
             Use your card and the money will come out of this account.
           </Text>
           <Button

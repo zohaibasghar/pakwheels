@@ -41,6 +41,7 @@ const IncomeAfterTax = () => {
               variant={"unstyled"}
               ref={textInputRef}
               my={4}
+              _input={{ fontSize: 48, fontFamily: "Manrope_400Regular" }}
               value={income}
               onChangeText={(e) => setIncome(e)}
               w={"1/2"}

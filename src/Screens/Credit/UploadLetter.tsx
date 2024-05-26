@@ -37,39 +37,37 @@ const UploadLetter = () => {
         handleFunc={() => nav.navigate("HomeTabs", { screen: "Credit" })}
       />
       <Stack w={"92%"} mx={"auto"} mt={8} justifyContent={"space-between"} flex={1}>
-        <ScrollView>
-          <Stack mb={6}>
-            <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
-              Upload your job letter
-            </Text>
-            <Text color={"#616161"} fontSize={"16px"}>
-              Gather this from your employer and we'll use this as reference
-            </Text>
-          </Stack>
-          {Object.keys(file).length ? (
-            <VStack bg={"#F7F6FE"} w={"2/3"} mx={"auto"} alignItems={"center"} space={4} py={4}>
-              <Image source={require("../../../assets/pdf.png")} alt="Uploaded file" />
-              <Text>{file?.name}</Text>
-              <TouchableOpacity onPress={() => setfile({})}>
-                <Text color={"#5E41E6"}>Delete</Text>
-              </TouchableOpacity>
-            </VStack>
-          ) : (
-            <TouchableOpacity onPress={mediaPick}>
-              <Stack
-                bg={"#F7F6FE"}
-                w={"2/3"}
-                mx={"auto"}
-                minH={200}
-                justifyContent={"center"}
-                alignItems={"center"}
-              >
-                <AntDesign name="plus" size={32} color="black" />
-                <Text>Add job letter</Text>
-              </Stack>
+        <Stack>
+          <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
+            Upload your job letter
+          </Text>
+          <Text color={"#616161"} fontSize={"16px"}>
+            Gather this from your employer and we'll use this as reference
+          </Text>
+        </Stack>
+        {Object.keys(file).length ? (
+          <VStack bg={"#F7F6FE"} w={"2/3"} mx={"auto"} alignItems={"center"} space={4} py={4}>
+            <Image source={require("../../../assets/pdf.png")} alt="Uploaded file" />
+            <Text>{file?.name}</Text>
+            <TouchableOpacity onPress={() => setfile({})}>
+              <Text color={"#5E41E6"}>Delete</Text>
             </TouchableOpacity>
-          )}
-        </ScrollView>
+          </VStack>
+        ) : (
+          <TouchableOpacity onPress={mediaPick}>
+            <Stack
+              bg={"#F7F6FE"}
+              w={"2/3"}
+              mx={"auto"}
+              minH={200}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <AntDesign name="plus" size={32} color="black" />
+              <Text>Upload job letter</Text>
+            </Stack>
+          </TouchableOpacity>
+        )}
         <Button
           _text={{ fontFamily: "Manrope_600SemiBold", fontSize: 16 }}
           _pressed={{ bg: "#f1f1f1" }}

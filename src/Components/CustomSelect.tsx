@@ -34,6 +34,8 @@ const CustomSelect = ({
         pt={6}
         borderColor={"#e0e0e0"}
         rounded={12}
+        fontSize={16}
+        fontWeight={500}
         _selectedItem={{
           bg: "#5E41E6",
           borderRadius: "12",

@@ -27,8 +27,13 @@ export default function BankCardDetails() {
 
           <VStack style={styles.row} space={4}>
             <HStack alignItems={"center"} space={2}>
-              <Text color="#f5f5f5" fontSize={20} fontFamily={"Manrope_500Medium"}>
-                4111 6545 0239 4839
+              <Text
+                color="#f5f5f5"
+                fontSize={20}
+                fontFamily={"Manrope_500Medium"}
+                letterSpacing={1}
+              >
+                4111 6526 0398 7429
               </Text>
               <TouchableOpacity
                 onPress={async () => {
@@ -38,13 +43,17 @@ export default function BankCardDetails() {
                   });
                 }}
               >
-                <FontAwesome5 name="copy" size={14} color="white" />
+                <FontAwesome5 name="copy" size={16} color="white" />
               </TouchableOpacity>
             </HStack>
             <HStack space={4} alignItems={"center"}>
               <HStack space={2} alignItems={"center"}>
-                <Text color={"#fff6"} fontFamily={"Manrope_500Medium"}>EXP</Text>
-                <Text color={"white"} fontFamily={"Manrope_500Medium"}>12/27 </Text>
+                <Text color={"#fff6"} fontFamily={"Manrope_500Medium"} fontSize={16}>
+                  EXP
+                </Text>
+                <Text color={"white"} fontFamily={"Manrope_500Medium"} fontSize={16}>
+                  12/27{" "}
+                </Text>
                 <TouchableOpacity
                   onPress={async () => {
                     await Clipboard.setStringAsync("12/27");
@@ -53,12 +62,16 @@ export default function BankCardDetails() {
                     });
                   }}
                 >
-                  <FontAwesome5 name="copy" size={14} color="white" />
+                  <FontAwesome5 name="copy" size={16} color="white" />
                 </TouchableOpacity>
               </HStack>
               <HStack space={2} alignItems={"center"}>
-                <Text color={"#fff6"} fontFamily={"Manrope_500Medium"}>CVV</Text>
-                <Text color={"white"} fontFamily={"Manrope_500Medium"}>738</Text>
+                <Text color={"#fff6"} fontFamily={"Manrope_500Medium"} fontSize={16}>
+                  CVV
+                </Text>
+                <Text color={"white"} fontFamily={"Manrope_500Medium"} fontSize={16}>
+                  738
+                </Text>
                 <TouchableOpacity
                   onPress={async () => {
                     await Clipboard.setStringAsync("738");
@@ -67,7 +80,7 @@ export default function BankCardDetails() {
                     });
                   }}
                 >
-                  <FontAwesome5 name="copy" size={14} color="white" />
+                  <FontAwesome5 name="copy" size={16} color="white" />
                 </TouchableOpacity>
               </HStack>
             </HStack>

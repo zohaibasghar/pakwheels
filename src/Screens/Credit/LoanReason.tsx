@@ -19,7 +19,7 @@ const LoanReason = () => {
             <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
               What's this loan for?
             </Text>
-            <Text color={"#616161"} fontSize={"16px"}>
+            <Text color={"#616161"} fontSize={"16px"} w={'95%'}>
               Telling us the purpose will ensure we only show you a suitable offer.
             </Text>
           </Stack>

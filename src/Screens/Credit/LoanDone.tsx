@@ -15,10 +15,10 @@ const LoanDone = () => {
       <Stack w={"92%"} mx={"auto"} mt={6} justifyContent={"space-between"} flex={1}>
         <Stack>
           <Text fontFamily={"Manrope_700Bold"} fontSize={28}>
-            Last step - almost there!
+            Thank you, Richard!
           </Text>
           <Text color={"#616161"} fontSize={"16px"}>
-            Please confirm that following details are correct.
+            We’re ready to get you personalized loan offer, this will take a few minutes.
           </Text>
         </Stack>
         <Image

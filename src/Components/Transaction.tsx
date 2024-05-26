@@ -15,7 +15,7 @@ const TransactionList = ({ transaction }: any) => {
             <Text fontFamily={"Manrope_700Bold"} lineHeight={18}>
               {transaction.bankName} {transaction.recipient}
             </Text>
-            <Text color={"#616161"} fontSize={"xs"}>
+            <Text color={"#7b7b7b"} fontSize={"xs"}>
               {transaction.type} • {transaction.time}
             </Text>
           </Stack>

@@ -1,4 +1,4 @@
-import { View, Text, Flex, Link, Stack, Image } from "native-base";
+import { View, Text, Flex, Link, Stack, Image, HStack } from "native-base";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native";
@@ -19,12 +19,18 @@ export default function CurrentAccounts() {
         <Flex justify="space-between" direction="row" py={"5"} px={4} alignItems={"center"}>
           <Stack space={2} direction={"row"} alignItems={"center"}>
             <Image source={require("../../assets/island_logo.png")} alt="PITG island" />
-            <Text color={"white"}>Debit</Text>
+            <Text color={"white"} fontSize={16} fontFamily={"Manrope_600SemiBold"}>
+              Debit
+            </Text>
           </Stack>
-          <Link onPress={() => navigation.navigate("Accounts", { screen: "MyCard" })}>
-            <Text color={"white"} fontFamily={"Manrope_700Bold"}>Show card</Text>
-            <Feather name="chevron-down" size={24} color="white" />
-          </Link>
+          <TouchableOpacity onPress={() => navigation.navigate("Accounts", { screen: "MyCard" })}>
+            <HStack>
+              <Text color={"white"} fontFamily={"Manrope_700Bold"}>
+                Show card
+              </Text>
+              <Feather name="chevron-down" size={24} color="white" />
+            </HStack>
+          </TouchableOpacity>
         </Flex>
         <View bg={"#fff"} p={"5"} rounded={"2xl"}>
           <Flex direction="row" justify="space-between" align="center">
@@ -32,7 +38,7 @@ export default function CurrentAccounts() {
               <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
                 Current Accounts
               </Text>
-              <Text fontSize={"xs"} color={"#616161"}>
+              <Text fontSize={"xs"} color={"#7b7b7b"}>
                 Balance: ${transaction.amount}
               </Text>
             </Stack>
@@ -43,12 +49,12 @@ export default function CurrentAccounts() {
                 direction={"row"}
                 alignItems={"center"}
                 bg={"#f1f1f1"}
-                rounded={"2xl"}
-                py={1}
-                px={2}
+                rounded={"full"}
+                py={2}
+                px={3}
               >
                 <Text fontFamily={"Manrope_700Bold"}>Add</Text>
-                <Feather name="plus" size={18} color={"black"} />
+                <Feather name="plus" size={20} color={"black"} />
               </Stack>
             </TouchableOpacity>
           </Flex>
@@ -56,16 +62,14 @@ export default function CurrentAccounts() {
             <Stack direction={"row"} alignItems={"center"} space={2}>
               <Image source={require("../../assets/dollar_wings.png")} alt="Money" />
               <Stack>
-                <Text fontSize={"xs"} color={"#616161"}>
+                <Text fontSize={"xs"} color={"#7b7b7b"}>
                   Debit Spending from
                 </Text>
-                <Text fontFamily={"Manrope_700Bold"}>
-                  Checking **2830
-                </Text>
+                <Text fontFamily={"Manrope_700Bold"}>Checking **2830</Text>
               </Stack>
             </Stack>
             <Stack direction={"row"} alignItems={"center"} space={1}>
-              <Text>${transaction.amount}</Text>
+              <Text fontFamily={"Manrope_700Bold"}>${transaction.amount}</Text>
               <CustomMenu />
             </Stack>
           </Flex>
@@ -73,16 +77,14 @@ export default function CurrentAccounts() {
             <Stack direction={"row"} alignItems={"center"} space={2}>
               <Image source={require("../../assets/bank.png")} alt="Bank" />
               <Stack>
-                <Text fontSize={"xs"} color={"#616161"}>
+                <Text fontSize={"xs"} color={"#7b7b7b"}>
                   Checking **2830
                 </Text>
-                <Text fontFamily={"Manrope_700Bold"}>
-                  New Account
-                </Text>
+                <Text fontFamily={"Manrope_700Bold"}>New Account</Text>
               </Stack>
             </Stack>
             <Stack direction={"row"} alignItems={"center"} space={1}>
-              <Text>${transaction.amount}</Text>
+              <Text fontFamily={"Manrope_700Bold"}>${transaction.amount}</Text>
               <CustomMenu />
             </Stack>
           </Flex>

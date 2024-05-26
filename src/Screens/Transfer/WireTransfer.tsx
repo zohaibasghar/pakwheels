@@ -42,6 +42,7 @@ const WireTransfer = () => {
           variant={"unstyled"}
           ref={textInputRef}
           my={4}
+          _input={{ fontSize: 48, fontFamily: "Manrope_400Regular" }}
           value={amount}
           onChangeText={(e) => setAmount(e)}
           w={"2/3"}
@@ -65,7 +66,7 @@ const WireTransfer = () => {
                       <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                         New Account
                       </Text>
-                      <Text fontSize={"2xs"} color={"#616161"}>
+                      <Text fontSize={"2xs"} color={"#7b7b7b"}>
                         $2,738.00 • Checking **2830
                       </Text>
                     </Stack>
@@ -86,7 +87,7 @@ const WireTransfer = () => {
                       <Text fontFamily={"Manrope_700Bold"} fontSize={16}>
                         Wade Cross
                       </Text>
-                      <Text fontSize={"2xs"} color={"#616161"}>
+                      <Text fontSize={"2xs"} color={"#7b7b7b"}>
                         CitiBank • Savings **7392
                       </Text>
                     </Stack>

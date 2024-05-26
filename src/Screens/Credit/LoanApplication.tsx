@@ -1,4 +1,4 @@
-import { ImageBackground } from "react-native";
+import { ImageBackground, Platform } from "react-native";
 import React from "react";
 import CustomHeader from "../../Components/CustomHeader";
 import {
@@ -45,7 +45,7 @@ const LoanApplication = () => {
           <Text fontFamily={"Manrope_700Bold"} fontSize={24}>
             Apply for a personal loan
           </Text>
-          <HStack mb={4} mt={6} space={4} mx={2} ml={5}>
+          <HStack mb={4} mt={6} space={4} mx={2} ml={Platform.OS === "ios" ? 5 : 3}>
             <Feather name="fast-forward" size={22} color="#aaa9" style={{ marginTop: 6 }} />
             <VStack w={"98%"}>
               <Text fontFamily={"Manrope_700Bold"} fontSize={18}>
@@ -74,7 +74,7 @@ const LoanApplication = () => {
           </HStack>
         </Center>
       </ScrollView>
-      <Stack space={2} mb={8} mx={6}>
+      <Stack space={2} mb={Platform.OS === "ios" ? 8 : 2} mx={6}>
         <Text fontSize={"xs"} textAlign={"left"} mx={0} color={"#616161"}>
           By tapping "Get started" you agree to the{" "}
           <Text color={"#5E41E6"}>Island Bank's Loan Agreement</Text>

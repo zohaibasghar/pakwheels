@@ -8,7 +8,7 @@ import CustomSelect from "../../Components/CustomSelect";
 
 const WorkInfo = () => {
   const nav = useNavigation();
-  const [employer, setEmployer] = React.useState("");
+  const [employer, setEmployer] = React.useState("Digicel");
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <CustomHeaderHelp
@@ -22,7 +22,7 @@ const WorkInfo = () => {
               Where do you work?
             </Text>
             <Text color={"#616161"} fontSize={"16px"}>
-              We will never contact your employer
+              We will never contact your employer.
             </Text>
           </Stack>
           <VStack space={4} w={"100%"}>
@@ -70,7 +70,20 @@ const WorkInfo = () => {
               <CustomSelect
                 width={"48.5%"}
                 label="Start month"
-                data={["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]}
+                data={[
+                  "January",
+                  "February",
+                  "March",
+                  "April",
+                  "May",
+                  "June",
+                  "July",
+                  "August",
+                  "September",
+                  "October",
+                  "November",
+                  "December",
+                ]}
               />
             </HStack>
           </VStack>

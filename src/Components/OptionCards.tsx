@@ -16,7 +16,7 @@ export default function OptionCards({ setDetails, details }: any) {
               h={16}
               rounded={"xl"}
               borderWidth={1}
-              borderColor={"#d9d9d9"}
+              borderColor={"#F2F5F7"}
             >
               <Feather name="eye-off" size={24} color="black" />
             </Stack>
@@ -40,7 +40,7 @@ export default function OptionCards({ setDetails, details }: any) {
               h={16}
               rounded={"xl"}
               borderWidth={1}
-              borderColor={"#d9d9d9"}
+              borderColor={"#F2F5F7"}
             >
               <AntDesign name="eyeo" size={24} color="black" />
             </Stack>
@@ -64,7 +64,7 @@ export default function OptionCards({ setDetails, details }: any) {
             h={16}
             rounded={"xl"}
             borderWidth={1}
-            borderColor={"#d9d9d9"}
+            borderColor={"#F2F5F7"}
             space={1}
             direction={"row"}
           >
@@ -90,7 +90,7 @@ export default function OptionCards({ setDetails, details }: any) {
             h={16}
             rounded={"xl"}
             borderWidth={1}
-            borderColor={"#d9d9d9"}
+            borderColor={"#F2F5F7"}
           >
             <FontAwesome name="snowflake-o" size={24} color="black" />
           </Stack>
@@ -120,7 +120,7 @@ export default function OptionCards({ setDetails, details }: any) {
                   h={16}
                   rounded={"xl"}
                   borderWidth={1}
-                  borderColor={"#d9d9d9"}
+                  borderColor={"#F2F5F7"}
                 >
                   <FontAwesome name="sliders" size={24} color="black" />
                 </Stack>
@@ -137,11 +137,14 @@ export default function OptionCards({ setDetails, details }: any) {
           );
         }}
       >
-        <Menu.Group title="Manage Card" _title={{ fontFamily: "Manrope_700Bold", color: "black" }}>
+        <Menu.Group
+          title="Manage Card"
+          _title={{ fontFamily: "Manrope_700Bold", color: "black", textTransform: "none" }}
+        >
           <Menu.Item px={0}>
-            <HStack space={2}>
+            <HStack space={2} alignItems={"center"}>
               <Flex
-                borderWidth={1}
+                borderWidth={1.5}
                 borderColor={"#D4D2D2"}
                 h={"20px"}
                 w={"20px"}
@@ -149,27 +152,21 @@ export default function OptionCards({ setDetails, details }: any) {
                 justifyContent={"center"}
                 rounded={"sm"}
               >
-                <AntDesign name="poweroff" size={14} color="#D4D2D2" />
+                <AntDesign name="poweroff" size={12} color="#D4D2D2" />
               </Flex>
-              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
-                Trun on Overdraft
-              </Text>
+              <Text fontFamily={"Manrope_500Medium"}>Trun on Overdraft</Text>
             </HStack>
           </Menu.Item>
           <Menu.Item px={0}>
-            <HStack space={2}>
+            <HStack space={2} alignItems={"center"}>
               <SimpleLineIcons name="shield" size={20} color="#D4D2D2" />
-              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
-                Report Stolen
-              </Text>
+              <Text fontFamily={"Manrope_500Medium"}>Report Stolen</Text>
             </HStack>
           </Menu.Item>
           <Menu.Item px={0}>
-            <HStack space={2}>
-              <AntDesign name="creditcard" size={20} color="#D4D2D2" />
-              <Text fontFamily={"Manrope_500Medium"} fontSize={12}>
-                Replace Card
-              </Text>
+            <HStack space={2} alignItems={"center"}>
+              <FontAwesome name="envelope-open-o" size={20} color="#D4D2D2" />
+              <Text fontFamily={"Manrope_500Medium"}>Replace Card</Text>
             </HStack>
           </Menu.Item>
         </Menu.Group>
