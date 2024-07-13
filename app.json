@@ -1,21 +1,11 @@
 {
   "expo": {
-    "name": "Island Bank",
-    "slug": "island-bank",
+    "name": "Pak Wheels",
+    "slug": "pakwheels",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/island_comp.png",
     "userInterfaceStyle": "light",
-    "plugins": [
-      [
-        "expo-camera",
-        {
-          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
-          "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
-          "recordAudioAndroid": true
-        }
-      ]
-    ],
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "cover",
@@ -29,16 +19,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/island_logo.png",
         "backgroundColor": "#5E41E6"
-      },
-      "package": "com.meharzohaib123.islandbank"
+      }
     },
     "web": {
       "favicon": "./assets/island_logo.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "983f9fde-ab4c-4f86-9935-5daf99c5325c"
-      }
     }
   }
 }

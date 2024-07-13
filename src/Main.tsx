@@ -1,16 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Accounts from "./Stacks/Accounts";
-import { AntDesign, MaterialIcons, Feather } from "@expo/vector-icons";
-import Transfer from "./Screens/Transfer/index";
-import Auth from "./Stacks/Auth";
-import { useAppSelector } from "./redux/Store";
-import Transfers from "./Stacks/Transfers";
 import { createStackNavigator } from "@react-navigation/stack";
+import { Feather, AntDesign, MaterialIcons } from "@expo/vector-icons";
+import React from "react";
 import Home from "./Screens/Home";
-import Credit from "./Stacks/Credit";
-import CreditHome from "./Screens/Credit/CreditHome";
-import SupportHome from "./Screens/Support/SupportHome";
-import Pay from "./Stacks/Pay";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -48,32 +40,15 @@ const HomeTabs = () => {
       })}
     >
       <Tab.Screen name="HomeAcc" component={Home} options={{ tabBarLabel: "Accounts" }} />
-      <Tab.Screen name="Transfer" component={Transfer} />
-      <Tab.Screen
-        name="Pay"
-        component={Pay}
-        options={{ tabBarLabel: "Pay", tabBarStyle: { display: "none" } }}
-      />
-      <Tab.Screen name="CreditHome" component={CreditHome} options={{ tabBarLabel: "Credit" }} />
-      <Tab.Screen
-        name="SupportHome"
-        component={SupportHome}
-        options={{ tabBarLabel: "Support", tabBarStyle: { display: "none" } }}
-      />
+      
     </Tab.Navigator>
   );
 };
 export default function Main() {
-  const { token } = useAppSelector((state) => state.auth);
-  if (!token) {
-    return <Auth />;
-  }
+
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeTabs" component={HomeTabs} />
-      <Stack.Screen name="Accounts" component={Accounts} />
-      <Stack.Screen name="Transfers" component={Transfers} />
-      <Stack.Screen name="Credit" component={Credit} />
     </Stack.Navigator>
   );
 }
