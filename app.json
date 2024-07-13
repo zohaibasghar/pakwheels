@@ -4,12 +4,12 @@
     "slug": "pakwheels",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/island_comp.png",
+    "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#5E41E6"
+      "image": "./assets/favicon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1D3A5F"
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
@@ -17,12 +17,9 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/island_logo.png",
-        "backgroundColor": "#5E41E6"
+        "foregroundImage": "./assets/favicon.png",
+        "backgroundColor": "#1D3A5F"
       }
-    },
-    "web": {
-      "favicon": "./assets/island_logo.png"
     }
   }
 }
