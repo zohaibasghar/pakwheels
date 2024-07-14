@@ -6,7 +6,7 @@ const list = ["Used Cars", "New Cards", "Bikes", "Auto Store"];
 const Header = () => {
   const [selectedCat, setSelectedCat] = useState<string>("Used Cars");
   return (
-    <ScrollView horizontal>
+    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
       {list.map((item, index) => {
         return (
           <TouchableOpacity onPress={() => setSelectedCat(item)} key={index}>
@@ -21,8 +21,6 @@ const Header = () => {
               <Text
                 style={{
                   color: selectedCat === item ? "#1D3A5F" : "#FFF",
-
-
                 }}
               >
                 {item}

@@ -1,14 +1,12 @@
-import {
-  Dimensions,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
-const list = ["Category", "Budget", "Brands", "Model", "Cities", "Body Types"];
-const listDropDown = {
+import Swiper from "react-native-swiper";
+import { Fontisto } from "@expo/vector-icons";
+
+type CategoryType = "Category" | "Budget" | "Brands" | "Model" | "Cities" | "Body Types";
+
+const list: CategoryType[] = ["Category", "Budget", "Brands", "Model", "Cities", "Body Types"];
+const listDropDown: Record<CategoryType, any[]> = {
   Category: [
     {
       image: "",
@@ -162,10 +160,17 @@ const listDropDown = {
   ],
 };
 
-const { width: viewportWidth } = Dimensions.get("window");
-
 const FilterCategory = () => {
-  const [selectedCat, setSelectedCat] = useState<string>("Category");
+  const [selectedCat, setSelectedCat] = useState<CategoryType>("Category");
+  const chunkArray = (arr: any, size: number) => {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const pages = chunkArray(listDropDown[selectedCat], 8);
 
   return (
     <View>
@@ -192,6 +197,26 @@ const FilterCategory = () => {
           </TouchableOpacity>
         ))}
       </ScrollView>
+      <Swiper style={{ height: 260 }} loop={false} key={selectedCat}>
+        {pages.map((page, pageIndex) => (
+          <View key={pageIndex} style={styles.swiperContent}>
+            {page.map((type: any, index: number) =>
+              selectedCat === "Category" ||
+              selectedCat === "Brands" ||
+              selectedCat === "Body Types" ? (
+                <TouchableOpacity key={index} style={styles.card}>
+                  <Fontisto name="car" size={42} color="#666" />
+                  <Text style={styles.text}>{type.title}</Text>
+                </TouchableOpacity>
+              ) : (
+                <TouchableOpacity style={styles.tab} key={index}>
+                  <Text style={{ textAlign: "center" }}>{type}</Text>
+                </TouchableOpacity>
+              ),
+            )}
+          </View>
+        ))}
+      </Swiper>
     </View>
   );
 };
@@ -199,6 +224,37 @@ const FilterCategory = () => {
 const styles = StyleSheet.create({
   listItem: {
     padding: 12,
+  },
+  swiperContainer: {
+    height: 260,
+  },
+  swiperContent: {
+    height: 300,
+    display: "flex",
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 6,
+    marginHorizontal: 12,
+    width: "100%",
+  },
+  card: {
+    height: 100,
+    width: "22%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 4,
+    backgroundColor: "white",
+    borderRadius: 12,
+  },
+  text: {
+    textAlign: "center",
+    marginTop: 6,
+  },
+  tab: {
+    display: "flex",
+    width: "48%",
+    marginTop: 12,
   },
 });
 

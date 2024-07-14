@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text, ImageSourcePropType, ScrollView, TouchableOpacity } from "react-native";
+import { View, Image, StyleSheet, Text, ImageSourcePropType, TouchableOpacity } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   img: {
-    width: "70%",
+    width: "80%",
     height: 100,
     padding: 4,
     marginHorizontal: "auto",
