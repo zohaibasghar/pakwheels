@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   img: {
-    width: "100%",
-    height: 130,
+    width: "70%",
+    height: 100,
     padding: 4,
     marginHorizontal: "auto",
     objectFit: "contain",
