@@ -94,8 +94,6 @@ const FeaturedAds = () => {
     />
   );
 
-  const ItemSeparator = () => <View style={styles.separator} />;
-
   return (
     <View style={{ flex: 1 }}>
       <FlatList
@@ -103,7 +101,6 @@ const FeaturedAds = () => {
         horizontal
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
-        ItemSeparatorComponent={ItemSeparator}
         contentContainerStyle={styles.container}
         showsHorizontalScrollIndicator={false}
       />
@@ -114,9 +111,6 @@ const FeaturedAds = () => {
 export default FeaturedAds;
 
 const styles = StyleSheet.create({
-  separator: {
-    width: 10,
-  },
   container: {
     paddingHorizontal: 12,
   },

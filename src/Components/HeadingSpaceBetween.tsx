@@ -1,12 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 
-const HeadingSpaceBetween = ({ heading }: { heading: string }) => {
+const HeadingSpaceBetween = ({ heading, label }: { heading: string; label?: string }) => {
   return (
     <View style={styles.header}>
       <Text style={styles.heading}>{heading}</Text>
       <TouchableOpacity>
-        <Text style={styles.anchor}>See all</Text>
+        <Text style={styles.anchor}>{label ?? "See all"}</Text>
       </TouchableOpacity>
     </View>
   );

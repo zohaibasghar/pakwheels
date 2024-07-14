@@ -51,8 +51,6 @@ const AutoStoreAds = () => {
     />
   );
 
-  const ItemSeparator = () => <View style={styles.separator} />;
-
   return (
     <View style={{ flex: 1 }}>
       <FlatList
@@ -60,7 +58,6 @@ const AutoStoreAds = () => {
         horizontal
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
-        ItemSeparatorComponent={ItemSeparator}
         contentContainerStyle={styles.container}
         showsHorizontalScrollIndicator={false}
       />
@@ -71,9 +68,6 @@ const AutoStoreAds = () => {
 export default AutoStoreAds;
 
 const styles = StyleSheet.create({
-  separator: {
-    width: 10,
-  },
   container: {
     paddingHorizontal: 12,
   },

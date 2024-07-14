@@ -16,7 +16,9 @@ const AutoStoreCard = ({ image, model, price, discount, cart }: IAdProps) => {
       <View style={styles.box}>
         {!!discount && (
           <View style={styles.leftLabel}>
-            <Text style={{ color: "white", paddingVertical: 2 }}>{discount}% off</Text>
+            <Text style={{ color: "white", paddingVertical: 2, fontSize: 12 }}>
+              {discount}% off
+            </Text>
           </View>
         )}
         {cart && (

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Platform, StyleSheet, Text, TextInput, View } from "react-native";
 import React from "react";
 import { AntDesign, FontAwesome6 } from "@expo/vector-icons";
 
@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 5,
     marginHorizontal: 10,
-    marginTop: 10,
+    marginTop: 20,
+    marginBottom: Platform.OS === "android" ? 20 : 0,
   },
   icon: {
     marginRight: 6,

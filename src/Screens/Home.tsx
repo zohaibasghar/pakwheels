@@ -10,6 +10,10 @@ import CertifiedAds from "../Components/CertifiedAds";
 import PakWheelsAds from "../Components/PakWheelsAds";
 import FeaturedAds from "../Components/FeaturedAds";
 import AutoStoreAds from "../Components/AutoStoreAds";
+import LatestVideos from "../Components/LatestVideos";
+import LatestNews from "../Components/LatestNews";
+import FuelPrices from "../Components/FuelPrices";
+import BrowseMore from "../Components/BrowseMore";
 
 export default function Home() {
   return (
@@ -30,6 +34,12 @@ export default function Home() {
       <FeaturedAds />
       <HeadingSpaceBetween heading="PakWheels Autostore" />
       <AutoStoreAds />
+      <HeadingSpaceBetween heading="Latest Video" label="View All" />
+      <LatestVideos />
+      <LatestNews />
+      <FuelPrices />
+      <Text style={styles.title}>Browse More</Text>
+      <BrowseMore />
     </ScrollView>
   );
 }

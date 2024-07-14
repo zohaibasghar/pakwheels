@@ -1,10 +1,10 @@
-import { View, Image, StyleSheet, Text, ImageSourcePropType, ScrollView } from "react-native";
+import { View, Image, StyleSheet, Text, ImageSourcePropType, ScrollView, TouchableOpacity } from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
 
 const OfferCard = ({ image, title }: { image: ImageSourcePropType; title: string }) => {
   return (
-    <View style={styles.view}>
+    <TouchableOpacity style={styles.view}>
       <View>
         <Image source={image} style={styles.img} />
         <Text style={{ color: "blue", fontSize: 10, marginVertical: 8 }}>PAKWHEELS</Text>
@@ -13,7 +13,7 @@ const OfferCard = ({ image, title }: { image: ImageSourcePropType; title: string
         <Text style={{ fontSize: 18, width: "90%", fontWeight: "600" }}>{title}</Text>
         <AntDesign name="right" size={20} color="black" />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

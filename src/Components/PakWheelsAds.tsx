@@ -15,7 +15,7 @@ const pakWheelsAds = [
   },
   {
     image:
-     "https://imgd.aeplcdn.com/1280x720/n/cw/ec/128231/hyundai-tucson-left-front-three-quarter0.jpeg",
+      "https://imgd.aeplcdn.com/1280x720/n/cw/ec/128231/hyundai-tucson-left-front-three-quarter0.jpeg",
     model: "Hyundai Tucson 2022",
     price: "80.8",
     city: "Lahore",
@@ -93,8 +93,6 @@ const PakWheelsAds = () => {
     />
   );
 
-  const ItemSeparator = () => <View style={styles.separator} />;
-
   return (
     <View style={{ flex: 1 }}>
       <FlatList
@@ -102,7 +100,6 @@ const PakWheelsAds = () => {
         horizontal
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
-        ItemSeparatorComponent={ItemSeparator}
         contentContainerStyle={styles.container}
         showsHorizontalScrollIndicator={false}
       />
@@ -113,9 +110,6 @@ const PakWheelsAds = () => {
 export default PakWheelsAds;
 
 const styles = StyleSheet.create({
-  separator: {
-    width: 10,
-  },
   container: {
     paddingHorizontal: 12,
   },

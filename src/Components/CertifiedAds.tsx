@@ -94,7 +94,6 @@ const CertifiedAds = () => {
     />
   );
 
-  const ItemSeparator = () => <View style={styles.separator} />;
 
   return (
     <View style={{ flex: 1 }}>
@@ -103,7 +102,6 @@ const CertifiedAds = () => {
         horizontal
         keyExtractor={(_, index) => index.toString()}
         renderItem={renderItem}
-        ItemSeparatorComponent={ItemSeparator}
         contentContainerStyle={styles.container}
         showsHorizontalScrollIndicator={false} // Optional: hide the horizontal scrollbar
       />
@@ -114,9 +112,7 @@ const CertifiedAds = () => {
 export default CertifiedAds;
 
 const styles = StyleSheet.create({
-  separator: {
-    width: 10,
-  },
+  
   container: {
     paddingHorizontal: 12,
   },

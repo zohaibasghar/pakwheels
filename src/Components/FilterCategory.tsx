@@ -1,6 +1,5 @@
 import {
   Dimensions,
-  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -8,8 +7,6 @@ import {
   View,
 } from "react-native";
 import React, { useState } from "react";
-import Swiper from "react-native-swiper";
-
 const list = ["Category", "Budget", "Brands", "Model", "Cities", "Body Types"];
 const listDropDown = {
   Category: [
@@ -195,25 +192,6 @@ const FilterCategory = () => {
           </TouchableOpacity>
         ))}
       </ScrollView>
-      <View style={styles.container}>
-        {/* <Swiper
-          style={styles.wrapper}
-          showsButtons={false}
-          dot={<View style={styles.dot} />}
-          activeDot={<View style={styles.activeDot} />}
-        >
-          {listDropDown.Brands.map((item, index) => (
-            <View style={styles.card} key={index}>
-              {item.image ? (
-                <Image source={item.image} style={styles.logo} />
-              ) : (
-                <View style={styles.logoPlaceholder} />
-              )}
-              <Text style={styles.name}>{item.title}</Text>
-            </View>
-          ))}
-        </Swiper> */}
-      </View>
     </View>
   );
 };
@@ -221,52 +199,6 @@ const FilterCategory = () => {
 const styles = StyleSheet.create({
   listItem: {
     padding: 12,
-  },
-  container: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  wrapper: {
-    height: viewportWidth / 2,
-  },
-  card: {
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#fff",
-    borderRadius: 8,
-    padding: 10,
-    marginHorizontal: 5,
-    elevation: 3,
-    height: viewportWidth / 2,
-  },
-  logo: {
-    width: 50,
-    height: 50,
-    resizeMode: "contain",
-  },
-  logoPlaceholder: {
-    width: 50,
-    height: 50,
-    backgroundColor: "#f0f0f0",
-    borderRadius: 25,
-  },
-  name: {
-    marginTop: 10,
-    fontSize: 16,
-  },
-  dot: {
-    backgroundColor: "rgba(0,0,0,.2)",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    margin: 3,
-  },
-  activeDot: {
-    backgroundColor: "#007aff",
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    margin: 3,
   },
 });
 
